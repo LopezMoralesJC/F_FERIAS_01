@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\F_Ferias.Models\F_Ferias.Models.csproj" />
+    <ProjectReference Include="..\F_Ferias.AccessData\F_Ferias.AccessData.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>Disable</Nullable>
+  </PropertyGroup>
+
+</Project>

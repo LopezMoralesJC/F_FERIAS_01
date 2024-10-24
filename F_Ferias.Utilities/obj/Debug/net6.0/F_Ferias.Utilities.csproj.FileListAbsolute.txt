@@ -1,0 +1,17 @@
+D:\Users\juancarlos.lopez\source\repos\F_FERIAS\F_Ferias\F_Ferias.Utilities\bin\Debug\net6.0\F_Ferias.Utilities.deps.json
+D:\Users\juancarlos.lopez\source\repos\F_FERIAS\F_Ferias\F_Ferias.Utilities\bin\Debug\net6.0\F_Ferias.Utilities.dll
+D:\Users\juancarlos.lopez\source\repos\F_FERIAS\F_Ferias\F_Ferias.Utilities\bin\Debug\net6.0\F_Ferias.Utilities.pdb
+D:\Users\juancarlos.lopez\source\repos\F_FERIAS\F_Ferias\F_Ferias.Utilities\bin\Debug\net6.0\F_Ferias.AccessData.dll
+D:\Users\juancarlos.lopez\source\repos\F_FERIAS\F_Ferias\F_Ferias.Utilities\bin\Debug\net6.0\F_Ferias.Models.dll
+D:\Users\juancarlos.lopez\source\repos\F_FERIAS\F_Ferias\F_Ferias.Utilities\bin\Debug\net6.0\F_Ferias.Models.pdb
+D:\Users\juancarlos.lopez\source\repos\F_FERIAS\F_Ferias\F_Ferias.Utilities\bin\Debug\net6.0\F_Ferias.AccessData.pdb
+D:\Users\juancarlos.lopez\source\repos\F_FERIAS\F_Ferias\F_Ferias.Utilities\obj\Debug\net6.0\F_Ferias.Utilities.csproj.AssemblyReference.cache
+D:\Users\juancarlos.lopez\source\repos\F_FERIAS\F_Ferias\F_Ferias.Utilities\obj\Debug\net6.0\F_Ferias.Utilities.GeneratedMSBuildEditorConfig.editorconfig
+D:\Users\juancarlos.lopez\source\repos\F_FERIAS\F_Ferias\F_Ferias.Utilities\obj\Debug\net6.0\F_Ferias.Utilities.AssemblyInfoInputs.cache
+D:\Users\juancarlos.lopez\source\repos\F_FERIAS\F_Ferias\F_Ferias.Utilities\obj\Debug\net6.0\F_Ferias.Utilities.AssemblyInfo.cs
+D:\Users\juancarlos.lopez\source\repos\F_FERIAS\F_Ferias\F_Ferias.Utilities\obj\Debug\net6.0\F_Ferias.Utilities.csproj.CoreCompileInputs.cache
+D:\Users\juancarlos.lopez\source\repos\F_FERIAS\F_Ferias\F_Ferias.Utilities\obj\Debug\net6.0\F_Ferias.DFB698C6.Up2Date
+D:\Users\juancarlos.lopez\source\repos\F_FERIAS\F_Ferias\F_Ferias.Utilities\obj\Debug\net6.0\F_Ferias.Utilities.dll
+D:\Users\juancarlos.lopez\source\repos\F_FERIAS\F_Ferias\F_Ferias.Utilities\obj\Debug\net6.0\refint\F_Ferias.Utilities.dll
+D:\Users\juancarlos.lopez\source\repos\F_FERIAS\F_Ferias\F_Ferias.Utilities\obj\Debug\net6.0\F_Ferias.Utilities.pdb
+D:\Users\juancarlos.lopez\source\repos\F_FERIAS\F_Ferias\F_Ferias.Utilities\obj\Debug\net6.0\ref\F_Ferias.Utilities.dll
