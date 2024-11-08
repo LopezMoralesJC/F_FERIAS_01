@@ -5,8 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace F_Ferias.API.Controllers
-{
+namespace F_Ferias.API.Controllers {
     [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
     [ApiController]
     [Route("api/[controller]")]

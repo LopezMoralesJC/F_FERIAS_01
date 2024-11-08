@@ -10,3 +10,4 @@ D:\Users\juancarlos.lopez\source\repos\F_FERIAS\F_Ferias\F_Ferias.Models\obj\Deb
 D:\Users\juancarlos.lopez\source\repos\F_FERIAS\F_Ferias\F_Ferias.Models\obj\Debug\net6.0\F_Ferias.Models.pdb
 D:\Users\juancarlos.lopez\source\repos\F_FERIAS\F_Ferias\F_Ferias.Models\obj\Debug\net6.0\ref\F_Ferias.Models.dll
 D:\Users\juancarlos.lopez\source\repos\F_FERIAS\F_Ferias\F_Ferias.Models\obj\Debug\net6.0\F_Ferias.Models.csproj.AssemblyReference.cache
+D:\Users\juancarlos.lopez\source\repos\F_FERIAS\F_Ferias\F_Ferias.Models\obj\Debug\net6.0\F_Ferias.Models.sourcelink.json

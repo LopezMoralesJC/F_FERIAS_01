@@ -15,3 +15,4 @@ D:\Users\juancarlos.lopez\source\repos\F_FERIAS\F_Ferias\F_Ferias.AccessData\obj
 D:\Users\juancarlos.lopez\source\repos\F_FERIAS\F_Ferias\F_Ferias.AccessData\obj\Debug\net6.0\ref\F_Ferias.AccessData.dll
 D:\Users\juancarlos.lopez\source\repos\F_FERIAS\F_Ferias\F_Ferias.AccessData\bin\Debug\net6.0\F_Ferias.AccessData.runtimeconfig.json
 D:\Users\juancarlos.lopez\source\repos\F_FERIAS\F_Ferias\F_Ferias.AccessData\obj\Debug\net6.0\F_Ferias.AccessData.genruntimeconfig.cache
+D:\Users\juancarlos.lopez\source\repos\F_FERIAS\F_Ferias\F_Ferias.AccessData\obj\Debug\net6.0\F_Ferias.AccessData.sourcelink.json

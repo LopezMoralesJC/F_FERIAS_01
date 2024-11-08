@@ -18,14 +18,12 @@ namespace F_Ferias.API.Controllers;
 
     [ApiController]
     [Route("api/[controller]")]
-    public class AccountController : ControllerBase
-    {
+    public class AccountController : ControllerBase {
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly RoleManager<ApplicationRole> _roleManager;
         private readonly IConfiguration _configuration;
 
-        public AccountController(UserManager<ApplicationUser> userManager , RoleManager<ApplicationRole> roleManager, IConfiguration configuration)
-        {
+        public AccountController(UserManager<ApplicationUser> userManager , RoleManager<ApplicationRole> roleManager, IConfiguration configuration) {
             _userManager = userManager;
             _roleManager = roleManager;
             _configuration = configuration;   
@@ -43,7 +41,7 @@ namespace F_Ferias.API.Controllers;
         }
 
         [HttpPost("login")]
-        public async Task<IActionResult> Login([FromBody] Login model){
+        public async Task<IActionResult> Login([FromBody] Login model) {
             var user = await _userManager.FindByNameAsync(model.Username);
             if(user != null && await _userManager.CheckPasswordAsync(user, model.Password)){
                 var UserRoles = await _userManager.GetRolesAsync(user);

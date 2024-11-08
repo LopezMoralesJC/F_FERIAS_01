@@ -15,3 +15,4 @@ D:\Users\juancarlos.lopez\source\repos\F_FERIAS\F_Ferias\F_Ferias.Utilities\obj\
 D:\Users\juancarlos.lopez\source\repos\F_FERIAS\F_Ferias\F_Ferias.Utilities\obj\Debug\net6.0\refint\F_Ferias.Utilities.dll
 D:\Users\juancarlos.lopez\source\repos\F_FERIAS\F_Ferias\F_Ferias.Utilities\obj\Debug\net6.0\F_Ferias.Utilities.pdb
 D:\Users\juancarlos.lopez\source\repos\F_FERIAS\F_Ferias\F_Ferias.Utilities\obj\Debug\net6.0\ref\F_Ferias.Utilities.dll
+D:\Users\juancarlos.lopez\source\repos\F_FERIAS\F_Ferias\F_Ferias.Utilities\obj\Debug\net6.0\F_Ferias.Utilities.sourcelink.json

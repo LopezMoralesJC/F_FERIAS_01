@@ -81,3 +81,4 @@ D:\Users\juancarlos.lopez\source\repos\F_FERIAS\F_Ferias\F_Ferias.API\bin\Debug\
 D:\Users\juancarlos.lopez\source\repos\F_FERIAS\F_Ferias\F_Ferias.API\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
 D:\Users\juancarlos.lopez\source\repos\F_FERIAS\F_Ferias\F_Ferias.API\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll
 D:\Users\juancarlos.lopez\source\repos\F_FERIAS\F_Ferias\F_Ferias.API\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+D:\Users\juancarlos.lopez\source\repos\F_FERIAS\F_Ferias\F_Ferias.API\obj\Debug\net6.0\F_Ferias.API.sourcelink.json
