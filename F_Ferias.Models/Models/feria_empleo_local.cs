@@ -104,7 +104,7 @@ namespace F_Ferias.Models.Models;
 
 
     public int id_tipo_recurso { get; set; } // FK
-    public int id_actividad_complementaria { get; set; } // FK
+    public int? id_actividad_complementaria { get; set; } // FK
     public string  otra_actividad { get; set; }
     public string  otra_tipo_recurso { get; set; }
     public int zona { get; set; }

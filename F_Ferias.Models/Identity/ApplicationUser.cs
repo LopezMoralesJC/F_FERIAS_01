@@ -8,4 +8,5 @@ namespace F_Ferias.Models.Identity;
 
     public class ApplicationUser : IdentityUser<int> {
         
+          public  int estatus{ get; set; }
     }

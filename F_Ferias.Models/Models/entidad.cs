@@ -12,6 +12,6 @@ namespace F_Ferias.Models.Models;
         public int Id_Pais { get; set; }
         public string  Descripcion { get; set; }
         public string Iniciales { get; set; }
-        public string  Estatus { get; set; }  
+        public int  Estatus { get; set; }  
 
     }

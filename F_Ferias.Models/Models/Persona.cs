@@ -51,20 +51,20 @@ namespace F_Ferias.Models.Models;
         public string  pcm_whatsapp { get; set; }
         public int  pcm_entidad_reside { get; set; }
         public int  pcm_municipio_reside { get; set; }
-        public bool pcm_necesita_visa_trabajar  { get; set; }
-        public string  id_pais_lada_telefono { get; set; }
-        public string  id_pais_lada_whatsapp { get; set; }
-        public byte foto { get; set; }
-        public string  archivo_foto { get; set; }
+        public bool pcm_necesita_visa_trabajar { get; set; }
+        public string  id_pais_lada_telefono { get; set; }
+        public string  id_pais_lada_whatsapp { get; set; }
+        public byte foto { get; set; }
+        public string  archivo_foto { get; set; }
 
 
 
         // Claves Foraneas
 
-        [ForeignKey("id_usuario ")]
+        [ForeignKey("id_usuario")]
         public virtual ApplicationUser usuario_Inserto_FK { get; set; }
 
-        [ForeignKey("id_tipodiscapacidad ")]
+        [ForeignKey("id_tipodiscapacidad")]
         public virtual tipodiscapacidad Id_tipo_discapacidado_FK { get; set; }
 
         

@@ -9,6 +9,6 @@ namespace F_Ferias.Models.Models ;
         [Key]
         public int Id { get; set; }
         public string  Descripcion { get; set; }
-        public string  Estatus { get; set; }
+        public int  Estatus { get; set; }
         
     }

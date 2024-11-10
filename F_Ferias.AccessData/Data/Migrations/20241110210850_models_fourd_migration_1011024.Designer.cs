@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace F_Ferias.AccessData.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20241108225935_models_migration_0811024")]
-    partial class models_migration_0811024
+    [Migration("20241110210850_models_fourd_migration_1011024")]
+    partial class models_fourd_migration_1011024
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -107,6 +107,9 @@ namespace F_Ferias.AccessData.Data.Migrations
                     b.Property<string>("UserName")
                         .HasMaxLength(256)
                         .HasColumnType("character varying(256)");
+
+                    b.Property<int>("estatus")
+                        .HasColumnType("integer");
 
                     b.HasKey("Id");
 
@@ -265,8 +268,8 @@ namespace F_Ferias.AccessData.Data.Migrations
                     b.Property<string>("Descripcion")
                         .HasColumnType("text");
 
-                    b.Property<string>("Estatus")
-                        .HasColumnType("text");
+                    b.Property<int>("Estatus")
+                        .HasColumnType("integer");
 
                     b.HasKey("Id");
 
@@ -284,8 +287,8 @@ namespace F_Ferias.AccessData.Data.Migrations
                     b.Property<string>("Descripcion")
                         .HasColumnType("text");
 
-                    b.Property<string>("Estatus")
-                        .HasColumnType("text");
+                    b.Property<int>("Estatus")
+                        .HasColumnType("integer");
 
                     b.HasKey("Id");
 
@@ -382,7 +385,7 @@ namespace F_Ferias.AccessData.Data.Migrations
                     b.Property<string>("ESTADO")
                         .HasColumnType("text");
 
-                    b.Property<int>("ID")
+                    b.Property<int?>("ID")
                         .HasColumnType("integer");
 
                     b.Property<string>("NOMBRE")
@@ -406,6 +409,9 @@ namespace F_Ferias.AccessData.Data.Migrations
                     b.Property<string>("TITULO")
                         .HasColumnType("text");
 
+                    b.Property<int>("id_entidad")
+                        .HasColumnType("integer");
+
                     b.Property<int?>("id_oficina")
                         .HasColumnType("integer");
 
@@ -413,6 +419,8 @@ namespace F_Ferias.AccessData.Data.Migrations
                         .HasColumnType("integer");
 
                     b.HasKey("CEDO_ID");
+
+                    b.HasIndex("id_entidad");
 
                     b.HasIndex("id_oficina");
 
@@ -432,8 +440,8 @@ namespace F_Ferias.AccessData.Data.Migrations
                     b.Property<string>("Descripcion")
                         .HasColumnType("text");
 
-                    b.Property<string>("Estatus")
-                        .HasColumnType("text");
+                    b.Property<int>("Estatus")
+                        .HasColumnType("integer");
 
                     b.HasKey("Id");
 
@@ -454,23 +462,23 @@ namespace F_Ferias.AccessData.Data.Migrations
                     b.Property<string>("c_CP")
                         .HasColumnType("text");
 
-                    b.Property<string>("c_cve_ciudad")
-                        .HasColumnType("text");
+                    b.Property<int>("c_cve_ciudad")
+                        .HasColumnType("integer");
 
-                    b.Property<string>("c_estado")
-                        .HasColumnType("text");
+                    b.Property<int>("c_estado")
+                        .HasColumnType("integer");
 
-                    b.Property<string>("c_mnpio")
-                        .HasColumnType("text");
+                    b.Property<int>("c_mnpio")
+                        .HasColumnType("integer");
 
-                    b.Property<string>("c_oficina")
-                        .HasColumnType("text");
+                    b.Property<int>("c_oficina")
+                        .HasColumnType("integer");
 
-                    b.Property<string>("c_tipo_asenta")
-                        .HasColumnType("text");
+                    b.Property<int>("c_tipo_asenta")
+                        .HasColumnType("integer");
 
-                    b.Property<string>("d_CP")
-                        .HasColumnType("text");
+                    b.Property<int>("d_CP")
+                        .HasColumnType("integer");
 
                     b.Property<string>("d_asenta")
                         .HasColumnType("text");
@@ -490,10 +498,15 @@ namespace F_Ferias.AccessData.Data.Migrations
                     b.Property<string>("d_zona")
                         .HasColumnType("text");
 
-                    b.Property<string>("id_asenta_cpcons")
-                        .HasColumnType("text");
+                    b.Property<int>("id_asenta_cpcons")
+                        .HasColumnType("integer");
+
+                    b.Property<int?>("id_entidad")
+                        .HasColumnType("integer");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("id_entidad");
 
                     b.ToTable("cp_Cepomex_Mexico");
                 });
@@ -509,8 +522,8 @@ namespace F_Ferias.AccessData.Data.Migrations
                     b.Property<string>("Descripcion")
                         .HasColumnType("text");
 
-                    b.Property<string>("Estatus")
-                        .HasColumnType("text");
+                    b.Property<int>("Estatus")
+                        .HasColumnType("integer");
 
                     b.Property<int>("Id_Pais")
                         .HasColumnType("integer");
@@ -638,8 +651,8 @@ namespace F_Ferias.AccessData.Data.Migrations
                     b.Property<string>("Descripcion")
                         .HasColumnType("text");
 
-                    b.Property<string>("Estatus")
-                        .HasColumnType("text");
+                    b.Property<int>("Estatus")
+                        .HasColumnType("integer");
 
                     b.HasKey("Id");
 
@@ -657,8 +670,8 @@ namespace F_Ferias.AccessData.Data.Migrations
                     b.Property<string>("Descripcion")
                         .HasColumnType("text");
 
-                    b.Property<string>("Estatus")
-                        .HasColumnType("text");
+                    b.Property<int>("Estatus")
+                        .HasColumnType("integer");
 
                     b.HasKey("Id");
 
@@ -751,7 +764,7 @@ namespace F_Ferias.AccessData.Data.Migrations
                     b.Property<DateTime>("hora_inicio")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<int>("id_actividad_complementaria")
+                    b.Property<int?>("id_actividad_complementaria")
                         .HasColumnType("integer");
 
                     b.Property<int>("id_entidad")
@@ -902,8 +915,8 @@ namespace F_Ferias.AccessData.Data.Migrations
                     b.Property<string>("Idescripcion")
                         .HasColumnType("text");
 
-                    b.Property<string>("estatus")
-                        .HasColumnType("text");
+                    b.Property<int>("estatus")
+                        .HasColumnType("integer");
 
                     b.HasKey("Id");
 
@@ -1066,7 +1079,7 @@ namespace F_Ferias.AccessData.Data.Migrations
                     b.Property<DateTime>("updated_at")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<int>("user_create")
+                    b.Property<int?>("user_create")
                         .HasColumnType("integer");
 
                     b.Property<string>("user_upddel")
@@ -1074,7 +1087,7 @@ namespace F_Ferias.AccessData.Data.Migrations
 
                     b.HasKey("id");
 
-                    b.HasIndex("estatus");
+                    b.HasIndex("id_consejero_asignado");
 
                     b.HasIndex("id_entidad");
 
@@ -1245,8 +1258,8 @@ namespace F_Ferias.AccessData.Data.Migrations
                     b.Property<string>("Descripcion")
                         .HasColumnType("text");
 
-                    b.Property<string>("Estatus")
-                        .HasColumnType("text");
+                    b.Property<int>("Estatus")
+                        .HasColumnType("integer");
 
                     b.HasKey("Id");
 
@@ -1264,8 +1277,8 @@ namespace F_Ferias.AccessData.Data.Migrations
                     b.Property<string>("Descripcion")
                         .HasColumnType("text");
 
-                    b.Property<string>("Estatus")
-                        .HasColumnType("text");
+                    b.Property<int>("Estatus")
+                        .HasColumnType("integer");
 
                     b.HasKey("Id");
 
@@ -1280,8 +1293,8 @@ namespace F_Ferias.AccessData.Data.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("descripcion")
-                        .HasColumnType("integer");
+                    b.Property<string>("descripcion")
+                        .HasColumnType("text");
 
                     b.Property<int>("estatus")
                         .HasColumnType("integer");
@@ -1302,8 +1315,8 @@ namespace F_Ferias.AccessData.Data.Migrations
                     b.Property<string>("Descripcion")
                         .HasColumnType("text");
 
-                    b.Property<string>("Estatus")
-                        .HasColumnType("text");
+                    b.Property<int>("Estatus")
+                        .HasColumnType("integer");
 
                     b.HasKey("Id");
 
@@ -1321,8 +1334,8 @@ namespace F_Ferias.AccessData.Data.Migrations
                     b.Property<string>("Descripcion")
                         .HasColumnType("text");
 
-                    b.Property<string>("Estatus")
-                        .HasColumnType("text");
+                    b.Property<int>("Estatus")
+                        .HasColumnType("integer");
 
                     b.HasKey("Id");
 
@@ -1440,7 +1453,7 @@ namespace F_Ferias.AccessData.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("F_Ferias.Models.Models.oficina", "id_oficibna_asociado_FK")
+                    b.HasOne("F_Ferias.Models.Models.oficina", "id_oficina_asociado_FK")
                         .WithMany()
                         .HasForeignKey("id_oficina")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -1448,7 +1461,7 @@ namespace F_Ferias.AccessData.Data.Migrations
 
                     b.Navigation("id_entidad_asociado_FK");
 
-                    b.Navigation("id_oficibna_asociado_FK");
+                    b.Navigation("id_oficina_asociado_FK");
                 });
 
             modelBuilder.Entity("F_Ferias.Models.Models.accion_por_modulo", b =>
@@ -1499,6 +1512,12 @@ namespace F_Ferias.AccessData.Data.Migrations
 
             modelBuilder.Entity("F_Ferias.Models.Models.C_FUNCIONARIOS_PORTALEMPLEO", b =>
                 {
+                    b.HasOne("F_Ferias.Models.Models.entidad", "Id_entidad_FK")
+                        .WithMany()
+                        .HasForeignKey("id_entidad")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("F_Ferias.Models.Models.oficina", "Id_Oficina_FK")
                         .WithMany()
                         .HasForeignKey("id_oficina");
@@ -1511,7 +1530,18 @@ namespace F_Ferias.AccessData.Data.Migrations
 
                     b.Navigation("Id_Oficina_FK");
 
+                    b.Navigation("Id_entidad_FK");
+
                     b.Navigation("usuario_Inserto");
+                });
+
+            modelBuilder.Entity("F_Ferias.Models.Models.cp_cepomex_mexico", b =>
+                {
+                    b.HasOne("F_Ferias.Models.Models.entidad", "Id_entidad_FK")
+                        .WithMany()
+                        .HasForeignKey("id_entidad");
+
+                    b.Navigation("Id_entidad_FK");
                 });
 
             modelBuilder.Entity("F_Ferias.Models.Models.feria_actividad_complementaria", b =>
@@ -1566,9 +1596,7 @@ namespace F_Ferias.AccessData.Data.Migrations
 
                     b.HasOne("F_Ferias.Models.Models.tipo_recurso", "id_actividad_complementaria_asociado")
                         .WithMany()
-                        .HasForeignKey("id_actividad_complementaria")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("id_actividad_complementaria");
 
                     b.HasOne("F_Ferias.Models.Models.entidad", "id_entidad_asociado")
                         .WithMany()
@@ -1699,11 +1727,9 @@ namespace F_Ferias.AccessData.Data.Migrations
 
             modelBuilder.Entity("F_Ferias.Models.Models.oficina", b =>
                 {
-                    b.HasOne("F_Ferias.Models.Models.ferias_estatus", "Id_estatus_FK")
+                    b.HasOne("F_Ferias.Models.Identity.ApplicationUser", "Id_usuario_consejero_Encargado_FK")
                         .WithMany()
-                        .HasForeignKey("estatus")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("id_consejero_asignado");
 
                     b.HasOne("F_Ferias.Models.Models.entidad", "Id_entidad_FK")
                         .WithMany()
@@ -1717,17 +1743,15 @@ namespace F_Ferias.AccessData.Data.Migrations
 
                     b.HasOne("F_Ferias.Models.Identity.ApplicationUser", "Id_user_creo_FK")
                         .WithMany()
-                        .HasForeignKey("user_create")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("user_create");
 
                     b.Navigation("Id_entidad_FK");
-
-                    b.Navigation("Id_estatus_FK");
 
                     b.Navigation("Id_user_creo_FK");
 
                     b.Navigation("Id_usuario_Encargado_FK");
+
+                    b.Navigation("Id_usuario_consejero_Encargado_FK");
                 });
 
             modelBuilder.Entity("F_Ferias.Models.Models.Persona", b =>

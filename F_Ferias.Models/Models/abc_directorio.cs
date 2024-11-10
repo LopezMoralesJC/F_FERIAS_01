@@ -66,5 +66,5 @@ namespace F_Ferias.Models.Models;
 
         
         [ForeignKey("id_oficina ")]
-        public virtual oficina id_oficibna_asociado_FK { get; set; }
+        public virtual oficina id_oficina_asociado_FK { get; set; }
     }

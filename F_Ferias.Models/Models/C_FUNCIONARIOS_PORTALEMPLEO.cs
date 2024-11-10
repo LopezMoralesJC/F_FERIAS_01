@@ -11,9 +11,10 @@ namespace F_Ferias.Models.Models;
         
         [Key]
         public int CEDO_ID  { get; set; }
+        public int id_entidad  { get; set; }
         public string  ESTADO  { get; set; }
         public string DEPENDENCIA  { get; set; }
-        public int ID  { get; set; }
+        public int? ID  { get; set; }
         public string NOMBRE  { get; set; }
         public string APELLIDOP  { get; set; }
         public string APELLIDOM  { get; set; }
@@ -38,4 +39,7 @@ namespace F_Ferias.Models.Models;
         [ForeignKey("id_oficina")]
         public virtual oficina Id_Oficina_FK { get; set; }
 
+       [ForeignKey("id_entidad")]
+        public virtual entidad Id_entidad_FK { get; set; }         
+        
     }

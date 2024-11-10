@@ -8,9 +8,6 @@ using System.Threading.Tasks;
 namespace F_Ferias.Models.Models;
     public class feria_inversion {
 
-
-
-
         [Key]
         public int id  { get; set; }
         public string observacion_promocion  { get; set; }

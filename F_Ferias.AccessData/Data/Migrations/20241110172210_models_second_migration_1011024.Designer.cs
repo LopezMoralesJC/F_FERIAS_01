@@ -3,6 +3,7 @@ using System;
 using F_Ferias.AccessData;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,10 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace F_Ferias.AccessData.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241110172210_models_second_migration_1011024")]
+    partial class models_second_migration_1011024
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -383,7 +385,7 @@ namespace F_Ferias.AccessData.Data.Migrations
                     b.Property<string>("ESTADO")
                         .HasColumnType("text");
 
-                    b.Property<int?>("ID")
+                    b.Property<int>("ID")
                         .HasColumnType("integer");
 
                     b.Property<string>("NOMBRE")
@@ -407,9 +409,6 @@ namespace F_Ferias.AccessData.Data.Migrations
                     b.Property<string>("TITULO")
                         .HasColumnType("text");
 
-                    b.Property<int>("id_entidad")
-                        .HasColumnType("integer");
-
                     b.Property<int?>("id_oficina")
                         .HasColumnType("integer");
 
@@ -417,8 +416,6 @@ namespace F_Ferias.AccessData.Data.Migrations
                         .HasColumnType("integer");
 
                     b.HasKey("CEDO_ID");
-
-                    b.HasIndex("id_entidad");
 
                     b.HasIndex("id_oficina");
 
@@ -1451,7 +1448,7 @@ namespace F_Ferias.AccessData.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("F_Ferias.Models.Models.oficina", "id_oficina_asociado_FK")
+                    b.HasOne("F_Ferias.Models.Models.oficina", "id_oficibna_asociado_FK")
                         .WithMany()
                         .HasForeignKey("id_oficina")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -1459,7 +1456,7 @@ namespace F_Ferias.AccessData.Data.Migrations
 
                     b.Navigation("id_entidad_asociado_FK");
 
-                    b.Navigation("id_oficina_asociado_FK");
+                    b.Navigation("id_oficibna_asociado_FK");
                 });
 
             modelBuilder.Entity("F_Ferias.Models.Models.accion_por_modulo", b =>
@@ -1510,12 +1507,6 @@ namespace F_Ferias.AccessData.Data.Migrations
 
             modelBuilder.Entity("F_Ferias.Models.Models.C_FUNCIONARIOS_PORTALEMPLEO", b =>
                 {
-                    b.HasOne("F_Ferias.Models.Models.entidad", "Id_entidad_FK")
-                        .WithMany()
-                        .HasForeignKey("id_entidad")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("F_Ferias.Models.Models.oficina", "Id_Oficina_FK")
                         .WithMany()
                         .HasForeignKey("id_oficina");
@@ -1527,8 +1518,6 @@ namespace F_Ferias.AccessData.Data.Migrations
                         .IsRequired();
 
                     b.Navigation("Id_Oficina_FK");
-
-                    b.Navigation("Id_entidad_FK");
 
                     b.Navigation("usuario_Inserto");
                 });

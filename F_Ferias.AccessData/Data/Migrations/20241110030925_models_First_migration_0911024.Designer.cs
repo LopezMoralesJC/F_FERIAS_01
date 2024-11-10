@@ -3,6 +3,7 @@ using System;
 using F_Ferias.AccessData;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,10 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace F_Ferias.AccessData.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241110030925_models_First_migration_0911024")]
+    partial class models_First_migration_0911024
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -383,7 +385,7 @@ namespace F_Ferias.AccessData.Data.Migrations
                     b.Property<string>("ESTADO")
                         .HasColumnType("text");
 
-                    b.Property<int?>("ID")
+                    b.Property<int>("ID")
                         .HasColumnType("integer");
 
                     b.Property<string>("NOMBRE")
@@ -407,9 +409,6 @@ namespace F_Ferias.AccessData.Data.Migrations
                     b.Property<string>("TITULO")
                         .HasColumnType("text");
 
-                    b.Property<int>("id_entidad")
-                        .HasColumnType("integer");
-
                     b.Property<int?>("id_oficina")
                         .HasColumnType("integer");
 
@@ -417,8 +416,6 @@ namespace F_Ferias.AccessData.Data.Migrations
                         .HasColumnType("integer");
 
                     b.HasKey("CEDO_ID");
-
-                    b.HasIndex("id_entidad");
 
                     b.HasIndex("id_oficina");
 
@@ -762,7 +759,7 @@ namespace F_Ferias.AccessData.Data.Migrations
                     b.Property<DateTime>("hora_inicio")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<int?>("id_actividad_complementaria")
+                    b.Property<int>("id_actividad_complementaria")
                         .HasColumnType("integer");
 
                     b.Property<int>("id_entidad")
@@ -1077,7 +1074,7 @@ namespace F_Ferias.AccessData.Data.Migrations
                     b.Property<DateTime>("updated_at")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<int?>("user_create")
+                    b.Property<int>("user_create")
                         .HasColumnType("integer");
 
                     b.Property<string>("user_upddel")
@@ -1085,7 +1082,7 @@ namespace F_Ferias.AccessData.Data.Migrations
 
                     b.HasKey("id");
 
-                    b.HasIndex("id_consejero_asignado");
+                    b.HasIndex("estatus");
 
                     b.HasIndex("id_entidad");
 
@@ -1451,7 +1448,7 @@ namespace F_Ferias.AccessData.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("F_Ferias.Models.Models.oficina", "id_oficina_asociado_FK")
+                    b.HasOne("F_Ferias.Models.Models.oficina", "id_oficibna_asociado_FK")
                         .WithMany()
                         .HasForeignKey("id_oficina")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -1459,7 +1456,7 @@ namespace F_Ferias.AccessData.Data.Migrations
 
                     b.Navigation("id_entidad_asociado_FK");
 
-                    b.Navigation("id_oficina_asociado_FK");
+                    b.Navigation("id_oficibna_asociado_FK");
                 });
 
             modelBuilder.Entity("F_Ferias.Models.Models.accion_por_modulo", b =>
@@ -1510,12 +1507,6 @@ namespace F_Ferias.AccessData.Data.Migrations
 
             modelBuilder.Entity("F_Ferias.Models.Models.C_FUNCIONARIOS_PORTALEMPLEO", b =>
                 {
-                    b.HasOne("F_Ferias.Models.Models.entidad", "Id_entidad_FK")
-                        .WithMany()
-                        .HasForeignKey("id_entidad")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("F_Ferias.Models.Models.oficina", "Id_Oficina_FK")
                         .WithMany()
                         .HasForeignKey("id_oficina");
@@ -1527,8 +1518,6 @@ namespace F_Ferias.AccessData.Data.Migrations
                         .IsRequired();
 
                     b.Navigation("Id_Oficina_FK");
-
-                    b.Navigation("Id_entidad_FK");
 
                     b.Navigation("usuario_Inserto");
                 });
@@ -1594,7 +1583,9 @@ namespace F_Ferias.AccessData.Data.Migrations
 
                     b.HasOne("F_Ferias.Models.Models.tipo_recurso", "id_actividad_complementaria_asociado")
                         .WithMany()
-                        .HasForeignKey("id_actividad_complementaria");
+                        .HasForeignKey("id_actividad_complementaria")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("F_Ferias.Models.Models.entidad", "id_entidad_asociado")
                         .WithMany()
@@ -1725,9 +1716,11 @@ namespace F_Ferias.AccessData.Data.Migrations
 
             modelBuilder.Entity("F_Ferias.Models.Models.oficina", b =>
                 {
-                    b.HasOne("F_Ferias.Models.Identity.ApplicationUser", "Id_usuario_consejero_Encargado_FK")
+                    b.HasOne("F_Ferias.Models.Models.ferias_estatus", "Id_estatus_FK")
                         .WithMany()
-                        .HasForeignKey("id_consejero_asignado");
+                        .HasForeignKey("estatus")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("F_Ferias.Models.Models.entidad", "Id_entidad_FK")
                         .WithMany()
@@ -1741,15 +1734,17 @@ namespace F_Ferias.AccessData.Data.Migrations
 
                     b.HasOne("F_Ferias.Models.Identity.ApplicationUser", "Id_user_creo_FK")
                         .WithMany()
-                        .HasForeignKey("user_create");
+                        .HasForeignKey("user_create")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Id_entidad_FK");
+
+                    b.Navigation("Id_estatus_FK");
 
                     b.Navigation("Id_user_creo_FK");
 
                     b.Navigation("Id_usuario_Encargado_FK");
-
-                    b.Navigation("Id_usuario_consejero_Encargado_FK");
                 });
 
             modelBuilder.Entity("F_Ferias.Models.Models.Persona", b =>

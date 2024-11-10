@@ -7,5 +7,5 @@ public class ferias_estatus {
     [Key]
     public int Id { get; set; }
     public string  Idescripcion { get; set; }
-    public string  estatus { get; set; }
+    public int  estatus { get; set; }
 }

@@ -9,7 +9,7 @@ namespace F_Ferias.Models.Models
     public class tipo_propietario {
         [Key]
         public int Id { get; set; }
-        public int descripcion { get; set; }
+        public string descripcion { get; set; }
         public int estatus { get; set; } 
     }
 }

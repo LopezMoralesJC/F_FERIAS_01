@@ -27,7 +27,7 @@ namespace F_Ferias.Models.Models;
         public int? id_usuario_encargado { get; set; }
 
         public string encargado { get; set; }
-        public int user_create { get; set; }
+        public int? user_create { get; set; }
 
 
 
@@ -74,15 +74,18 @@ namespace F_Ferias.Models.Models;
     [ForeignKey("id_entidad ")]
     public virtual entidad Id_entidad_FK { get; set; }
 
+
+
     [ForeignKey("id_usuario_encargado ")]
     public virtual ApplicationUser Id_usuario_Encargado_FK { get; set; }
 
+    [ForeignKey("id_consejero_asignado ")]
+    public virtual ApplicationUser Id_usuario_consejero_Encargado_FK { get; set; }
+
+
+
     [ForeignKey("user_create ")]
     public virtual ApplicationUser Id_user_creo_FK { get; set; }
-
-
-    [ForeignKey("estatus ")]
-    public virtual ferias_estatus Id_estatus_FK { get; set; }
 
     
     }
