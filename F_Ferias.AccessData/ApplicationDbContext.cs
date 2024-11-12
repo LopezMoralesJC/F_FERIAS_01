@@ -10,6 +10,9 @@ namespace F_Ferias.AccessData;
 public class ApplicationDbContext : IdentityDbContext<ApplicationUser , ApplicationRole , int> {
     public ApplicationDbContext(DbContextOptions options) : base(options) { }
 
+
+
+
       public DbSet<ApplicationUser> ApplicationUser { get; set; }
 
       public DbSet<abc_directorio> abc_Directorio { get; set; }
