@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using F_Ferias.AccessData.IRepository;
+using F_Ferias.Models.Models;
 
 namespace F_Ferias.AccessData.Repository;
   public class ContenedorTrabajo : IContenedorTrabajo
@@ -14,19 +15,39 @@ namespace F_Ferias.AccessData.Repository;
         #region Readonlys
         private readonly ApplicationDbContext _context;
         #endregion
-        public ContenedorTrabajo(ApplicationDbContext context)
-        {
+
+
+
+
+        public ContenedorTrabajo(ApplicationDbContext context) {
             _context = context;
             // cat_destinatario = new Cat_DestinatariosRepository(_context); 
             c_FUNCIONARIOS_PORTALEMPLEO_Repository = new C_FUNCIONARIOS_PORTALEMPLEO_Repository(_context);
+            entidadesRepository = new EntidadesRepository(_context);
         }
 
-        // public ICat_DestinatariosRepository cat_destinatario { get; private set; }
 
 
-     
 
+
+
+
+
+        #region import
         public IC_FUNCIONARIOS_PORTALEMPLEO_Repository c_FUNCIONARIOS_PORTALEMPLEO_Repository  { get; private set; }
+
+        public IEntidadesRepository entidadesRepository  { get; private set; }
+
+        #endregion
+
+
+
+
+
+
+
+
+
     #region Methods
 
     public async Task CompleteAsync() {

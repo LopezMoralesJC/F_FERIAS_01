@@ -167,4 +167,16 @@ namespace F_Ferias.API.Controllers;
           }
             return BadRequest("Usuario no encontrado con id o aun no estas autenticado");
      }
+
+
+
+    [Authorize(Roles = "Administrador Consejero Laboral")]
+    [HttpGet("get-listado-entidades")]
+    public IActionResult getEntidades() {
+        if (User.Identity.IsAuthenticated) {
+            var entidadesDb = _contenedorTrabajo.entidadesRepository.Get_entidades();
+            return Ok(entidadesDb);
+        }
+        return BadRequest("No se pudieron obtener las entidades");
+    }
 }

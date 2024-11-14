@@ -13,26 +13,27 @@ namespace F_Ferias.Models.Models;
         public int id { get; set; }	
 
         // [System.ComponentModel.DataAnnotations.Required(ErrorMessage = "Ingresa un nombre para cargo")]
-        [System.ComponentModel.DataAnnotations.Display(Name = "Nombre de la feria*")]
+        [Display(Name = "Nombre de la feria*")]
+        [MaxLength(100)]  //MaxLength worked properly.
         public string nombre  { get; set; }
 
-       [System.ComponentModel.DataAnnotations.Display(Name = "Fecha de recepcion*:")]
+       [Display(Name = "Fecha de recepcion*:")]
        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
        [DataType(DataType.Date)]
         public DateTime fecha_inicio { get; set; }
 
-       [System.ComponentModel.DataAnnotations.Display(Name = "Fecha de Fin*:")]
+       [Display(Name = "Fecha de Fin*:")]
        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
        [DataType(DataType.Date)]
         public DateTime fecha_fin  { get; set; }
 
 
-        [System.ComponentModel.DataAnnotations.Display(Name = "Hora Inicio*:")]
+        [Display(Name = "Hora Inicio*:")]
         [DisplayFormat(DataFormatString = "{0:HH:mm}", ApplyFormatInEditMode = false)]
         [DataType(DataType.Time)]
         public DateTime hora_inicio	{ get; set; }   // Se insertara la hora 
 
-        [System.ComponentModel.DataAnnotations.Display(Name = "Hora Fin*:")]
+        [Display(Name = "Hora Fin*:")]
         [DisplayFormat(DataFormatString = "{0:HH:mm}", ApplyFormatInEditMode = false)]
         [DataType(DataType.Time)]
         public DateTime hora_fin { get; set; }  // Se insertara la hora 
