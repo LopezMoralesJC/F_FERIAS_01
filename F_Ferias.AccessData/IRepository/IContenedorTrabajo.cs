@@ -13,6 +13,8 @@ namespace F_Ferias.AccessData.IRepository;
         IC_FUNCIONARIOS_PORTALEMPLEO_Repository c_FUNCIONARIOS_PORTALEMPLEO_Repository {get;}
         IEntidadesRepository entidadesRepository {get;}
 
+        IPersonaRepository personaRepository {get;}
+
         #endregion
 
 

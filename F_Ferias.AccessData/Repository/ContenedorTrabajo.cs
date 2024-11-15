@@ -24,6 +24,7 @@ namespace F_Ferias.AccessData.Repository;
             // cat_destinatario = new Cat_DestinatariosRepository(_context); 
             c_FUNCIONARIOS_PORTALEMPLEO_Repository = new C_FUNCIONARIOS_PORTALEMPLEO_Repository(_context);
             entidadesRepository = new EntidadesRepository(_context);
+            personaRepository = new PersonaRepository(_context);
         }
 
 
@@ -38,7 +39,9 @@ namespace F_Ferias.AccessData.Repository;
 
         public IEntidadesRepository entidadesRepository  { get; private set; }
 
-        #endregion
+        public IPersonaRepository personaRepository { get; private set; }
+
+    #endregion
 
 
 
