@@ -179,4 +179,35 @@ namespace F_Ferias.API.Controllers;
         }
         return BadRequest("No se pudieron obtener las entidades");
     }
+
+    [Authorize]
+    [HttpGet("get-data-user-login-1")]
+     public IActionResult getDataUser_1(int id) {
+        try {
+            if (User.Identity.IsAuthenticated) {
+                        var data__users = _contenedorTrabajo.c_FUNCIONARIOS_PORTALEMPLEO_Repository.Get_FUNCIONARIOS_PORTALEMPLEO(id);
+                        return Ok(data__users);
+            }else {
+                 return BadRequest("No estas autenticado");
+            }
+        } catch(Exception e) {
+               return BadRequest("No se pueden consultar :  " + e.Message);
+        }
+   
+      }
+
+    [Authorize]
+    [HttpPost("get-data-user-login-2")]
+     public IActionResult getDataUser_2([FromBody] int id) {
+        try {
+            if (User.Identity.IsAuthenticated) {
+                        var data__users = _contenedorTrabajo.personaRepository.Get_Persona(id);
+                        return Ok(data__users);
+            }else {
+                 return BadRequest("No estas autenticado");
+            }
+        } catch(Exception e) {
+               return BadRequest("No se pueden consultar :  " + e.Message);
+        } 
+      }
 }

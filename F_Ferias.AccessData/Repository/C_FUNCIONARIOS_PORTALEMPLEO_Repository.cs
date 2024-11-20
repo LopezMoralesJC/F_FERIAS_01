@@ -20,6 +20,11 @@ namespace F_Ferias.AccessData.Repository
            return _context.C_FUNCIONARIOS_PORTALEMPLEO.Where(a => a.EMAIL == email).FirstOrDefault();
         }
 
+        public C_FUNCIONARIOS_PORTALEMPLEO Get_FUNCIONARIOS_PORTALEMPLEO(int id)
+        {
+            return _context.C_FUNCIONARIOS_PORTALEMPLEO.Where(a=> a.id_usuario == id).FirstOrDefault();
+        }
+
         public IEnumerable<C_FUNCIONARIOS_PORTALEMPLEO> Get_FUNCIONARIOS_PORTALEMPLEOS()
         {
             return _context.C_FUNCIONARIOS_PORTALEMPLEO.ToList();
