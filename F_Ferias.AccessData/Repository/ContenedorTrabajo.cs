@@ -25,6 +25,8 @@ namespace F_Ferias.AccessData.Repository;
             c_FUNCIONARIOS_PORTALEMPLEO_Repository = new C_FUNCIONARIOS_PORTALEMPLEO_Repository(_context);
             entidadesRepository = new EntidadesRepository(_context);
             personaRepository = new PersonaRepository(_context);
+            feriaNacionalRepository = new FeriaNacionalRepository(_context);
+            ferias_Nacionales_BannerRepository = new Ferias_nacionales_bannerRepository(_context);
         }
 
 
@@ -40,6 +42,10 @@ namespace F_Ferias.AccessData.Repository;
         public IEntidadesRepository entidadesRepository  { get; private set; }
 
         public IPersonaRepository personaRepository { get; private set; }
+
+        public IFeriaNacionalRepository feriaNacionalRepository  { get; private set; }
+
+        public IFerias_nacionales_bannerRepository ferias_Nacionales_BannerRepository { get; private set; }
 
     #endregion
 

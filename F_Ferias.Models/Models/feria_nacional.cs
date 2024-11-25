@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 using F_Ferias.Models.Identity;
-
+using Microsoft.AspNetCore.Http;
 namespace F_Ferias.Models.Models; 
     public class ferias_nacional {
         
@@ -37,12 +37,23 @@ namespace F_Ferias.Models.Models;
         [DisplayFormat(DataFormatString = "{0:HH:mm}", ApplyFormatInEditMode = false)]
         [DataType(DataType.Time)]
         public DateTime hora_fin { get; set; }  // Se insertara la hora 
-        public Byte feria_logo { get; set; } // Se insertara una imagen BLOB para almacenar en base
+     
+
+        // [StringLength(1000)]
+        //  public string feria_logo_ruta { get; set; } // Se insertara una imagen BLOB para almacenar en base
         public int estatus { get; set; }
         public bool entidades_todas	 { get; set; }
 
         [Column(TypeName = "jsonb")]
         public string Dataentidades_selection { get; set; }
+
+        
+        // [NotMapped]
+        //  public IFormFile File { get; set; }
+
+        [NotMapped]
+        public byte[] feria_logo_banner { get; set; } 
+         
 
        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
        [DataType(DataType.Date)]

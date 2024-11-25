@@ -1,4 +1,5 @@
 using System.Text;
+using System.Text.Json.Serialization;
 using F_Ferias.AccessData;
 using F_Ferias.Models.Identity;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -85,6 +86,14 @@ builder.Services.AddSwaggerGen(Options => {
                                 }    
                                 });
     });
+
+    builder.Services.AddControllers().AddJsonOptions(options =>
+{
+    options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
+    options.JsonSerializerOptions.WriteIndented = true;
+});
+
+
     
 Ioc.AddDependency(builder.Services);
 var app = builder.Build();

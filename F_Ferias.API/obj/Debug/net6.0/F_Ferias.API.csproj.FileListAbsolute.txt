@@ -250,3 +250,4 @@ D:\Users\juancarlos.lopez\source\repos\F_FERIAS\F_FERIAS_01\F_Ferias.API\obj\Deb
 D:\Users\juancarlos.lopez\source\repos\F_FERIAS\F_FERIAS_01\F_Ferias.API\obj\Debug\net6.0\F_Ferias.API.pdb
 D:\Users\juancarlos.lopez\source\repos\F_FERIAS\F_FERIAS_01\F_Ferias.API\obj\Debug\net6.0\F_Ferias.API.genruntimeconfig.cache
 D:\Users\juancarlos.lopez\source\repos\F_FERIAS\F_FERIAS_01\F_Ferias.API\obj\Debug\net6.0\ref\F_Ferias.API.dll
+C:\Users\japoc\source\repos\F_FERIAS_01\F_Ferias.API\bin\Debug\net6.0\F_Ferias.API.staticwebassets.runtime.json

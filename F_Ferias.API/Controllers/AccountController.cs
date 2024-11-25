@@ -16,6 +16,7 @@ using Microsoft.AspNetCore.Authorization;
 using F_Ferias.AccessData.IRepository;
 using F_Ferias.AccessData;
 using Microsoft.EntityFrameworkCore;
+using System.Globalization;
 
 namespace F_Ferias.API.Controllers;
 
@@ -27,13 +28,14 @@ namespace F_Ferias.API.Controllers;
         private readonly IConfiguration _configuration;
         private readonly IContenedorTrabajo _contenedorTrabajo;
         private readonly ApplicationDbContext _context;
-
-        public AccountController(ApplicationDbContext context , IContenedorTrabajo contenedorTrabajo , UserManager<ApplicationUser> userManager , RoleManager<ApplicationRole> roleManager, IConfiguration configuration) {
+        private readonly IWebHostEnvironment _environment;
+        public AccountController(IWebHostEnvironment environment ,ApplicationDbContext context , IContenedorTrabajo contenedorTrabajo , UserManager<ApplicationUser> userManager , RoleManager<ApplicationRole> roleManager, IConfiguration configuration) {
             _userManager = userManager;
             _roleManager = roleManager;
             _configuration = configuration;
             _contenedorTrabajo = contenedorTrabajo;   
             _context = context;
+             _environment = environment;
         }
 
 
@@ -50,10 +52,6 @@ namespace F_Ferias.API.Controllers;
             }
             return BadRequest(result.Errors);
         }
-
-
-
-
 
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] Login model) {
@@ -112,102 +110,154 @@ namespace F_Ferias.API.Controllers;
         }
 
 
-
-
-
-
-
-
-    [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
-    [HttpGet("return-data_funcionary")]
-    public IActionResult GetCurrentUSerRole([FromBody] string email) {
-        if (User.Identity.IsAuthenticated) {
-
-             string UserName = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-            var userId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
-
-            var data = _contenedorTrabajo.c_FUNCIONARIOS_PORTALEMPLEO_Repository.Get_FUNCIONARIOS_PORTALEMPLEO(email);
-            //    return Ok(new { message = "Si estas autenticado ::: " + UserName});
-            return Ok(data);
-        }
-
-        return BadRequest("Usuario no encontrado o aun no estas autenticado");
-
-    }
-
-
-
-    
-    [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
-    [HttpGet("getData_user")]
-     public IActionResult getUserData([FromBody] string email) {
-         if (User.Identity.IsAuthenticated) {
-          var userDb = _context.ApplicationUser.FirstOrDefault(u => u.Email == email);
-            return Ok(userDb);
-         }
-       
-             return BadRequest("Usuario no encontrado con id o aun no estas autenticado");
-       
-     } 
-
-
-    [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
-    [HttpPost("send-tokken-data")]
-      public async Task<IActionResult> SendTokenUsuario([FromBody] Login.User_Data model) {
-          if (User.Identity.IsAuthenticated) {
-                var userDb = await _context.ApplicationUser.FirstOrDefaultAsync(u => u.Email == model.email);
-                
-            if(userDb == null){
-                 return BadRequest("Usuario no encontrado");
-            }
-                 userDb.Token = model.token;
-                await _context.SaveChangesAsync();
-                return Ok(new {message = "Token actualizado correctamente"});
-            
-          }
-            return BadRequest("Usuario no encontrado con id o aun no estas autenticado");
-     }
-
-
-
-    [Authorize(Roles = "Administrador Consejero Laboral")]
-    [HttpGet("get-listado-entidades")]
-    public IActionResult getEntidades() {
-        if (User.Identity.IsAuthenticated) {
-            var entidadesDb = _contenedorTrabajo.entidadesRepository.Get_entidades();
-            return Ok(entidadesDb);
-        }
-        return BadRequest("No se pudieron obtener las entidades");
-    }
-
-    [Authorize]
-    [HttpGet("get-data-user-login-1")]
-     public IActionResult getDataUser_1(int id) {
-        try {
+        [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
+        [HttpGet("return-data_funcionary")]
+        public IActionResult GetCurrentUSerRole([FromBody] string email) {
             if (User.Identity.IsAuthenticated) {
-                        var data__users = _contenedorTrabajo.c_FUNCIONARIOS_PORTALEMPLEO_Repository.Get_FUNCIONARIOS_PORTALEMPLEO(id);
-                        return Ok(data__users);
-            }else {
-                 return BadRequest("No estas autenticado");
-            }
-        } catch(Exception e) {
-               return BadRequest("No se pueden consultar :  " + e.Message);
-        }
-   
-      }
 
-    [Authorize]
-    [HttpPost("get-data-user-login-2")]
-     public IActionResult getDataUser_2([FromBody] int id) {
-        try {
-            if (User.Identity.IsAuthenticated) {
-                        var data__users = _contenedorTrabajo.personaRepository.Get_Persona(id);
-                        return Ok(data__users);
-            }else {
-                 return BadRequest("No estas autenticado");
+                string UserName = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+                var userId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+                var data = _contenedorTrabajo.c_FUNCIONARIOS_PORTALEMPLEO_Repository.Get_FUNCIONARIOS_PORTALEMPLEO(email);
+                //    return Ok(new { message = "Si estas autenticado ::: " + UserName});
+                return Ok(data);
             }
-        } catch(Exception e) {
-               return BadRequest("No se pueden consultar :  " + e.Message);
+
+            return BadRequest("Usuario no encontrado o aun no estas autenticado");
+
+        }
+
+
+
+        
+        [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
+        [HttpGet("getData_user")]
+        public IActionResult getUserData([FromBody] string email) {
+            if (User.Identity.IsAuthenticated) {
+            var userDb = _context.ApplicationUser.FirstOrDefault(u => u.Email == email);
+                return Ok(userDb);
+            }
+        
+                return BadRequest("Usuario no encontrado con id o aun no estas autenticado");
+        
         } 
-      }
-}
+
+
+        [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
+        [HttpPost("send-tokken-data")]
+        public async Task<IActionResult> SendTokenUsuario([FromBody] Login.User_Data model) {
+            if (User.Identity.IsAuthenticated) {
+                    var userDb = await _context.ApplicationUser.FirstOrDefaultAsync(u => u.Email == model.email);
+                    
+                if(userDb == null){
+                    return BadRequest("Usuario no encontrado");
+                }
+                    userDb.Token = model.token;
+                    await _context.SaveChangesAsync();
+                    return Ok(new {message = "Token actualizado correctamente"});
+                
+            }
+                return BadRequest("Usuario no encontrado con id o aun no estas autenticado");
+        }
+
+
+
+        [Authorize(Roles = "Administrador Consejero Laboral")]
+        [HttpGet("get-listado-entidades")]
+        public IActionResult getEntidades() {
+            if (User.Identity.IsAuthenticated) {
+                var entidadesDb = _contenedorTrabajo.entidadesRepository.Get_entidades();
+                return Ok(entidadesDb);
+            }
+            return BadRequest("No se pudieron obtener las entidades");
+        }
+
+        [Authorize]
+        [HttpGet("get-data-user-login-1")]
+        public IActionResult getDataUser_1(int id) {
+            try {
+                if (User.Identity.IsAuthenticated) {
+                            var data__users = _contenedorTrabajo.c_FUNCIONARIOS_PORTALEMPLEO_Repository.Get_FUNCIONARIOS_PORTALEMPLEO(id);
+                            return Ok(data__users);
+                }else {
+                    return BadRequest("No estas autenticado");
+                }
+            } catch(Exception e) {
+                return BadRequest("No se pueden consultar :  " + e.Message);
+            }
+    
+        }
+
+        [Authorize]
+        [HttpPost("get-data-user-login-2")]
+        public IActionResult getDataUser_2([FromBody] int id) {
+            try {
+                if (User.Identity.IsAuthenticated) {
+                            var data__users = _contenedorTrabajo.personaRepository.Get_Persona(id);
+                            return Ok(data__users);
+                }else {
+                    return BadRequest("No estas autenticado");
+                }
+            } catch(Exception e) {
+                return BadRequest("No se pueden consultar :  " + e.Message);
+            } 
+        }
+
+
+
+
+        // [Authorize(Roles = "Administrador Consejero Laboral")]
+        [HttpPost("add-feria-na")]
+        public IActionResult AddFeria(ferias_nacional feria) {
+            try {
+                if (User.Identity.IsAuthenticated) {
+                    // CultureInfo ci = new CultureInfo("es-ES");
+                    // DateTime sqlFormattedDate = (DateTime)feria.create_at;
+                    // string fecha_titulo = sqlFormattedDate.ToString("yyyyMMddHHmmssfffffff");
+                    // string YFormateada = sqlFormattedDate.ToString("yyyy", ci);
+                    // string MFormateada = sqlFormattedDate.ToString("MMMM", ci);
+                    // string filePathGeneral = "wwwroot\\Uploads\\fna__uploads" + string.Format("\\{0}\\{1}", YFormateada, MFormateada + "\\");
+                    // string NombreArchivo = fecha_titulo + "_" + feria.File.FileName;
+                    // string rutaDestinoCompleta = Path.Combine(_environment.ContentRootPath + filePathGeneral, NombreArchivo);
+                    // bool exist = Directory.Exists(_environment.ContentRootPath + filePathGeneral);
+                    // if (!Directory.Exists(_environment.ContentRootPath + filePathGeneral))
+                    // {
+                    //     Directory.CreateDirectory(_environment.ContentRootPath + filePathGeneral);
+                    // }
+                    // else { }
+                    // if (feria.File.Length > 0)
+                    // {
+                    //     using (var stream = new FileStream(rutaDestinoCompleta, FileMode.Create))
+                    //     {
+                    //         feria.File.CopyTo(stream);
+                    //         return Ok("Se inserto de manera correcta");
+                    //     }
+                    // }
+                    // else
+                    // {
+                    //     return BadRequest("No se inserto de manera correcta");
+                    // }
+
+                    // feria.feria_logo_ruta = filePathGeneral;
+                    //await using var memoryStream = new MemoryStream();
+                    //await feria.File.CopyToAsync(memoryStream);
+                    //byte[] data = memoryStream.ToArray();
+                    _contenedorTrabajo.feriaNacionalRepository.Add(feria);
+                       _contenedorTrabajo.Save();
+                      int dataInserAct = feria.id;
+
+              return Ok(feria);
+
+                }
+                else
+                {
+                    return BadRequest("No tienes las credenciales correctas");
+                }
+            }
+            catch (Exception e)
+            {
+                return BadRequest("No se pueden consultar :  " + e.Message);
+            }
+
+        }
+    }

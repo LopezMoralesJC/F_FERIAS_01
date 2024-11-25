@@ -15,6 +15,10 @@ namespace F_Ferias.AccessData.IRepository;
 
         IPersonaRepository personaRepository {get;}
 
+        IFeriaNacionalRepository feriaNacionalRepository {get;} 
+
+        IFerias_nacionales_bannerRepository ferias_Nacionales_BannerRepository {get;}
+
         #endregion
 
 

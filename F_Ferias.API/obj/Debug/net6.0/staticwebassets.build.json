@@ -1,11 +1,19 @@
 {
   "Version": 1,
-  "Hash": "5wH26J/Ld3LFVIXz3QfXln4dt3cVDJfiP0t6NCppm2g=",
+  "Hash": "c3pRBdlvrmGogm3uyLwt2OvQdcLm75brmlm2SoqQGek=",
   "Source": "F_Ferias.API",
   "BasePath": "_content/F_Ferias.API",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "F_Ferias.API\\wwwroot",
+      "Source": "F_Ferias.API",
+      "ContentRoot": "C:\\Users\\japoc\\source\\repos\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\",
+      "BasePath": "_content/F_Ferias.API",
+      "Pattern": "**"
+    }
+  ],
   "Assets": []
 }

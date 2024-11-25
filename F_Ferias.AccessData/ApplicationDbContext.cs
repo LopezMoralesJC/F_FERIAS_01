@@ -44,6 +44,8 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser , Applicat
 
       public DbSet<ferias_nacional> Ferias_Nacional { get; set; }
 
+      public DbSet<ferias_nacionales_banner> Ferias_Nacional_Banners { get; set; }
+
       public DbSet<feria_tamanio> Feria_Tamanio { get; set; }
 
       public DbSet<ferias_estatus> Ferias_Estatus { get; set; }

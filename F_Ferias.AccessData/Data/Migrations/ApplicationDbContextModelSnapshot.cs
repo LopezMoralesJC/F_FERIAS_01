@@ -112,9 +112,6 @@ namespace F_Ferias.AccessData.Data.Migrations
                     b.Property<int>("estatus")
                         .HasColumnType("integer");
 
-                    b.Property<string>("userTempToken")
-                        .HasColumnType("text");
-
                     b.HasKey("Id");
 
                     b.HasIndex("NormalizedEmail")
@@ -953,9 +950,6 @@ namespace F_Ferias.AccessData.Data.Migrations
                     b.Property<DateTime>("fecha_inicio")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<byte>("feria_logo")
-                        .HasColumnType("smallint");
-
                     b.Property<DateTime>("hora_fin")
                         .HasColumnType("timestamp with time zone");
 
@@ -963,7 +957,8 @@ namespace F_Ferias.AccessData.Data.Migrations
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("nombre")
-                        .HasColumnType("text");
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
 
                     b.Property<DateTime>("update_at")
                         .HasColumnType("timestamp with time zone");
@@ -983,6 +978,35 @@ namespace F_Ferias.AccessData.Data.Migrations
                     b.HasIndex("user_upddel");
 
                     b.ToTable("Ferias_Nacional");
+                });
+
+            modelBuilder.Entity("F_Ferias.Models.Models.ferias_nacionales_banner", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("id"));
+
+                    b.Property<byte[]>("feria_logo_banner")
+                        .HasColumnType("bytea");
+
+                    b.Property<string>("feria_logo_ruta")
+                        .HasMaxLength(1000)
+                        .HasColumnType("character varying(1000)");
+
+                    b.Property<int>("id_feria_nacional")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("nombre_feria_logo_ruta")
+                        .HasMaxLength(1000)
+                        .HasColumnType("character varying(1000)");
+
+                    b.HasKey("id");
+
+                    b.HasIndex("id_feria_nacional");
+
+                    b.ToTable("Ferias_Nacional_Banners");
                 });
 
             modelBuilder.Entity("F_Ferias.Models.Models.modulo", b =>
@@ -1716,6 +1740,17 @@ namespace F_Ferias.AccessData.Data.Migrations
                     b.Navigation("Id_usuario_Actualizo_FK");
 
                     b.Navigation("Id_usuario_Inserto_FK");
+                });
+
+            modelBuilder.Entity("F_Ferias.Models.Models.ferias_nacionales_banner", b =>
+                {
+                    b.HasOne("F_Ferias.Models.Models.ferias_nacional", "Id_feria_na_banner_FK")
+                        .WithMany()
+                        .HasForeignKey("id_feria_nacional")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Id_feria_na_banner_FK");
                 });
 
             modelBuilder.Entity("F_Ferias.Models.Models.modulo", b =>
