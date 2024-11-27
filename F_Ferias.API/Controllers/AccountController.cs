@@ -128,8 +128,6 @@ namespace F_Ferias.API.Controllers;
         }
 
 
-
-        
         [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
         [HttpGet("getData_user")]
         public IActionResult getUserData([FromBody] string email) {
@@ -159,7 +157,6 @@ namespace F_Ferias.API.Controllers;
             }
                 return BadRequest("Usuario no encontrado con id o aun no estas autenticado");
         }
-
 
 
         [Authorize(Roles = "Administrador Consejero Laboral")]
@@ -206,47 +203,39 @@ namespace F_Ferias.API.Controllers;
 
 
 
-        // [Authorize(Roles = "Administrador Consejero Laboral")]
+        [Authorize(Roles = "Administrador Consejero Laboral")]
         [HttpPost("add-feria-na")]
-        public IActionResult AddFeria(ferias_nacional feria) {
+        public async Task<IActionResult> AddFeria(ferias_nacional feria) {
             try {
                 if (User.Identity.IsAuthenticated) {
-                    // CultureInfo ci = new CultureInfo("es-ES");
-                    // DateTime sqlFormattedDate = (DateTime)feria.create_at;
-                    // string fecha_titulo = sqlFormattedDate.ToString("yyyyMMddHHmmssfffffff");
-                    // string YFormateada = sqlFormattedDate.ToString("yyyy", ci);
-                    // string MFormateada = sqlFormattedDate.ToString("MMMM", ci);
-                    // string filePathGeneral = "wwwroot\\Uploads\\fna__uploads" + string.Format("\\{0}\\{1}", YFormateada, MFormateada + "\\");
-                    // string NombreArchivo = fecha_titulo + "_" + feria.File.FileName;
-                    // string rutaDestinoCompleta = Path.Combine(_environment.ContentRootPath + filePathGeneral, NombreArchivo);
-                    // bool exist = Directory.Exists(_environment.ContentRootPath + filePathGeneral);
-                    // if (!Directory.Exists(_environment.ContentRootPath + filePathGeneral))
-                    // {
-                    //     Directory.CreateDirectory(_environment.ContentRootPath + filePathGeneral);
-                    // }
-                    // else { }
-                    // if (feria.File.Length > 0)
-                    // {
-                    //     using (var stream = new FileStream(rutaDestinoCompleta, FileMode.Create))
-                    //     {
-                    //         feria.File.CopyTo(stream);
-                    //         return Ok("Se inserto de manera correcta");
-                    //     }
-                    // }
-                    // else
-                    // {
-                    //     return BadRequest("No se inserto de manera correcta");
-                    // }
+                    CultureInfo ci = new CultureInfo("es-ES");
+                    DateTime sqlFormattedDate = (DateTime)feria.create_at;
+                    string fecha_titulo = sqlFormattedDate.ToString("yyyyMMddHHmmssfffffff");
+                    string YFormateada = sqlFormattedDate.ToString("yyyy", ci);
+                    string MFormateada = sqlFormattedDate.ToString("MMMM", ci);
+                    string filePathGeneral = "wwwroot\\Uploads\\fna__uploads" + string.Format("\\{0}\\{1}", YFormateada, MFormateada + "\\");
+                    string NombreArchivo = fecha_titulo + "_" + feria.file__name;
+                    string rutaDestinoCompleta = Path.Combine(_environment.ContentRootPath + filePathGeneral, NombreArchivo);
+                    bool exist = Directory.Exists(_environment.ContentRootPath + filePathGeneral);
 
-                    // feria.feria_logo_ruta = filePathGeneral;
-                    //await using var memoryStream = new MemoryStream();
-                    //await feria.File.CopyToAsync(memoryStream);
-                    //byte[] data = memoryStream.ToArray();
+                    if (!Directory.Exists(_environment.ContentRootPath + filePathGeneral)) {
+                        Directory.CreateDirectory(_environment.ContentRootPath + filePathGeneral);
+                    }
+                    else { }
                     _contenedorTrabajo.feriaNacionalRepository.Add(feria);
-                       _contenedorTrabajo.Save();
-                      int dataInserAct = feria.id;
+                    _contenedorTrabajo.Save();
+                    int dataInserAct = feria.id;
+                    var feria_nac_banner = new  ferias_nacionales_banner();
+                    feria_nac_banner.id_feria_nacional = dataInserAct;
+                    feria_nac_banner.feria_logo_banner = feria.feria_logo_banner;
+                    feria_nac_banner.feria_logo_ruta = rutaDestinoCompleta;
+                    feria_nac_banner.nombre_feria_logo_ruta =  feria.file__name;
+                    _contenedorTrabajo.ferias_Nacionales_BannerRepository.Add(feria_nac_banner);
+                    _contenedorTrabajo.Save();
+                    //  string base64 = Convert.ToBase64String(feria.feria_logo_banner);
+                     await System.IO.File.WriteAllBytesAsync(string.Format("{0}" ,rutaDestinoCompleta  ), feria.feria_logo_banner);
 
-              return Ok(feria);
+              return Ok("Ruta - > " + exist);
 
                 }
                 else
@@ -260,4 +249,47 @@ namespace F_Ferias.API.Controllers;
             }
 
         }
+
+
+
+        [Authorize(Roles = "Administrador Consejero Laboral")]
+        [HttpPost("pagination-feria-na")]
+        public async Task<IActionResult> get__Pagination__fna([FromBody] int pageNumber) {
+            var feria =  _contenedorTrabajo.feriaNacionalRepository.GetAll_2( includeProperties: "Id_usuario_Inserto_FK,Id_usuario_Actualizo_FK,Id_FKestatus_feria_FK,ferias_nac_FK");
+              // Ensure pageNumber is at least 1
+            if (pageNumber < 1)
+            {
+                pageNumber = 1;
+            }
+             int pageSize = 2;
+             return Ok(await PaginatedList<ferias_nacional>.CreateAsync((IQueryable<ferias_nacional>)feria, pageNumber, pageSize ));
+        }
+
+
+    [Authorize(Roles = "Administrador Consejero Laboral")]
+    [HttpPost("pagination-feria-na__2")]
+    public IActionResult get__Pagination__fna_async([FromBody] int pageNumber)
+    {
+
+        //  var totalRegistrosTotal = _context.DeptoTurnados.Where(p => p.IdArea == usuarioDb.id_dir_area).Count();
+        var total_reg = _context.Ferias_Nacional.Count();
+        int cantidadRegistros = 3;
+        int OmitirRegistros = (pageNumber * cantidadRegistros) - cantidadRegistros;
+
+        var consulta = _contenedorTrabajo.feriaNacionalRepository.GetPaginationAll(
+                   includeProperties: "Id_usuario_Inserto_FK,Id_usuario_Actualizo_FK,Id_FKestatus_feria_FK,ferias_nac_FK",
+                                                                            omitirRegistros: OmitirRegistros,
+                                                                            cantidadRegistros: cantidadRegistros
+                                                                        // orderBy: a =>a.OrderBy(a => a.id)
+                                                                        );
+
+        return Ok(new
+        {
+            draw = pageNumber,
+            recordsTotal = total_reg,
+            recordsFiltered = OmitirRegistros,
+            data = consulta,
+        });
+
     }
+}

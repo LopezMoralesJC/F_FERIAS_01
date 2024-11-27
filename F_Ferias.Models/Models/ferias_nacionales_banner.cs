@@ -13,6 +13,7 @@ namespace F_Ferias.Models.Models {
         public string feria_logo_ruta { get; set; } // 
         [StringLength(1000)]
         public string nombre_feria_logo_ruta { get; set; }
+        
         public int id_feria_nacional { get; set; }	
 
         // public Byte feria_logo { get; set; } // Se insertara una imagen BLOB para almacenar en base

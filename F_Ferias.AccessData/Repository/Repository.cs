@@ -52,6 +52,25 @@ namespace F_Ferias.AccessData.Repository;
 
 
 
+    public IEnumerable<T> GetAll_2(Expression<Func<T, bool>> filter = null, Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null, string includeProperties = null)
+        {
+            IQueryable<T> query = _DbSet;
+            if (filter != null) {
+                query = query.Where(filter);
+            }
+            if (includeProperties != null) {
+                foreach (var includepropertie in includeProperties.Split(new char[] { ',' } , StringSplitOptions.RemoveEmptyEntries)) {
+                    query = query.Include(includepropertie);
+                }
+               
+            }
+            if (orderBy != null) {
+                return orderBy(query).ToList();
+            }
+
+            return query;
+        }
+
 
 
         public T GetFirstOrDefault(Expression<Func<T, bool>> filter = null, string IncludeProperties = null) {

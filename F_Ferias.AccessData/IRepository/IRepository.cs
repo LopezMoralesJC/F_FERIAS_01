@@ -16,6 +16,12 @@ namespace F_Ferias.AccessData.IRepository;
             string includeProperties = null
         );
 
+         IEnumerable<T> GetAll_2(
+            Expression<Func<T, bool>> filter = null,
+            Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null,
+            string includeProperties = null
+        );
+
           IEnumerable<T> GetPaginationAll(
           Expression<Func<T, bool>> filter = null,
           Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null,

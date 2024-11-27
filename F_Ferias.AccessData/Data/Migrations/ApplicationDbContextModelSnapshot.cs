@@ -1745,7 +1745,7 @@ namespace F_Ferias.AccessData.Data.Migrations
             modelBuilder.Entity("F_Ferias.Models.Models.ferias_nacionales_banner", b =>
                 {
                     b.HasOne("F_Ferias.Models.Models.ferias_nacional", "Id_feria_na_banner_FK")
-                        .WithMany()
+                        .WithMany("ferias_nac_FK")
                         .HasForeignKey("id_feria_nacional")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -1859,6 +1859,11 @@ namespace F_Ferias.AccessData.Data.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("F_Ferias.Models.Models.ferias_nacional", b =>
+                {
+                    b.Navigation("ferias_nac_FK");
                 });
 #pragma warning restore 612, 618
         }
