@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("F_Ferias.Models")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+73a04f81ab0ee3acc9d4fb06d053a7ca7bc426fc")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+65e53f72671ac989b02068410e0e778e30c424c2")]
 [assembly: System.Reflection.AssemblyProductAttribute("F_Ferias.Models")]
 [assembly: System.Reflection.AssemblyTitleAttribute("F_Ferias.Models")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

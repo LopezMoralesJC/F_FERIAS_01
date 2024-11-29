@@ -261,7 +261,7 @@ namespace F_Ferias.API.Controllers;
             {
                 pageNumber = 1;
             }
-             int pageSize = 2;
+             int pageSize = 10;
              return Ok(await PaginatedList<ferias_nacional>.CreateAsync((IQueryable<ferias_nacional>)feria, pageNumber, pageSize ));
         }
 
@@ -273,7 +273,7 @@ namespace F_Ferias.API.Controllers;
 
         //  var totalRegistrosTotal = _context.DeptoTurnados.Where(p => p.IdArea == usuarioDb.id_dir_area).Count();
         var total_reg = _context.Ferias_Nacional.Count();
-        int cantidadRegistros = 3;
+        int cantidadRegistros = 10;
         int OmitirRegistros = (pageNumber * cantidadRegistros) - cantidadRegistros;
 
         var consulta = _contenedorTrabajo.feriaNacionalRepository.GetPaginationAll(
