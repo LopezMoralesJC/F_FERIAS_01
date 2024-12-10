@@ -228,7 +228,7 @@ namespace F_Ferias.API.Controllers;
                     var feria_nac_banner = new  ferias_nacionales_banner();
                     feria_nac_banner.id_feria_nacional = dataInserAct;
                     feria_nac_banner.feria_logo_banner = feria.feria_logo_banner;
-                    feria_nac_banner.feria_logo_ruta = rutaDestinoCompleta;
+                    feria_nac_banner.feria_logo_ruta = filePathGeneral + "" + NombreArchivo; // rutaDestinoCompleta;
                     feria_nac_banner.nombre_feria_logo_ruta =  feria.file__name;
                     _contenedorTrabajo.ferias_Nacionales_BannerRepository.Add(feria_nac_banner);
                     _contenedorTrabajo.Save();
@@ -268,8 +268,7 @@ namespace F_Ferias.API.Controllers;
 
     [Authorize(Roles = "Administrador Consejero Laboral")]
     [HttpPost("pagination-feria-na__2")]
-    public IActionResult get__Pagination__fna_async([FromBody] int pageNumber)
-    {
+    public IActionResult get__Pagination__fna_async([FromBody] int pageNumber) {
 
         //  var totalRegistrosTotal = _context.DeptoTurnados.Where(p => p.IdArea == usuarioDb.id_dir_area).Count();
         var total_reg = _context.Ferias_Nacional.Count();
@@ -292,4 +291,20 @@ namespace F_Ferias.API.Controllers;
         });
 
     }
+
+
+    [Authorize(Roles = "Administrador Consejero Laboral")]
+    [HttpPost("get_feria_na")]
+    public IActionResult get__feria_na([FromBody] int id) {
+        try {
+            if (User.Identity.IsAuthenticated) {
+                var data_consulta = _contenedorTrabajo.feriaNacionalRepository.GetFirstOrDefault(IncludeProperties: "ferias_nac_FK", filter: p => p.id == id);
+                return Ok(data_consulta);
+            }
+        } catch (Exception e) {
+            return BadRequest("No se pueden consultar :  " + e.Message);
+        }
+        return Ok(new { message = "Se recibio la informacion" });
+    }
+
 }

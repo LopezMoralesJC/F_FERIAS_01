@@ -31,8 +31,7 @@ namespace F_Ferias.AccessData.Repository;
             return _DbSet.Find(id);
         }
 
-        public IEnumerable<T> GetAll(Expression<Func<T, bool>> filter = null, Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null, string includeProperties = null)
-        {
+        public IEnumerable<T> GetAll(Expression<Func<T, bool>> filter = null, Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null, string includeProperties = null) {
             IQueryable<T> query = _DbSet;
             if (filter != null) {
                 query = query.Where(filter);
