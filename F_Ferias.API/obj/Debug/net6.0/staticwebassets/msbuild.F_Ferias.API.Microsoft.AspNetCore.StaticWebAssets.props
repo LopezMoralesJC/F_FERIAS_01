@@ -48,6 +48,38 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\fna__uploads\2024\diciembre\202412092343250664637_202411261638100708866_Search_job_svg.svg))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\fna__uploads\2024\diciembre\202412092346083686394_202411261638100708866_Search_job_svg.svg))">
+      <SourceType>Package</SourceType>
+      <SourceId>F_Ferias.API</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/F_Ferias.API</BasePath>
+      <RelativePath>Uploads/fna__uploads/2024/diciembre/202412092346083686394_202411261638100708866_Search_job_svg.svg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\fna__uploads\2024\diciembre\202412092346083686394_202411261638100708866_Search_job_svg.svg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\fna__uploads\2024\diciembre\202412092354254721974_202411252115543390148_Search_job_svg.svg))">
+      <SourceType>Package</SourceType>
+      <SourceId>F_Ferias.API</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/F_Ferias.API</BasePath>
+      <RelativePath>Uploads/fna__uploads/2024/diciembre/202412092354254721974_202411252115543390148_Search_job_svg.svg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\fna__uploads\2024\diciembre\202412092354254721974_202411252115543390148_Search_job_svg.svg))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\fna__uploads\2024\noviembre\202411252035510395287_Black Minimalist Corporate Professional Profile LinkedIn Banner (1).png))">
       <SourceType>Package</SourceType>
       <SourceId>F_Ferias.API</SourceId>
