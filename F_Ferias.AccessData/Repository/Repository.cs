@@ -102,7 +102,6 @@ namespace F_Ferias.AccessData.Repository;
 
 
         #region
-
         public async Task AddAsync(T entity) { 
             await _DbSet.AddAsync(entity);
         }

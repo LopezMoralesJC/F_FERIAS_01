@@ -13,11 +13,14 @@ public class FeriaNacionalRepository : Repository<ferias_nacional>, IFeriaNacion
         _context = context;
     }
 
-     IQueryable<ferias_nacional> IFeriaNacionalRepository.GetAllAsync__2()
+    public IEnumerable<ferias_nacional> GetListaFeriasNacionales()
     {
+       return _context.Ferias_Nacional.Where(f => f.estatus == 1);
+    }
+
+    IQueryable<ferias_nacional> IFeriaNacionalRepository.GetAllAsync__2() {
          var employees = _context.Ferias_Nacional
-            .Select(e => new ferias_nacional
-            { 
+            .Select(e => new ferias_nacional { 
                 id = e.id,
                 nombre = e.nombre,
 

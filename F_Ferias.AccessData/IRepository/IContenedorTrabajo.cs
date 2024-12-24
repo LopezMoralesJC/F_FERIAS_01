@@ -19,6 +19,8 @@ namespace F_Ferias.AccessData.IRepository;
 
         IFerias_nacionales_bannerRepository ferias_Nacionales_BannerRepository {get;}
 
+        IAbcDirectorioRepository abcDirectorioRepository  {get;}
+
         #endregion
 
 

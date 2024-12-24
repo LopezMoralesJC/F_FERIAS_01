@@ -80,6 +80,54 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\fna__uploads\2024\diciembre\202412092354254721974_202411252115543390148_Search_job_svg.svg))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\fna__uploads\2024\diciembre\202412231709098918284_3_B Slider 1.svg))">
+      <SourceType>Package</SourceType>
+      <SourceId>F_Ferias.API</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/F_Ferias.API</BasePath>
+      <RelativePath>Uploads/fna__uploads/2024/diciembre/202412231709098918284_3_B Slider 1.svg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\fna__uploads\2024\diciembre\202412231709098918284_3_B Slider 1.svg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\fna__uploads\2024\diciembre\202412231711362852422_202411241427043793312_Black Minimalist Corporate Professional Profile LinkedIn Banner (1) (1) (1) (1).png))">
+      <SourceType>Package</SourceType>
+      <SourceId>F_Ferias.API</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/F_Ferias.API</BasePath>
+      <RelativePath>Uploads/fna__uploads/2024/diciembre/202412231711362852422_202411241427043793312_Black Minimalist Corporate Professional Profile LinkedIn Banner (1) (1) (1) (1).png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\fna__uploads\2024\diciembre\202412231711362852422_202411241427043793312_Black Minimalist Corporate Professional Profile LinkedIn Banner (1) (1) (1) (1).png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\fna__uploads\2024\diciembre\202412231711371168238_202411241427043793312_Black Minimalist Corporate Professional Profile LinkedIn Banner (1) (1) (1) (1).png))">
+      <SourceType>Package</SourceType>
+      <SourceId>F_Ferias.API</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/F_Ferias.API</BasePath>
+      <RelativePath>Uploads/fna__uploads/2024/diciembre/202412231711371168238_202411241427043793312_Black Minimalist Corporate Professional Profile LinkedIn Banner (1) (1) (1) (1).png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\fna__uploads\2024\diciembre\202412231711371168238_202411241427043793312_Black Minimalist Corporate Professional Profile LinkedIn Banner (1) (1) (1) (1).png))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\fna__uploads\2024\noviembre\202411252035510395287_Black Minimalist Corporate Professional Profile LinkedIn Banner (1).png))">
       <SourceType>Package</SourceType>
       <SourceId>F_Ferias.API</SourceId>

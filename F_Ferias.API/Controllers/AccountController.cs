@@ -17,6 +17,7 @@ using F_Ferias.AccessData.IRepository;
 using F_Ferias.AccessData;
 using Microsoft.EntityFrameworkCore;
 using System.Globalization;
+using F_Ferias.AccessData.Repository;
 
 namespace F_Ferias.API.Controllers;
 
@@ -159,7 +160,7 @@ namespace F_Ferias.API.Controllers;
         }
 
 
-        [Authorize(Roles = "Administrador Consejero Laboral")]
+        [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
         [HttpGet("get-listado-entidades")]
         public IActionResult getEntidades() {
             if (User.Identity.IsAuthenticated) {
@@ -266,45 +267,77 @@ namespace F_Ferias.API.Controllers;
         }
 
 
-    [Authorize(Roles = "Administrador Consejero Laboral")]
-    [HttpPost("pagination-feria-na__2")]
-    public IActionResult get__Pagination__fna_async([FromBody] int pageNumber) {
+        [Authorize(Roles = "Administrador Consejero Laboral")]
+        [HttpPost("pagination-feria-na__2")]
+        public IActionResult get__Pagination__fna_async([FromBody] int pageNumber) {
 
-        //  var totalRegistrosTotal = _context.DeptoTurnados.Where(p => p.IdArea == usuarioDb.id_dir_area).Count();
-        var total_reg = _context.Ferias_Nacional.Count();
-        int cantidadRegistros = 10;
-        int OmitirRegistros = (pageNumber * cantidadRegistros) - cantidadRegistros;
+            //  var totalRegistrosTotal = _context.DeptoTurnados.Where(p => p.IdArea == usuarioDb.id_dir_area).Count();
+            var total_reg = _context.Ferias_Nacional.Count();
+            int cantidadRegistros = 10;
+            int OmitirRegistros = (pageNumber * cantidadRegistros) - cantidadRegistros;
 
-        var consulta = _contenedorTrabajo.feriaNacionalRepository.GetPaginationAll(
-                   includeProperties: "Id_usuario_Inserto_FK,Id_usuario_Actualizo_FK,Id_FKestatus_feria_FK,ferias_nac_FK",
-                                                                            omitirRegistros: OmitirRegistros,
-                                                                            cantidadRegistros: cantidadRegistros
-                                                                        // orderBy: a =>a.OrderBy(a => a.id)
-                                                                        );
+            var consulta = _contenedorTrabajo.feriaNacionalRepository.GetPaginationAll(
+                    includeProperties: "Id_usuario_Inserto_FK,Id_usuario_Actualizo_FK,Id_FKestatus_feria_FK,ferias_nac_FK",
+                                                                                omitirRegistros: OmitirRegistros,
+                                                                                cantidadRegistros: cantidadRegistros
+                                                                            // orderBy: a =>a.OrderBy(a => a.id)
+                                                                            );
 
-        return Ok(new
-        {
-            draw = pageNumber,
-            recordsTotal = total_reg,
-            recordsFiltered = OmitirRegistros,
-            data = consulta,
-        });
+            return Ok(new
+            {
+                draw = pageNumber,
+                recordsTotal = total_reg,
+                recordsFiltered = OmitirRegistros,
+                data = consulta,
+            });
 
-    }
-
-
-    [Authorize(Roles = "Administrador Consejero Laboral")]
-    [HttpPost("get_feria_na")]
-    public IActionResult get__feria_na([FromBody] int id) {
-        try {
-            if (User.Identity.IsAuthenticated) {
-                var data_consulta = _contenedorTrabajo.feriaNacionalRepository.GetFirstOrDefault(IncludeProperties: "ferias_nac_FK", filter: p => p.id == id);
-                return Ok(data_consulta);
-            }
-        } catch (Exception e) {
-            return BadRequest("No se pueden consultar :  " + e.Message);
         }
-        return Ok(new { message = "Se recibio la informacion" });
-    }
+
+
+        [Authorize(Roles = "Administrador Consejero Laboral")]
+        [HttpPost("get_feria_na")]
+        public IActionResult get__feria_na([FromBody] int id) {
+            try {
+                if (User.Identity.IsAuthenticated) {
+                    var data_consulta = _contenedorTrabajo.feriaNacionalRepository.GetFirstOrDefault(IncludeProperties: "ferias_nac_FK", filter: p => p.id == id);
+                    return Ok(data_consulta);
+                }
+            } catch (Exception e) {
+                return BadRequest("No se pueden consultar :  " + e.Message);
+            }
+            return Ok(new { message = "Se recibio la informacion" });
+        }
+
+
+
+        [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
+        [HttpGet("get_ferias_na")]
+        public IActionResult get__ferias_na() {
+            try {
+                if (User.Identity.IsAuthenticated) {
+                    var data_consulta = _contenedorTrabajo.feriaNacionalRepository.GetListaFeriasNacionales();
+                    return Ok(data_consulta);
+                }
+            } catch (Exception e) {
+                return BadRequest("No se pueden consultar :  " + e.Message);
+            }
+            return Ok(new { message = "Se recibio la informacion" });
+        }
+
+
+
+        [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
+        [HttpPost("get_unidades_res")]
+        public IActionResult get__unidades_responsables([FromBody] int id) {
+            try {
+                if (User.Identity.IsAuthenticated) {
+                    var data_consulta = _contenedorTrabajo.abcDirectorioRepository.GetAllUnidadesResponsables(id);
+                    return Ok(data_consulta);
+                }
+            } catch (Exception e) {
+                return BadRequest("No se pueden consultar :  " + e.Message);
+            }
+            return Ok(new { message = "Se recibio la informacion" });
+        }
 
 }
