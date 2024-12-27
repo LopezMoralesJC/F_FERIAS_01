@@ -21,6 +21,8 @@ namespace F_Ferias.AccessData.IRepository;
 
         IAbcDirectorioRepository abcDirectorioRepository  {get;}
 
+        ICpCepomexRepository cpCepomexRepository {get;}
+
         #endregion
 
 

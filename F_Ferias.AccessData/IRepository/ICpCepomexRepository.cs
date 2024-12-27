@@ -1,0 +1,14 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using F_Ferias.Models.Models;
+
+namespace F_Ferias.AccessData.IRepository
+{
+    public interface ICpCepomexRepository : IRepository<cp_cepomex_mexico>
+    {
+        IEnumerable<cp_cepomex_mexico> get__all__vialidades();
+        
+    }
+}

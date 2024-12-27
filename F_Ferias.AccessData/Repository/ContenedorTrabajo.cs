@@ -28,6 +28,7 @@ namespace F_Ferias.AccessData.Repository;
             feriaNacionalRepository = new FeriaNacionalRepository(_context);
             ferias_Nacionales_BannerRepository = new Ferias_nacionales_bannerRepository(_context);
             abcDirectorioRepository = new AbcDirectorioRepository(_context);
+            cpCepomexRepository  = new CpCepomexRepository(_context);
         }
 
 
@@ -49,6 +50,8 @@ namespace F_Ferias.AccessData.Repository;
         public IFerias_nacionales_bannerRepository ferias_Nacionales_BannerRepository { get; private set; }
 
         public IAbcDirectorioRepository abcDirectorioRepository { get; private set; }
+
+        public ICpCepomexRepository cpCepomexRepository  { get; private set; }
 
     #endregion
 

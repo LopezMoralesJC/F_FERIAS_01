@@ -340,4 +340,19 @@ namespace F_Ferias.API.Controllers;
             return Ok(new { message = "Se recibio la informacion" });
         }
 
+        [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
+        [HttpGet("get-all-vialidades")]
+        public IActionResult getVialidades() { 
+                try {
+                if (User.Identity.IsAuthenticated) { 
+                            // var data__vialidad = _context.Set<cp_cepomex_mexico>().GroupBy(e => new{e.c_tipo_asenta}).Select(g => g.FirstOrDefault());
+                            return Ok(_contenedorTrabajo.cpCepomexRepository.get__all__vialidades());
+                }else {
+                    return BadRequest("No estas autenticado");
+                }
+            } catch(Exception e) {
+                return BadRequest("No se pueden consultar :  " + e.Message);
+            }    
+        }
+
 }
