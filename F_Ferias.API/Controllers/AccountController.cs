@@ -373,7 +373,7 @@ namespace F_Ferias.API.Controllers;
         [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
         [HttpPost("get-filter-colonias")]
         public IActionResult getColonias([FromBody] GetColonias.obtenerColonias model) {
-       try {
+        try {
                 if (User.Identity.IsAuthenticated) { 
                 return Ok(_contenedorTrabajo.cpCepomexRepository.get__all__colonias(model.IdEntidad , model.IdMunicipio).OrderBy(a => a.d_asenta));
                 }else {
@@ -383,4 +383,43 @@ namespace F_Ferias.API.Controllers;
                 return BadRequest("No se pueden consultar :  " + e.Message);
             } 
         }
+
+
+
+
+
+
+
+
+
+
+        [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
+        [HttpPost("get-filter-entidades_cp")]
+        public IActionResult getEntidadCp([FromBody] string id) {
+        try {
+                if (User.Identity.IsAuthenticated) { 
+                return Ok(_contenedorTrabajo.cpCepomexRepository.get__cp__entidades(id));
+                }else {
+                    return BadRequest("No estas autenticado");
+                }
+            } catch(Exception e) {
+                return BadRequest("No se pueden consultar :  " + e.Message);
+            } 
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 } // End

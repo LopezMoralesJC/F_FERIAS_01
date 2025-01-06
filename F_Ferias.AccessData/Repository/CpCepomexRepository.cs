@@ -29,7 +29,11 @@ namespace F_Ferias.AccessData.Repository
         {
            return _context.Set<cp_cepomex_mexico>().GroupBy(e => new{e.c_tipo_asenta}).Select(g => g.FirstOrDefault());
         }
-        
 
+        public IEnumerable<cp_cepomex_mexico> get__cp__entidades(string cp)
+        {
+           return _context.Set<cp_cepomex_mexico>().Where(g => g.d_codigo == cp).GroupBy(g => new{g.id_entidad}).Select(g => g.FirstOrDefault());
+  
+        }
     }
 }
