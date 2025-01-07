@@ -7,10 +7,9 @@ using System.Threading.Tasks;
 
 namespace F_Ferias.Models.Models;
     public class cp_cepomex_mexico {
-
-        
+    
     [Key]
-    public int Id  { get; set; }     
+    public int Id  { get; set; }
     public string d_codigo  { get; set; }
     public string d_asenta  { get; set; }
     public string d_tipo_asenta  { get; set; }

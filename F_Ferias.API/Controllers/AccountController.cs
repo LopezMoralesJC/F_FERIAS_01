@@ -408,6 +408,19 @@ namespace F_Ferias.API.Controllers;
         }
 
 
+        [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
+        [HttpPost("get-filter-colonias_cp")]
+        public IActionResult getColoniasCp([FromBody] string id) {
+        try {
+                if (User.Identity.IsAuthenticated) { 
+                return Ok(_contenedorTrabajo.cpCepomexRepository.get__all__colonias_cp(id));
+                }else {
+                    return BadRequest("No estas autenticado");
+                }
+            } catch(Exception e) {
+                return BadRequest("No se pueden consultar :  " + e.Message);
+            } 
+        }
 
 
 

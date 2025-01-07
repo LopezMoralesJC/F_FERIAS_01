@@ -35,5 +35,11 @@ namespace F_Ferias.AccessData.Repository
            return _context.Set<cp_cepomex_mexico>().Where(g => g.d_codigo == cp).GroupBy(g => new{g.id_entidad}).Select(g => g.FirstOrDefault());
   
         }
+
+        public IEnumerable<cp_cepomex_mexico> get__all__colonias_cp(string cp)
+        {
+           return _context.cp_Cepomex_Mexico.Where(c => c.d_codigo == cp);
+        }
+        
     }
 }
