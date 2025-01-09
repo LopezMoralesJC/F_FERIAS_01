@@ -4,9 +4,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using F_Ferias.AccessData.IRepository;
 using F_Ferias.Models.Models;
+using F_Ferias.Utilities;
+using F_Ferias.Utilities.Datos;
+using Humanizer;
+using Microsoft.EntityFrameworkCore;
 
-namespace F_Ferias.AccessData.Repository
-{
+
+namespace F_Ferias.AccessData.Repository;
     public class CpCepomexRepository : Repository<cp_cepomex_mexico> , ICpCepomexRepository
     {
         private readonly ApplicationDbContext _context;
@@ -40,6 +44,14 @@ namespace F_Ferias.AccessData.Repository
         {
            return _context.cp_Cepomex_Mexico.Where(c => c.d_codigo == cp);
         }
+
+        public IEnumerable<cp_cepomex_mexico> get__colonias__cp(string cp, string colonia)
+        {
+           
+            // return _context.cp_Cepomex_Mexico.Where(c =>c.d_codigo == cp && c.d_asenta == colonia );
+            return _context.cp_Cepomex_Mexico.Where(c =>c.d_codigo == cp &&  EF.Functions.Unaccent(c.d_asenta.ToLower()) == colonia.ToLower());
+            //.Where(x => people.ILike(EF.Functions.Unaccent(x.Name)....
+          // var entity =  _context.cp_Cepomex_Mexico.FromSqlRaw("", "");
+        }
         
     }
-}

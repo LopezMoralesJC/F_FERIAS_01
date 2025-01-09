@@ -18,6 +18,8 @@ namespace F_Ferias.AccessData.IRepository
 
          IEnumerable<cp_cepomex_mexico> get__cp__entidades(string cp);
 
+         IEnumerable<cp_cepomex_mexico> get__colonias__cp(string cp , string colonia);
+
 
         
     }

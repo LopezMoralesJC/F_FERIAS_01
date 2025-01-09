@@ -12,4 +12,10 @@ namespace F_Ferias.Models.Models.Modelos_API;
     public  int IdEntidad  { get; set; }
     public  int IdMunicipio  { get; set; }
     }
+
+
+    public class obtenercolonia_cp {
+      public  string cp  { get; set; }
+      public  string colonia  { get; set; }
+      }
 }
