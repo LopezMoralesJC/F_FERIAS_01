@@ -161,14 +161,14 @@ namespace F_Ferias.API.Controllers;
         }
 
 
-        [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
+        // [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
         [HttpGet("get-listado-entidades")]
         public IActionResult getEntidades() {
-            if (User.Identity.IsAuthenticated) {
+            // if (User.Identity.IsAuthenticated) {
                 var entidadesDb = _contenedorTrabajo.entidadesRepository.Get_entidades();
                 return Ok(entidadesDb);
-            }
-            return BadRequest("No se pudieron obtener las entidades");
+            // }
+            // return BadRequest("No se pudieron obtener las entidades");
         }
 
         [Authorize]
@@ -426,18 +426,26 @@ namespace F_Ferias.API.Controllers;
         // [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
         [HttpPost("get-filter-colonia-cp")]
         public IActionResult getdataCp_colonia([FromBody] GetColonias.obtenercolonia_cp obtenercolonia_Cp) {
-                // try {
-                //         if (User.Identity.IsAuthenticated) { 
+                try {
+                        // if (User.Identity.IsAuthenticated) { 
                         return Ok(_contenedorTrabajo.cpCepomexRepository.get__colonias__cp (obtenercolonia_Cp.cp  , obtenercolonia_Cp.colonia));
-                    //     }else {
-                    //         return BadRequest("No estas autenticado");
-                    //     }
-                    // } catch(Exception e) {
-                    //     return BadRequest("No se pueden consultar :  " + e.Message);
-                    // } 
+                        // }else {
+                        //     return BadRequest("No estas autenticado");
+                        // }
+                    } catch(Exception e) {
+                        return BadRequest("No se pueden consultar :  " + e.Message);
+                    }
                 }
 
+        [HttpPost("get-filter-user-entidad")]
+         public IActionResult getData_User_Entidad([FromBody] string email) { 
+            var usuario = (_contenedorTrabajo.c_FUNCIONARIOS_PORTALEMPLEO_Repository.Get_FUNCIONARIOS_PORTALEMPLEO(email));
+             
+             var entidadesDb = _contenedorTrabajo.entidadesRepository.Get_entidades_filter(usuario.id_entidad);
+                        
+             return Ok(usuario.id_entidad) ;
 
+         }
 
 
 

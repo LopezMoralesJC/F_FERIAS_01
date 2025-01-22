@@ -1,0 +1,16 @@
+D:\Users\juancarlos.lopez\source\repos\F_FERIAS\F_FERIAS_01\publish\F_Ferias.Models.dll
+D:\Users\juancarlos.lopez\source\repos\F_FERIAS\F_FERIAS_01\publish\F_Ferias.Models.deps.json
+D:\Users\juancarlos.lopez\source\repos\F_FERIAS\F_FERIAS_01\publish\F_Ferias.Models.pdb
+D:\Users\juancarlos.lopez\source\repos\F_FERIAS\F_FERIAS_01\publish\Microsoft.AspNetCore.Cryptography.Internal.dll
+D:\Users\juancarlos.lopez\source\repos\F_FERIAS\F_FERIAS_01\publish\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+D:\Users\juancarlos.lopez\source\repos\F_FERIAS\F_FERIAS_01\publish\Microsoft.AspNetCore.Http.Features.dll
+D:\Users\juancarlos.lopez\source\repos\F_FERIAS\F_FERIAS_01\publish\Microsoft.Extensions.Caching.Abstractions.dll
+D:\Users\juancarlos.lopez\source\repos\F_FERIAS\F_FERIAS_01\publish\Microsoft.Extensions.DependencyInjection.dll
+D:\Users\juancarlos.lopez\source\repos\F_FERIAS\F_FERIAS_01\publish\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Users\juancarlos.lopez\source\repos\F_FERIAS\F_FERIAS_01\publish\Microsoft.Extensions.Identity.Core.dll
+D:\Users\juancarlos.lopez\source\repos\F_FERIAS\F_FERIAS_01\publish\Microsoft.Extensions.Identity.Stores.dll
+D:\Users\juancarlos.lopez\source\repos\F_FERIAS\F_FERIAS_01\publish\Microsoft.Extensions.Logging.dll
+D:\Users\juancarlos.lopez\source\repos\F_FERIAS\F_FERIAS_01\publish\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Users\juancarlos.lopez\source\repos\F_FERIAS\F_FERIAS_01\publish\Microsoft.Extensions.Options.dll
+D:\Users\juancarlos.lopez\source\repos\F_FERIAS\F_FERIAS_01\publish\Microsoft.Extensions.Primitives.dll
+D:\Users\juancarlos.lopez\source\repos\F_FERIAS\F_FERIAS_01\publish\System.IO.Pipelines.dll

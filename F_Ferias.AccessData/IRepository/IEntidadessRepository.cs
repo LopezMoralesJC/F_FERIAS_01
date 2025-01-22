@@ -11,5 +11,7 @@ namespace F_Ferias.AccessData.IRepository
 
     
         IEnumerable<entidad> Get_entidades();
+
+        IEnumerable<entidad> Get_entidades_filter(int id_entidad);
     }
 }
