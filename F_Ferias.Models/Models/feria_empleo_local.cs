@@ -114,6 +114,9 @@ namespace F_Ferias.Models.Models;
 
 
 
+
+
+
     public int clasificacion { get; set; }   // FK
     public int actividad_economica { get; set; } // FK
         public string otra_actividad_economica { get; set; }
@@ -128,17 +131,24 @@ namespace F_Ferias.Models.Models;
 
     public bool otra_justificacion { get; set; }
     public string otros_tipo_justificacion { get; set; }
+
+
+
     public int asiste_empresas { get; set; }
     public int asiste_oferta_empleo { get; set; }
     public int asiste_solicitan_empleo { get; set; }
     public int asiste_solicitan_colocado { get; set; }
+
+
+
+
     public byte feria_logo { get; set; }
     public bool misma_cede { get; set; }
     public bool publicacion { get; set; }
     public int id_feriatamanio { get; set; } // FK
     public string sede_evento { get; set; }
 
-    public int? id_feria_inversion { get; set; } // FK
+    // public int? id_feria_inversion { get; set; } // FK
     public bool notificacion_enviada { get; set; }
 
 
@@ -195,8 +205,8 @@ namespace F_Ferias.Models.Models;
     [ForeignKey("id_feriatamanio")]
     public virtual feria_tamanio id_feriatamanio_asociado { get; set; }
     
-    [ForeignKey("id_feria_inversion")]
-    public virtual feria_inversion id_feria_inversion_asociado { get; set; }
+    // [ForeignKey("id_feria_inversion")]
+    // public virtual feria_inversion id_feria_inversion_asociado { get; set; }
     
     
 

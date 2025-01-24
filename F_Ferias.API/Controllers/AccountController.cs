@@ -443,7 +443,9 @@ namespace F_Ferias.API.Controllers;
              
              var entidadesDb = _contenedorTrabajo.entidadesRepository.Get_entidades_filter(usuario.id_entidad);
                         
-             return Ok(usuario.id_entidad) ;
+             return Ok(entidadesDb) ;
+
+             
 
          }
 
