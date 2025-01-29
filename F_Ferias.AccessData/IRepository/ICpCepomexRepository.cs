@@ -14,12 +14,13 @@ namespace F_Ferias.AccessData.IRepository
 
          IEnumerable<cp_cepomex_mexico> get__all__colonias(int IdEntidad , int IdMunicipio);
 
-        IEnumerable<cp_cepomex_mexico> get__all__colonias_cp(string cp );
+         IEnumerable<cp_cepomex_mexico> get__all__colonias_cp(string cp );
 
          IEnumerable<cp_cepomex_mexico> get__cp__entidades(string cp);
 
          IEnumerable<cp_cepomex_mexico> get__colonias__cp(string cp , string colonia);
 
+         cp_cepomex_mexico get_vialidad_unique(int Id_Vialidad);
 
         
     }

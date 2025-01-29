@@ -6,8 +6,7 @@ using F_Ferias.AccessData.IRepository;
 using F_Ferias.Models.Models;
 
 namespace F_Ferias.AccessData.Repository;
-  public class ContenedorTrabajo : IContenedorTrabajo
-    {
+  public class ContenedorTrabajo : IContenedorTrabajo {
 
         #region Properties
         #endregion
@@ -30,6 +29,9 @@ namespace F_Ferias.AccessData.Repository;
             abcDirectorioRepository = new AbcDirectorioRepository(_context);
             cpCepomexRepository  = new CpCepomexRepository(_context);
             usersRepository = new UsersRepository(_context);
+            feriaLocalRepository = new FeriaLocalRepository(_context);
+            ferias_locales_bannerRespository = new Ferias_locales_bannerRespository(_context);
+            feriaInversionRepository = new FeriaInversionRepository(_context);
         }
 
 
@@ -55,6 +57,12 @@ namespace F_Ferias.AccessData.Repository;
         public ICpCepomexRepository cpCepomexRepository  { get; private set; }
 
         public IUsersRepository usersRepository   { get; private set; }
+
+        public IFeriaLocalRepository feriaLocalRepository  { get; private set; }
+
+        public IFerias_locales_bannerRespository ferias_locales_bannerRespository  { get; private set; }
+
+        public IFeriaInversionRepository feriaInversionRepository  { get; private set; }
 
     #endregion
 

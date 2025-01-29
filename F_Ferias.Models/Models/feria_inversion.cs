@@ -10,31 +10,70 @@ namespace F_Ferias.Models.Models;
 
         [Key]
         public int id  { get; set; }
-        public string observacion_promocion  { get; set; }
-        public float cantidad_promocion  { get; set; }
-        public string observacion_acondicionamiento  { get; set; }
-        public float cantidad_acondicionamiento  { get; set; }
-        public string observacion_infraestructura_computo  { get; set; }
-        public float cantidad_infraestructura_computo  { get; set; }
-        public string observacion_alquiler  { get; set; }
-        public float cantidad_alquiler  { get; set; }
-        public string observacion_alimentos_bebidas  { get; set; }
-        public float cantidad_alimentos_bebidas  { get; set; }
 
 
         public int id_tipo_recurso  { get; set; }
-        public int estatus  { get; set; }
-        public string observacion_promocion_est  { get; set; }
+
+        public string observacion_recurso_estatal  { get; set; }
+
+        public string observacion_promocion_estatal  { get; set; }
         public float cantidad_promocion_est  { get; set; }
+
+
+
         public string observacion_acondicionamiento_est  { get; set; }
         public float cantidad_acondicionamiento_est  { get; set; }
+
+
+
         public string observacion_infraestructura_computo_est  { get; set; }
         public float cantidad_infraestructura_computo_est  { get; set; }
+
+
+
         public string observacion_alquiler_est  { get; set; }
         public float cantidad_alquiler_est  { get; set; }
-        public string observacion_alimentos_bebidas_est  { get; set; }
-        public float cantidad_alimentos_bebidas_est  { get; set; }
 
+
+        public string observacion_servicios_videoconferencias_est  { get; set; }
+        public float cantidad_servicios_videoconferencias_est  { get; set; }
+
+
+
+        public float cantidad_total_est  { get; set; }
+
+
+
+    
+// -------------------------------------------------------------------------------------------
+
+        public string observacion_recurso_federal  { get; set; }
+
+
+
+        public string observacion_promocion_federal  { get; set; }
+        public float cantidad_promocion_federal  { get; set; }
+
+
+
+        public string observacion_acondicionamiento_federal  { get; set; }
+        public float cantidad_acondicionamiento_federal  { get; set; }
+
+
+        
+        public string observacion_infraestructura_computo_federal  { get; set; }
+        public float cantidad_infraestructura_computo_federal  { get; set; }
+
+
+        public string observacion_alquiler_federal  { get; set; }
+        public float cantidad_alquiler_federal  { get; set; }
+
+
+        public string observacion_servicios_videoconferencias_federal  { get; set; }
+        public float cantidad_servicios_videoconferencias_federal  { get; set; }
+
+        public float cantidad_total_federal  { get; set; }  
+    
 
         [ForeignKey("id_tipo_recurso")]
         public virtual tipo_recurso id_entidad_asociado_FK { get; set; }

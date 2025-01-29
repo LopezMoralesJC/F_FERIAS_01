@@ -66,11 +66,15 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser , Applicat
 
       public DbSet<tipodiscapacidad> TipoDiscapacidad { get; set; }
 
+      public DbSet<justificaciones> Tipo_justificaciones_FK { get; set; }
 
+      public DbSet<ferias_locales_banners> ferias_Locales_Banners_FK { get; set; }
 
 
       // public DbSet<ApplicationRole> ApplicationRole { get; set; }
     protected override void OnModelCreating(ModelBuilder modelBuilder) {
+
+     
         base.OnModelCreating(modelBuilder);
     }
 }

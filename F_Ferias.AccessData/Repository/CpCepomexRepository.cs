@@ -53,5 +53,9 @@ namespace F_Ferias.AccessData.Repository;
             //.Where(x => people.ILike(EF.Functions.Unaccent(x.Name)....
           // var entity =  _context.cp_Cepomex_Mexico.FromSqlRaw("", "");
         }
-        
+
+    public cp_cepomex_mexico get_vialidad_unique(int Id_Vialidad)
+    {
+         return _context.cp_Cepomex_Mexico.Where(g => g.c_tipo_asenta == Id_Vialidad).FirstOrDefault();
     }
+}

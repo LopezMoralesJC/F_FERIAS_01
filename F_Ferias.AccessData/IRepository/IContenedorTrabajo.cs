@@ -20,12 +20,18 @@ namespace F_Ferias.AccessData.IRepository;
 
         IFerias_nacionales_bannerRepository ferias_Nacionales_BannerRepository {get;}
 
+        IFeriaLocalRepository feriaLocalRepository {get;}
+
         IAbcDirectorioRepository abcDirectorioRepository  {get;}
 
         ICpCepomexRepository cpCepomexRepository {get;}
 
 
         IUsersRepository usersRepository {get;}
+
+        IFerias_locales_bannerRespository ferias_locales_bannerRespository {get;}
+
+        IFeriaInversionRepository feriaInversionRepository {get;}
 
         #endregion
 
