@@ -1,4 +1,5 @@
 
+using F_Ferias.Models;
 using F_Ferias.Models.Identity;
 using F_Ferias.Models.Models;
 using Microsoft.AspNetCore.Identity;
@@ -69,6 +70,10 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser , Applicat
       public DbSet<justificaciones> Tipo_justificaciones_FK { get; set; }
 
       public DbSet<ferias_locales_banners> ferias_Locales_Banners_FK { get; set; }
+
+      public DbSet<Estatus> Estatus  { get; set; }
+
+      public DbSet<Perfiles> Perfiles  { get; set; }
 
 
       // public DbSet<ApplicationRole> ApplicationRole { get; set; }

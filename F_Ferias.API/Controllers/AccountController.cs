@@ -410,10 +410,28 @@ namespace F_Ferias.API.Controllers;
                                                                                                   +"id_tipo_evento_asociado,id_actividad_economica_asociado,id_clasificacion_asociado,"
                                                                                                   +"id_feriatamanio_asociado,id_modalidad_asociado,estatus_feria_asociado,id_modalidad_asociado,id_actividad_complementaria_asociado_FK,"
                                                                                                   +"id_tipo_recurso_asociado" 
+                                                                                                  
                                                                                                    );
             return Ok(data);
 
         }
+
+        [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
+        [HttpPost("get-feria-local")]
+        public async Task<IActionResult> get_Feria_local([FromBody] int id) {
+
+            var data =  _contenedorTrabajo.feriaLocalRepository.GetAll_2(includeProperties:"Feria_Inversion_FK,ferias_locales_banners,id_unidad_responsable_asociada_FK,"
+                                                                                                  +"id_entidad_feria_presencial_ubicacion,id_entidad_asociado,id_feria_nacional_asociado," 
+                                                                                                  +"usuario_Actualizo,usuario_Inserto,justificacion_feria_local,id_poblacion_especifica_asociado," 
+                                                                                                  +"id_tipo_evento_asociado,id_actividad_economica_asociado,id_clasificacion_asociado,"
+                                                                                                  +"id_feriatamanio_asociado,id_modalidad_asociado,estatus_feria_asociado,id_modalidad_asociado,id_actividad_complementaria_asociado_FK,"
+                                                                                                  +"id_tipo_recurso_asociado" 
+                                                                                                  , filter: p => p.id == id
+                                                                                                   );
+            return Ok(data);
+
+        }
+
 
 
         [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "rHUQUq4ke11ztQSfuJpJZoZIqZj6Wj49v9vFNXJG7v8=",
+  "Hash": "mhR5PNwHd0f04Q6lWacCaIJkqelN1WfjWs59o/A1ux4=",
   "Source": "F_Ferias.API",
   "BasePath": "_content/F_Ferias.API",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "F_Ferias.API\\wwwroot",
       "Source": "F_Ferias.API",
-      "ContentRoot": "D:\\Users\\juancarlos.lopez\\source\\repos\\F_FERIAS\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\japoc\\source\\repos\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\",
       "BasePath": "_content/F_Ferias.API",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "D:\\Users\\juancarlos.lopez\\source\\repos\\F_FERIAS\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\Uploads\\flc__uploads\\2025\\enero\\202501280606490191981_Black Minimalist Corporate Professional Profile LinkedIn Banner (1) (1) (1).png",
+      "Identity": "C:\\Users\\japoc\\source\\repos\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\Uploads\\flc__uploads\\2025\\enero\\202501280606490191981_Black Minimalist Corporate Professional Profile LinkedIn Banner (1) (1) (1).png",
       "SourceId": "F_Ferias.API",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Users\\juancarlos.lopez\\source\\repos\\F_FERIAS\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\japoc\\source\\repos\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\",
       "BasePath": "_content/F_Ferias.API",
       "RelativePath": "Uploads/flc__uploads/2025/enero/202501280606490191981_Black Minimalist Corporate Professional Profile LinkedIn Banner (1) (1) (1).png",
       "AssetKind": "All",
@@ -36,10 +36,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\flc__uploads\\2025\\enero\\202501280606490191981_Black Minimalist Corporate Professional Profile LinkedIn Banner (1) (1) (1).png"
     },
     {
-      "Identity": "D:\\Users\\juancarlos.lopez\\source\\repos\\F_FERIAS\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\Uploads\\flc__uploads\\2025\\enero\\202501280830016444818_Black Minimalist Corporate Professional Profile LinkedIn Banner (1) (1) (1).png",
+      "Identity": "C:\\Users\\japoc\\source\\repos\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\Uploads\\flc__uploads\\2025\\enero\\202501280830016444818_Black Minimalist Corporate Professional Profile LinkedIn Banner (1) (1) (1).png",
       "SourceId": "F_Ferias.API",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Users\\juancarlos.lopez\\source\\repos\\F_FERIAS\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\japoc\\source\\repos\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\",
       "BasePath": "_content/F_Ferias.API",
       "RelativePath": "Uploads/flc__uploads/2025/enero/202501280830016444818_Black Minimalist Corporate Professional Profile LinkedIn Banner (1) (1) (1).png",
       "AssetKind": "All",
@@ -55,10 +55,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\flc__uploads\\2025\\enero\\202501280830016444818_Black Minimalist Corporate Professional Profile LinkedIn Banner (1) (1) (1).png"
     },
     {
-      "Identity": "D:\\Users\\juancarlos.lopez\\source\\repos\\F_FERIAS\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\Uploads\\flc__uploads\\2025\\enero\\202501280851284071400_Black Minimalist Corporate Professional Profile LinkedIn Banner (1) (1) (1).png",
+      "Identity": "C:\\Users\\japoc\\source\\repos\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\Uploads\\flc__uploads\\2025\\enero\\202501280851284071400_Black Minimalist Corporate Professional Profile LinkedIn Banner (1) (1) (1).png",
       "SourceId": "F_Ferias.API",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Users\\juancarlos.lopez\\source\\repos\\F_FERIAS\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\japoc\\source\\repos\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\",
       "BasePath": "_content/F_Ferias.API",
       "RelativePath": "Uploads/flc__uploads/2025/enero/202501280851284071400_Black Minimalist Corporate Professional Profile LinkedIn Banner (1) (1) (1).png",
       "AssetKind": "All",
@@ -74,10 +74,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\flc__uploads\\2025\\enero\\202501280851284071400_Black Minimalist Corporate Professional Profile LinkedIn Banner (1) (1) (1).png"
     },
     {
-      "Identity": "D:\\Users\\juancarlos.lopez\\source\\repos\\F_FERIAS\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\Uploads\\flc__uploads\\2025\\enero\\202501281719404275117_2021080720404800-5E92066D83C981FCBC05AE4D9711906A.png",
+      "Identity": "C:\\Users\\japoc\\source\\repos\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\Uploads\\flc__uploads\\2025\\enero\\202501281719404275117_2021080720404800-5E92066D83C981FCBC05AE4D9711906A.png",
       "SourceId": "F_Ferias.API",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Users\\juancarlos.lopez\\source\\repos\\F_FERIAS\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\japoc\\source\\repos\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\",
       "BasePath": "_content/F_Ferias.API",
       "RelativePath": "Uploads/flc__uploads/2025/enero/202501281719404275117_2021080720404800-5E92066D83C981FCBC05AE4D9711906A.png",
       "AssetKind": "All",
@@ -93,10 +93,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\flc__uploads\\2025\\enero\\202501281719404275117_2021080720404800-5E92066D83C981FCBC05AE4D9711906A.png"
     },
     {
-      "Identity": "D:\\Users\\juancarlos.lopez\\source\\repos\\F_FERIAS\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\Uploads\\flc__uploads\\2025\\enero\\202501281732503052744_2021080720404800-5E92066D83C981FCBC05AE4D9711906A.png",
+      "Identity": "C:\\Users\\japoc\\source\\repos\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\Uploads\\flc__uploads\\2025\\enero\\202501281732503052744_2021080720404800-5E92066D83C981FCBC05AE4D9711906A.png",
       "SourceId": "F_Ferias.API",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Users\\juancarlos.lopez\\source\\repos\\F_FERIAS\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\japoc\\source\\repos\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\",
       "BasePath": "_content/F_Ferias.API",
       "RelativePath": "Uploads/flc__uploads/2025/enero/202501281732503052744_2021080720404800-5E92066D83C981FCBC05AE4D9711906A.png",
       "AssetKind": "All",
@@ -112,10 +112,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\flc__uploads\\2025\\enero\\202501281732503052744_2021080720404800-5E92066D83C981FCBC05AE4D9711906A.png"
     },
     {
-      "Identity": "D:\\Users\\juancarlos.lopez\\source\\repos\\F_FERIAS\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\Uploads\\flc__uploads\\2025\\enero\\202501281746100187487_2021080720404800-5E92066D83C981FCBC05AE4D9711906A.png",
+      "Identity": "C:\\Users\\japoc\\source\\repos\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\Uploads\\flc__uploads\\2025\\enero\\202501281746100187487_2021080720404800-5E92066D83C981FCBC05AE4D9711906A.png",
       "SourceId": "F_Ferias.API",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Users\\juancarlos.lopez\\source\\repos\\F_FERIAS\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\japoc\\source\\repos\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\",
       "BasePath": "_content/F_Ferias.API",
       "RelativePath": "Uploads/flc__uploads/2025/enero/202501281746100187487_2021080720404800-5E92066D83C981FCBC05AE4D9711906A.png",
       "AssetKind": "All",
@@ -131,10 +131,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\flc__uploads\\2025\\enero\\202501281746100187487_2021080720404800-5E92066D83C981FCBC05AE4D9711906A.png"
     },
     {
-      "Identity": "D:\\Users\\juancarlos.lopez\\source\\repos\\F_FERIAS\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\Uploads\\flc__uploads\\2025\\enero\\202501281750200717288_2021080720404800-5E92066D83C981FCBC05AE4D9711906A.png",
+      "Identity": "C:\\Users\\japoc\\source\\repos\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\Uploads\\flc__uploads\\2025\\enero\\202501281750200717288_2021080720404800-5E92066D83C981FCBC05AE4D9711906A.png",
       "SourceId": "F_Ferias.API",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Users\\juancarlos.lopez\\source\\repos\\F_FERIAS\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\japoc\\source\\repos\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\",
       "BasePath": "_content/F_Ferias.API",
       "RelativePath": "Uploads/flc__uploads/2025/enero/202501281750200717288_2021080720404800-5E92066D83C981FCBC05AE4D9711906A.png",
       "AssetKind": "All",
@@ -150,10 +150,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\flc__uploads\\2025\\enero\\202501281750200717288_2021080720404800-5E92066D83C981FCBC05AE4D9711906A.png"
     },
     {
-      "Identity": "D:\\Users\\juancarlos.lopez\\source\\repos\\F_FERIAS\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\Uploads\\flc__uploads\\2025\\enero\\202501281815492958597_2021080720404800-5E92066D83C981FCBC05AE4D9711906A.png",
+      "Identity": "C:\\Users\\japoc\\source\\repos\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\Uploads\\flc__uploads\\2025\\enero\\202501281815492958597_2021080720404800-5E92066D83C981FCBC05AE4D9711906A.png",
       "SourceId": "F_Ferias.API",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Users\\juancarlos.lopez\\source\\repos\\F_FERIAS\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\japoc\\source\\repos\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\",
       "BasePath": "_content/F_Ferias.API",
       "RelativePath": "Uploads/flc__uploads/2025/enero/202501281815492958597_2021080720404800-5E92066D83C981FCBC05AE4D9711906A.png",
       "AssetKind": "All",
@@ -169,10 +169,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\flc__uploads\\2025\\enero\\202501281815492958597_2021080720404800-5E92066D83C981FCBC05AE4D9711906A.png"
     },
     {
-      "Identity": "D:\\Users\\juancarlos.lopez\\source\\repos\\F_FERIAS\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\Uploads\\flc__uploads\\2025\\enero\\202501281839037782916_2021080720404800-5E92066D83C981FCBC05AE4D9711906A.png",
+      "Identity": "C:\\Users\\japoc\\source\\repos\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\Uploads\\flc__uploads\\2025\\enero\\202501281839037782916_2021080720404800-5E92066D83C981FCBC05AE4D9711906A.png",
       "SourceId": "F_Ferias.API",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Users\\juancarlos.lopez\\source\\repos\\F_FERIAS\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\japoc\\source\\repos\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\",
       "BasePath": "_content/F_Ferias.API",
       "RelativePath": "Uploads/flc__uploads/2025/enero/202501281839037782916_2021080720404800-5E92066D83C981FCBC05AE4D9711906A.png",
       "AssetKind": "All",
@@ -188,10 +188,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\flc__uploads\\2025\\enero\\202501281839037782916_2021080720404800-5E92066D83C981FCBC05AE4D9711906A.png"
     },
     {
-      "Identity": "D:\\Users\\juancarlos.lopez\\source\\repos\\F_FERIAS\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\Uploads\\flc__uploads\\2025\\enero\\202501281849156340871_2021080720404800-5E92066D83C981FCBC05AE4D9711906A.png",
+      "Identity": "C:\\Users\\japoc\\source\\repos\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\Uploads\\flc__uploads\\2025\\enero\\202501281849156340871_2021080720404800-5E92066D83C981FCBC05AE4D9711906A.png",
       "SourceId": "F_Ferias.API",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Users\\juancarlos.lopez\\source\\repos\\F_FERIAS\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\japoc\\source\\repos\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\",
       "BasePath": "_content/F_Ferias.API",
       "RelativePath": "Uploads/flc__uploads/2025/enero/202501281849156340871_2021080720404800-5E92066D83C981FCBC05AE4D9711906A.png",
       "AssetKind": "All",
@@ -207,10 +207,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\flc__uploads\\2025\\enero\\202501281849156340871_2021080720404800-5E92066D83C981FCBC05AE4D9711906A.png"
     },
     {
-      "Identity": "D:\\Users\\juancarlos.lopez\\source\\repos\\F_FERIAS\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\Uploads\\flc__uploads\\2025\\enero\\202501281853432030327_2021080720404800-5E92066D83C981FCBC05AE4D9711906A.png",
+      "Identity": "C:\\Users\\japoc\\source\\repos\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\Uploads\\flc__uploads\\2025\\enero\\202501281853432030327_2021080720404800-5E92066D83C981FCBC05AE4D9711906A.png",
       "SourceId": "F_Ferias.API",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Users\\juancarlos.lopez\\source\\repos\\F_FERIAS\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\japoc\\source\\repos\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\",
       "BasePath": "_content/F_Ferias.API",
       "RelativePath": "Uploads/flc__uploads/2025/enero/202501281853432030327_2021080720404800-5E92066D83C981FCBC05AE4D9711906A.png",
       "AssetKind": "All",
@@ -226,10 +226,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\flc__uploads\\2025\\enero\\202501281853432030327_2021080720404800-5E92066D83C981FCBC05AE4D9711906A.png"
     },
     {
-      "Identity": "D:\\Users\\juancarlos.lopez\\source\\repos\\F_FERIAS\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\Uploads\\flc__uploads\\2025\\enero\\202501281947110487869_2021080720404800-5E92066D83C981FCBC05AE4D9711906A.png",
+      "Identity": "C:\\Users\\japoc\\source\\repos\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\Uploads\\flc__uploads\\2025\\enero\\202501281947110487869_2021080720404800-5E92066D83C981FCBC05AE4D9711906A.png",
       "SourceId": "F_Ferias.API",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Users\\juancarlos.lopez\\source\\repos\\F_FERIAS\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\japoc\\source\\repos\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\",
       "BasePath": "_content/F_Ferias.API",
       "RelativePath": "Uploads/flc__uploads/2025/enero/202501281947110487869_2021080720404800-5E92066D83C981FCBC05AE4D9711906A.png",
       "AssetKind": "All",
@@ -245,10 +245,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\flc__uploads\\2025\\enero\\202501281947110487869_2021080720404800-5E92066D83C981FCBC05AE4D9711906A.png"
     },
     {
-      "Identity": "D:\\Users\\juancarlos.lopez\\source\\repos\\F_FERIAS\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\Uploads\\flc__uploads\\2025\\enero\\202501282325198929750_Captura de pantalla 2024-02-28 123432.png",
+      "Identity": "C:\\Users\\japoc\\source\\repos\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\Uploads\\flc__uploads\\2025\\enero\\202501282325198929750_Captura de pantalla 2024-02-28 123432.png",
       "SourceId": "F_Ferias.API",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Users\\juancarlos.lopez\\source\\repos\\F_FERIAS\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\japoc\\source\\repos\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\",
       "BasePath": "_content/F_Ferias.API",
       "RelativePath": "Uploads/flc__uploads/2025/enero/202501282325198929750_Captura de pantalla 2024-02-28 123432.png",
       "AssetKind": "All",
@@ -264,10 +264,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\flc__uploads\\2025\\enero\\202501282325198929750_Captura de pantalla 2024-02-28 123432.png"
     },
     {
-      "Identity": "D:\\Users\\juancarlos.lopez\\source\\repos\\F_FERIAS\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\Uploads\\fna__uploads\\2024\\diciembre\\202412092338406913283_202411252115543390148_Search_job_svg.svg",
+      "Identity": "C:\\Users\\japoc\\source\\repos\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\Uploads\\fna__uploads\\2024\\diciembre\\202412092338406913283_202411252115543390148_Search_job_svg.svg",
       "SourceId": "F_Ferias.API",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Users\\juancarlos.lopez\\source\\repos\\F_FERIAS\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\japoc\\source\\repos\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\",
       "BasePath": "_content/F_Ferias.API",
       "RelativePath": "Uploads/fna__uploads/2024/diciembre/202412092338406913283_202411252115543390148_Search_job_svg.svg",
       "AssetKind": "All",
@@ -283,10 +283,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\fna__uploads\\2024\\diciembre\\202412092338406913283_202411252115543390148_Search_job_svg.svg"
     },
     {
-      "Identity": "D:\\Users\\juancarlos.lopez\\source\\repos\\F_FERIAS\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\Uploads\\fna__uploads\\2024\\diciembre\\202412092340145351623_202411252115543390148_Search_job_svg.svg",
+      "Identity": "C:\\Users\\japoc\\source\\repos\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\Uploads\\fna__uploads\\2024\\diciembre\\202412092340145351623_202411252115543390148_Search_job_svg.svg",
       "SourceId": "F_Ferias.API",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Users\\juancarlos.lopez\\source\\repos\\F_FERIAS\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\japoc\\source\\repos\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\",
       "BasePath": "_content/F_Ferias.API",
       "RelativePath": "Uploads/fna__uploads/2024/diciembre/202412092340145351623_202411252115543390148_Search_job_svg.svg",
       "AssetKind": "All",
@@ -302,10 +302,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\fna__uploads\\2024\\diciembre\\202412092340145351623_202411252115543390148_Search_job_svg.svg"
     },
     {
-      "Identity": "D:\\Users\\juancarlos.lopez\\source\\repos\\F_FERIAS\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\Uploads\\fna__uploads\\2024\\diciembre\\202412092343250664637_202411261638100708866_Search_job_svg.svg",
+      "Identity": "C:\\Users\\japoc\\source\\repos\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\Uploads\\fna__uploads\\2024\\diciembre\\202412092343250664637_202411261638100708866_Search_job_svg.svg",
       "SourceId": "F_Ferias.API",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Users\\juancarlos.lopez\\source\\repos\\F_FERIAS\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\japoc\\source\\repos\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\",
       "BasePath": "_content/F_Ferias.API",
       "RelativePath": "Uploads/fna__uploads/2024/diciembre/202412092343250664637_202411261638100708866_Search_job_svg.svg",
       "AssetKind": "All",
@@ -321,10 +321,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\fna__uploads\\2024\\diciembre\\202412092343250664637_202411261638100708866_Search_job_svg.svg"
     },
     {
-      "Identity": "D:\\Users\\juancarlos.lopez\\source\\repos\\F_FERIAS\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\Uploads\\fna__uploads\\2024\\diciembre\\202412092346083686394_202411261638100708866_Search_job_svg.svg",
+      "Identity": "C:\\Users\\japoc\\source\\repos\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\Uploads\\fna__uploads\\2024\\diciembre\\202412092346083686394_202411261638100708866_Search_job_svg.svg",
       "SourceId": "F_Ferias.API",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Users\\juancarlos.lopez\\source\\repos\\F_FERIAS\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\japoc\\source\\repos\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\",
       "BasePath": "_content/F_Ferias.API",
       "RelativePath": "Uploads/fna__uploads/2024/diciembre/202412092346083686394_202411261638100708866_Search_job_svg.svg",
       "AssetKind": "All",
@@ -340,10 +340,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\fna__uploads\\2024\\diciembre\\202412092346083686394_202411261638100708866_Search_job_svg.svg"
     },
     {
-      "Identity": "D:\\Users\\juancarlos.lopez\\source\\repos\\F_FERIAS\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\Uploads\\fna__uploads\\2024\\diciembre\\202412092354254721974_202411252115543390148_Search_job_svg.svg",
+      "Identity": "C:\\Users\\japoc\\source\\repos\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\Uploads\\fna__uploads\\2024\\diciembre\\202412092354254721974_202411252115543390148_Search_job_svg.svg",
       "SourceId": "F_Ferias.API",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Users\\juancarlos.lopez\\source\\repos\\F_FERIAS\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\japoc\\source\\repos\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\",
       "BasePath": "_content/F_Ferias.API",
       "RelativePath": "Uploads/fna__uploads/2024/diciembre/202412092354254721974_202411252115543390148_Search_job_svg.svg",
       "AssetKind": "All",
@@ -359,10 +359,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\fna__uploads\\2024\\diciembre\\202412092354254721974_202411252115543390148_Search_job_svg.svg"
     },
     {
-      "Identity": "D:\\Users\\juancarlos.lopez\\source\\repos\\F_FERIAS\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\Uploads\\fna__uploads\\2024\\diciembre\\202412231709098918284_3_B Slider 1.svg",
+      "Identity": "C:\\Users\\japoc\\source\\repos\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\Uploads\\fna__uploads\\2024\\diciembre\\202412231709098918284_3_B Slider 1.svg",
       "SourceId": "F_Ferias.API",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Users\\juancarlos.lopez\\source\\repos\\F_FERIAS\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\japoc\\source\\repos\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\",
       "BasePath": "_content/F_Ferias.API",
       "RelativePath": "Uploads/fna__uploads/2024/diciembre/202412231709098918284_3_B Slider 1.svg",
       "AssetKind": "All",
@@ -378,10 +378,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\fna__uploads\\2024\\diciembre\\202412231709098918284_3_B Slider 1.svg"
     },
     {
-      "Identity": "D:\\Users\\juancarlos.lopez\\source\\repos\\F_FERIAS\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\Uploads\\fna__uploads\\2024\\diciembre\\202412231711362852422_202411241427043793312_Black Minimalist Corporate Professional Profile LinkedIn Banner (1) (1) (1) (1).png",
+      "Identity": "C:\\Users\\japoc\\source\\repos\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\Uploads\\fna__uploads\\2024\\diciembre\\202412231711362852422_202411241427043793312_Black Minimalist Corporate Professional Profile LinkedIn Banner (1) (1) (1) (1).png",
       "SourceId": "F_Ferias.API",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Users\\juancarlos.lopez\\source\\repos\\F_FERIAS\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\japoc\\source\\repos\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\",
       "BasePath": "_content/F_Ferias.API",
       "RelativePath": "Uploads/fna__uploads/2024/diciembre/202412231711362852422_202411241427043793312_Black Minimalist Corporate Professional Profile LinkedIn Banner (1) (1) (1) (1).png",
       "AssetKind": "All",
@@ -397,10 +397,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\fna__uploads\\2024\\diciembre\\202412231711362852422_202411241427043793312_Black Minimalist Corporate Professional Profile LinkedIn Banner (1) (1) (1) (1).png"
     },
     {
-      "Identity": "D:\\Users\\juancarlos.lopez\\source\\repos\\F_FERIAS\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\Uploads\\fna__uploads\\2024\\diciembre\\202412231711371168238_202411241427043793312_Black Minimalist Corporate Professional Profile LinkedIn Banner (1) (1) (1) (1).png",
+      "Identity": "C:\\Users\\japoc\\source\\repos\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\Uploads\\fna__uploads\\2024\\diciembre\\202412231711371168238_202411241427043793312_Black Minimalist Corporate Professional Profile LinkedIn Banner (1) (1) (1) (1).png",
       "SourceId": "F_Ferias.API",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Users\\juancarlos.lopez\\source\\repos\\F_FERIAS\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\japoc\\source\\repos\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\",
       "BasePath": "_content/F_Ferias.API",
       "RelativePath": "Uploads/fna__uploads/2024/diciembre/202412231711371168238_202411241427043793312_Black Minimalist Corporate Professional Profile LinkedIn Banner (1) (1) (1) (1).png",
       "AssetKind": "All",
@@ -416,10 +416,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\fna__uploads\\2024\\diciembre\\202412231711371168238_202411241427043793312_Black Minimalist Corporate Professional Profile LinkedIn Banner (1) (1) (1) (1).png"
     },
     {
-      "Identity": "D:\\Users\\juancarlos.lopez\\source\\repos\\F_FERIAS\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\Uploads\\fna__uploads\\2024\\noviembre\\202411252035510395287_Black Minimalist Corporate Professional Profile LinkedIn Banner (1).png",
+      "Identity": "C:\\Users\\japoc\\source\\repos\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\Uploads\\fna__uploads\\2024\\noviembre\\202411252035510395287_Black Minimalist Corporate Professional Profile LinkedIn Banner (1).png",
       "SourceId": "F_Ferias.API",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Users\\juancarlos.lopez\\source\\repos\\F_FERIAS\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\japoc\\source\\repos\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\",
       "BasePath": "_content/F_Ferias.API",
       "RelativePath": "Uploads/fna__uploads/2024/noviembre/202411252035510395287_Black Minimalist Corporate Professional Profile LinkedIn Banner (1).png",
       "AssetKind": "All",
@@ -435,10 +435,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\fna__uploads\\2024\\noviembre\\202411252035510395287_Black Minimalist Corporate Professional Profile LinkedIn Banner (1).png"
     },
     {
-      "Identity": "D:\\Users\\juancarlos.lopez\\source\\repos\\F_FERIAS\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\Uploads\\fna__uploads\\2024\\noviembre\\202411252040360733050_Black Minimalist Corporate Professional Profile LinkedIn Banner (1) (1) (1) (1).png",
+      "Identity": "C:\\Users\\japoc\\source\\repos\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\Uploads\\fna__uploads\\2024\\noviembre\\202411252040360733050_Black Minimalist Corporate Professional Profile LinkedIn Banner (1) (1) (1) (1).png",
       "SourceId": "F_Ferias.API",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Users\\juancarlos.lopez\\source\\repos\\F_FERIAS\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\japoc\\source\\repos\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\",
       "BasePath": "_content/F_Ferias.API",
       "RelativePath": "Uploads/fna__uploads/2024/noviembre/202411252040360733050_Black Minimalist Corporate Professional Profile LinkedIn Banner (1) (1) (1) (1).png",
       "AssetKind": "All",
@@ -454,10 +454,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\fna__uploads\\2024\\noviembre\\202411252040360733050_Black Minimalist Corporate Professional Profile LinkedIn Banner (1) (1) (1) (1).png"
     },
     {
-      "Identity": "D:\\Users\\juancarlos.lopez\\source\\repos\\F_FERIAS\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\Uploads\\fna__uploads\\2024\\noviembre\\202411252101100895558_Inicio_svg.svg",
+      "Identity": "C:\\Users\\japoc\\source\\repos\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\Uploads\\fna__uploads\\2024\\noviembre\\202411252101100895558_Inicio_svg.svg",
       "SourceId": "F_Ferias.API",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Users\\juancarlos.lopez\\source\\repos\\F_FERIAS\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\japoc\\source\\repos\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\",
       "BasePath": "_content/F_Ferias.API",
       "RelativePath": "Uploads/fna__uploads/2024/noviembre/202411252101100895558_Inicio_svg.svg",
       "AssetKind": "All",
@@ -473,10 +473,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\fna__uploads\\2024\\noviembre\\202411252101100895558_Inicio_svg.svg"
     },
     {
-      "Identity": "D:\\Users\\juancarlos.lopez\\source\\repos\\F_FERIAS\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\Uploads\\fna__uploads\\2024\\noviembre\\202411252104460069685_ListToDo.svg",
+      "Identity": "C:\\Users\\japoc\\source\\repos\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\Uploads\\fna__uploads\\2024\\noviembre\\202411252104460069685_ListToDo.svg",
       "SourceId": "F_Ferias.API",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Users\\juancarlos.lopez\\source\\repos\\F_FERIAS\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\japoc\\source\\repos\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\",
       "BasePath": "_content/F_Ferias.API",
       "RelativePath": "Uploads/fna__uploads/2024/noviembre/202411252104460069685_ListToDo.svg",
       "AssetKind": "All",
@@ -492,10 +492,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\fna__uploads\\2024\\noviembre\\202411252104460069685_ListToDo.svg"
     },
     {
-      "Identity": "D:\\Users\\juancarlos.lopez\\source\\repos\\F_FERIAS\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\Uploads\\fna__uploads\\2024\\noviembre\\202411252108487955067_Search_job_svg.svg",
+      "Identity": "C:\\Users\\japoc\\source\\repos\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\Uploads\\fna__uploads\\2024\\noviembre\\202411252108487955067_Search_job_svg.svg",
       "SourceId": "F_Ferias.API",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Users\\juancarlos.lopez\\source\\repos\\F_FERIAS\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\japoc\\source\\repos\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\",
       "BasePath": "_content/F_Ferias.API",
       "RelativePath": "Uploads/fna__uploads/2024/noviembre/202411252108487955067_Search_job_svg.svg",
       "AssetKind": "All",
@@ -511,10 +511,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\fna__uploads\\2024\\noviembre\\202411252108487955067_Search_job_svg.svg"
     },
     {
-      "Identity": "D:\\Users\\juancarlos.lopez\\source\\repos\\F_FERIAS\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\Uploads\\fna__uploads\\2024\\noviembre\\202411252115543390148_Search_job_svg.svg",
+      "Identity": "C:\\Users\\japoc\\source\\repos\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\Uploads\\fna__uploads\\2024\\noviembre\\202411252115543390148_Search_job_svg.svg",
       "SourceId": "F_Ferias.API",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Users\\juancarlos.lopez\\source\\repos\\F_FERIAS\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\japoc\\source\\repos\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\",
       "BasePath": "_content/F_Ferias.API",
       "RelativePath": "Uploads/fna__uploads/2024/noviembre/202411252115543390148_Search_job_svg.svg",
       "AssetKind": "All",
@@ -530,10 +530,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\fna__uploads\\2024\\noviembre\\202411252115543390148_Search_job_svg.svg"
     },
     {
-      "Identity": "D:\\Users\\juancarlos.lopez\\source\\repos\\F_FERIAS\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\Uploads\\fna__uploads\\2024\\noviembre\\202411261638100708866_Search_job_svg.svg",
+      "Identity": "C:\\Users\\japoc\\source\\repos\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\Uploads\\fna__uploads\\2024\\noviembre\\202411261638100708866_Search_job_svg.svg",
       "SourceId": "F_Ferias.API",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Users\\juancarlos.lopez\\source\\repos\\F_FERIAS\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\japoc\\source\\repos\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\",
       "BasePath": "_content/F_Ferias.API",
       "RelativePath": "Uploads/fna__uploads/2024/noviembre/202411261638100708866_Search_job_svg.svg",
       "AssetKind": "All",
@@ -549,10 +549,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\fna__uploads\\2024\\noviembre\\202411261638100708866_Search_job_svg.svg"
     },
     {
-      "Identity": "D:\\Users\\juancarlos.lopez\\source\\repos\\F_FERIAS\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\Uploads\\fna__uploads\\2025\\enero\\202501142234214729976_Black Minimalist Corporate Professional Profile LinkedIn Banner (1).png",
+      "Identity": "C:\\Users\\japoc\\source\\repos\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\Uploads\\fna__uploads\\2025\\enero\\202501142234214729976_Black Minimalist Corporate Professional Profile LinkedIn Banner (1).png",
       "SourceId": "F_Ferias.API",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Users\\juancarlos.lopez\\source\\repos\\F_FERIAS\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\japoc\\source\\repos\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\",
       "BasePath": "_content/F_Ferias.API",
       "RelativePath": "Uploads/fna__uploads/2025/enero/202501142234214729976_Black Minimalist Corporate Professional Profile LinkedIn Banner (1).png",
       "AssetKind": "All",
@@ -568,10 +568,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\fna__uploads\\2025\\enero\\202501142234214729976_Black Minimalist Corporate Professional Profile LinkedIn Banner (1).png"
     },
     {
-      "Identity": "D:\\Users\\juancarlos.lopez\\source\\repos\\F_FERIAS\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\Uploads\\fna__uploads\\2025\\enero\\202501280334489070602_Black Minimalist Corporate Professional Profile LinkedIn Banner (1).png",
+      "Identity": "C:\\Users\\japoc\\source\\repos\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\Uploads\\fna__uploads\\2025\\enero\\202501280334489070602_Black Minimalist Corporate Professional Profile LinkedIn Banner (1).png",
       "SourceId": "F_Ferias.API",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Users\\juancarlos.lopez\\source\\repos\\F_FERIAS\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\japoc\\source\\repos\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\",
       "BasePath": "_content/F_Ferias.API",
       "RelativePath": "Uploads/fna__uploads/2025/enero/202501280334489070602_Black Minimalist Corporate Professional Profile LinkedIn Banner (1).png",
       "AssetKind": "All",
@@ -587,10 +587,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\fna__uploads\\2025\\enero\\202501280334489070602_Black Minimalist Corporate Professional Profile LinkedIn Banner (1).png"
     },
     {
-      "Identity": "D:\\Users\\juancarlos.lopez\\source\\repos\\F_FERIAS\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\Uploads\\fna__uploads\\2025\\enero\\202501281751405330460_Black Minimalist Corporate Professional Profile LinkedIn Banner (1) (1) (1).png",
+      "Identity": "C:\\Users\\japoc\\source\\repos\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\Uploads\\fna__uploads\\2025\\enero\\202501281751405330460_Black Minimalist Corporate Professional Profile LinkedIn Banner (1) (1) (1).png",
       "SourceId": "F_Ferias.API",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Users\\juancarlos.lopez\\source\\repos\\F_FERIAS\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\japoc\\source\\repos\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\",
       "BasePath": "_content/F_Ferias.API",
       "RelativePath": "Uploads/fna__uploads/2025/enero/202501281751405330460_Black Minimalist Corporate Professional Profile LinkedIn Banner (1) (1) (1).png",
       "AssetKind": "All",
