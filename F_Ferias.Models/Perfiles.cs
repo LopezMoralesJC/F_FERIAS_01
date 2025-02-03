@@ -20,17 +20,17 @@ namespace F_Ferias.Models ;
     [System.ComponentModel.DataAnnotations.Display(Name = "Fecha de recepcion*:")]
     [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
     [DataType(DataType.Date)]
-    public DateTime created_at { get; set; }
+    public DateTime? created_at { get; set; }
 
     [System.ComponentModel.DataAnnotations.Display(Name = "Fecha de recepcion*:")]
     [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
     [DataType(DataType.Date)]
-    public DateTime updated_at { get; set; }
+    public DateTime? updated_at { get; set; }
 
     [System.ComponentModel.DataAnnotations.Display(Name = "Fecha de recepcion*:")]
     [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
     [DataType(DataType.Date)]
-    public DateTime deleted_at { get; set; } 
+    public DateTime? deleted_at { get; set; } 
     
      public int estatus { get; set; }
 

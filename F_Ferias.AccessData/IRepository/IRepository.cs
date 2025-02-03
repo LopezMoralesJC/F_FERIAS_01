@@ -31,6 +31,8 @@ namespace F_Ferias.AccessData.IRepository;
           int omitirRegistros = 0 , int cantidadRegistros = 0
       );
 
+      
+
         T GetFirstOrDefault(
             Expression<Func<T, bool>> filter = null,
             string IncludeProperties = null

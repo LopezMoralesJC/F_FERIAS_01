@@ -20,6 +20,7 @@ using System.Globalization;
 using F_Ferias.AccessData.Repository;
 using F_Ferias.Models.Models.Modelos_API;
 using F_Ferias.Models;
+using System.Text.Json.Serialization;
 
 namespace F_Ferias.API.Controllers;
 
@@ -206,11 +207,11 @@ namespace F_Ferias.API.Controllers;
 
 
 
-        [Authorize(Roles = "Administrador Consejero Laboral")]
+        // [Authorize(Roles = "Administrador Consejero Laboral")]
         [HttpPost("add-feria-na")]
         public async Task<IActionResult> AddFeria(ferias_nacional feria) {
             try {
-                if (User.Identity.IsAuthenticated) {
+                // if (User.Identity.IsAuthenticated) {
                     CultureInfo ci = new CultureInfo("es-ES");
                     DateTime sqlFormattedDate = (DateTime)feria.create_at;
                     string fecha_titulo = sqlFormattedDate.ToString("yyyyMMddHHmmssfffffff");
@@ -225,6 +226,9 @@ namespace F_Ferias.API.Controllers;
                         Directory.CreateDirectory(_environment.ContentRootPath + filePathGeneral);
                     }
                     else { }
+
+                  
+
                     _contenedorTrabajo.feriaNacionalRepository.Add(feria);
                     _contenedorTrabajo.Save();
                     int dataInserAct = feria.id;
@@ -240,11 +244,11 @@ namespace F_Ferias.API.Controllers;
 
                      return Ok("Ruta - > " + exist);
 
-                }
-                else
-                {
-                    return BadRequest("No tienes las credenciales correctas");
-                }
+                // }
+                // else
+                // {
+                //     return BadRequest("No tienes las credenciales correctas");
+                // }
             }
             catch (Exception e)
             {
@@ -334,12 +338,12 @@ namespace F_Ferias.API.Controllers;
                         feriaInversion.observacion_alquiler_est = feria.add_Feria_local._Gastos_de_alquiler_Estatales ?? "No Aplica";
                         feriaInversion.observacion_servicios_videoconferencias_est = feria.add_Feria_local._Gastos_de_servicios_de_videoconferencias_Estatales ?? "No Aplica";
 
-                        feriaInversion.cantidad_promocion_est = feria.add_Feria_local.number_1_Estatales;
-                        feriaInversion.cantidad_acondicionamiento_est = feria.add_Feria_local.number_2_Estatales;
-                        feriaInversion.cantidad_infraestructura_computo_est = feria.add_Feria_local.number_3_Estatales;
-                        feriaInversion.cantidad_alquiler_est = feria.add_Feria_local.number_4_Estatales;
-                        feriaInversion.cantidad_servicios_videoconferencias_est = feria.add_Feria_local.number_5_Estatales;
-                        feriaInversion.cantidad_total_est = feria.add_Feria_local.number_1_Estatales + feria.add_Feria_local.number_2_Estatales + feria.add_Feria_local.number_3_Estatales + feria.add_Feria_local.number_4_Estatales + feria.add_Feria_local.number_5_Estatales;
+                        feriaInversion.cantidad_promocion_est = feria.add_Feria_local.number_1_Estatales ;
+                        feriaInversion.cantidad_acondicionamiento_est = feria.add_Feria_local.number_2_Estatales ;
+                        feriaInversion.cantidad_infraestructura_computo_est = feria.add_Feria_local.number_3_Estatales ;
+                        feriaInversion.cantidad_alquiler_est = feria.add_Feria_local.number_4_Estatales ;
+                        feriaInversion.cantidad_servicios_videoconferencias_est = feria.add_Feria_local.number_5_Estatales ;
+                        feriaInversion.cantidad_total_est = feria.add_Feria_local.number_1_Estatales + feria.add_Feria_local.number_2_Estatales + feria.add_Feria_local.number_3_Estatales + feria.add_Feria_local.number_4_Estatales + feria.add_Feria_local.number_5_Estatales ;
 
 
 
@@ -351,12 +355,12 @@ namespace F_Ferias.API.Controllers;
                         feriaInversion.observacion_alquiler_federal = feria.add_Feria_local.Gastos_de_alquiler_Federales ?? "No Aplica";
                         feriaInversion.observacion_servicios_videoconferencias_federal = feria.add_Feria_local.Gastos_de_servicios_de_videoconferencias_Federales ?? "No Aplica";
 
-                        feriaInversion.cantidad_promocion_federal = feria.add_Feria_local.number1_Federales;
-                        feriaInversion.cantidad_acondicionamiento_federal = feria.add_Feria_local.number2_Federales;
+                        feriaInversion.cantidad_promocion_federal = feria.add_Feria_local.number1_Federales ;
+                        feriaInversion.cantidad_acondicionamiento_federal = feria.add_Feria_local.number2_Federales ;
                         feriaInversion.cantidad_infraestructura_computo_federal = feria.add_Feria_local.number3_Federales;
-                        feriaInversion.cantidad_alquiler_federal = feria.add_Feria_local.number4_Federales;
-                        feriaInversion.cantidad_servicios_videoconferencias_federal = feria.add_Feria_local.number5_Federales;
-                        feriaInversion.cantidad_total_est = feria.add_Feria_local.number1_Federales + feria.add_Feria_local.number2_Federales + feria.add_Feria_local.number3_Federales + feria.add_Feria_local.number4_Federales + feria.add_Feria_local.number5_Federales;
+                        feriaInversion.cantidad_alquiler_federal = feria.add_Feria_local.number4_Federales ;
+                        feriaInversion.cantidad_servicios_videoconferencias_federal = feria.add_Feria_local.number5_Federales;;
+                        feriaInversion.cantidad_total_est = feria.add_Feria_local.number1_Federales + feria.add_Feria_local.number2_Federales + feria.add_Feria_local.number3_Federales + feria.add_Feria_local.number4_Federales + feria.add_Feria_local.number5_Federales ;;
 
                          break;
 
@@ -418,16 +422,15 @@ namespace F_Ferias.API.Controllers;
 
         [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
         [HttpPost("get-feria-local")]
-        public async Task<IActionResult> get_Feria_local([FromBody] int id) {
-
-            var data =  _contenedorTrabajo.feriaLocalRepository.GetAll_2(includeProperties:"Feria_Inversion_FK,ferias_locales_banners,id_unidad_responsable_asociada_FK,"
-                                                                                                  +"id_entidad_feria_presencial_ubicacion,id_entidad_asociado,id_feria_nacional_asociado," 
-                                                                                                  +"usuario_Actualizo,usuario_Inserto,justificacion_feria_local,id_poblacion_especifica_asociado," 
-                                                                                                  +"id_tipo_evento_asociado,id_actividad_economica_asociado,id_clasificacion_asociado,"
-                                                                                                  +"id_feriatamanio_asociado,id_modalidad_asociado,estatus_feria_asociado,id_modalidad_asociado,id_actividad_complementaria_asociado_FK,"
-                                                                                                  +"id_tipo_recurso_asociado" 
-                                                                                                  , filter: p => p.id == id
-                                                                                                   );
+        public IActionResult get_Feria_local([FromBody] int id) {
+            var data = _contenedorTrabajo.feriaLocalRepository.GetAll_2(
+                includeProperties: "Feria_Inversion_FK,ferias_locales_banners,id_unidad_responsable_asociada_FK,"
+                                    + "id_entidad_feria_presencial_ubicacion,id_entidad_asociado,id_feria_nacional_asociado,"
+                                    + "usuario_Actualizo,usuario_Inserto,justificacion_feria_local,id_poblacion_especifica_asociado,"
+                                    + "id_tipo_evento_asociado,id_actividad_economica_asociado,id_clasificacion_asociado,"
+                                    + "id_feriatamanio_asociado,id_modalidad_asociado,estatus_feria_asociado,id_modalidad_asociado,id_actividad_complementaria_asociado_FK,"
+                                    + "id_tipo_recurso_asociado"
+                                    , filter: p => p.id == id );
             return Ok(data);
 
         }
@@ -453,10 +456,6 @@ namespace F_Ferias.API.Controllers;
              return Ok(await PaginatedList<ferias_empleo_local>.CreateAsync((IQueryable<ferias_empleo_local>)feria, pageNumber, pageSize ));
         }
 
-
-
-
-
         [Authorize(Roles = "Administrador Consejero Laboral")]
         [HttpPost("pagination-feria-na")]
         public async Task<IActionResult> get__Pagination__fna([FromBody] int pageNumber) {
@@ -469,13 +468,6 @@ namespace F_Ferias.API.Controllers;
              int pageSize = 10;
              return Ok(await PaginatedList<ferias_nacional>.CreateAsync((IQueryable<ferias_nacional>)feria, pageNumber, pageSize ));
         }
-
-
-
-
-
-
-
 
         [Authorize(Roles = "Administrador Consejero Laboral")]
         [HttpPost("pagination-feria-na__2")]
@@ -509,7 +501,9 @@ namespace F_Ferias.API.Controllers;
         public IActionResult get__feria_na([FromBody] int id) {
             try {
                 if (User.Identity.IsAuthenticated) {
-                    var data_consulta = _contenedorTrabajo.feriaNacionalRepository.GetFirstOrDefault(IncludeProperties: "ferias_nac_FK", filter: p => p.id == id);
+                    var data_consulta = _contenedorTrabajo.feriaNacionalRepository.GetFirstOrDefault(
+                        IncludeProperties: "Id_usuario_Inserto_FK,Id_usuario_Actualizo_FK,Id_FKestatus_feria_FK,ferias_nac_FK,", filter: p => p.id == id );
+                        
                     return Ok(data_consulta);
                 }
             } catch (Exception e) {
@@ -534,6 +528,37 @@ namespace F_Ferias.API.Controllers;
             return Ok(new { message = "Se recibio la informacion" });
         }
 
+
+        // [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
+        [HttpPost("get_ferias_na_osne")]
+        public IActionResult get__ferias_na_osne([FromBody] int id) {
+            try {
+            //   x.Name->>'value' like '%@search%'
+                    var data_consulta = _contenedorTrabajo.feriaNacionalRepository.GetAll(filter: p => p.id == id);
+                    return Ok(data_consulta);
+            
+            } catch (Exception e) {
+                return BadRequest("No se pueden consultar :  " + e.Message);
+            }
+            // return Ok(new { message = "Se recibio la informacion" });
+        }
+
+
+        [HttpPost("get_ferias_na_osne_2")]
+        public IActionResult get__feria_na_osne_2([FromBody] int id) {
+            try {
+            //   x.Name->>'value' like '%@search%'
+                    var data_consulta = _contenedorTrabajo.feriaNacionalRepository.GetAll(
+                    filter: p => p.data_entidades_selection.Contains(id));
+
+            return Ok(data_consulta);
+            
+            } catch (Exception e) {
+                return BadRequest("No se pueden consultar :  " + e.Message);
+            
+            }
+            // return Ok(new { message = "Se recibio la informacion" }); .Where(entity=> entity.JsonObject[PathInsideJson] == filterValue)
+        }
 
 
         [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
@@ -655,6 +680,8 @@ namespace F_Ferias.API.Controllers;
                     }
                 }
 
+        
+        
         [HttpPost("get-filter-user-entidad")]
          public IActionResult getData_User_Entidad([FromBody] string email) {
             var usuario = (_contenedorTrabajo.c_FUNCIONARIOS_PORTALEMPLEO_Repository.Get_FUNCIONARIOS_PORTALEMPLEO(email));
@@ -667,11 +694,222 @@ namespace F_Ferias.API.Controllers;
 
          }
 
+        [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
+        [HttpPost("set-feria-Validado-osne")]
+        public IActionResult setOsne([FromBody] int id) {
+            try {
+                if (User.Identity.IsAuthenticated) {
+                    var data_consulta = _contenedorTrabajo.feriaLocalRepository.GetFirstOrDefault(filter: p => p.id == id);
+                    data_consulta.estatus = 7;
+
+
+                    _contenedorTrabajo.feriaLocalRepository.UpdateFeriaLocal(data_consulta);
+                    _contenedorTrabajo.Save();
+                    return Ok(data_consulta);
+                }
+            } catch (Exception e) {
+                return BadRequest("No se pueden consultar :  " + e.Message);
+            }
+            return Ok(new { message = "Se recibio la informacion" });
+        }
+
+      
+        [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
+        [HttpPost("set-feria-rechazado-osne")]
+        public IActionResult setRechazarOsne([FromBody] int id) {
+            try {
+                if (User.Identity.IsAuthenticated) {
+                    var data_consulta = _contenedorTrabajo.feriaLocalRepository.GetFirstOrDefault(filter: p => p.id == id);
+                    data_consulta.estatus = 8;
+                    _contenedorTrabajo.feriaLocalRepository.UpdateFeriaLocal(data_consulta);
+                    _contenedorTrabajo.Save();
+                    return Ok(data_consulta);
+                }
+            } catch (Exception e) {
+                return BadRequest("No se pueden consultar :  " + e.Message);
+            }
+            return Ok(new { message = "Se recibio la informacion" });
+        }
+
+
+
+        [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
+        [HttpPost("set-feria-reactivar_osne")]
+        public IActionResult setReactivarOsne([FromBody] int id) {
+            try {
+                if (User.Identity.IsAuthenticated) {
+                    var data_consulta = _contenedorTrabajo.feriaLocalRepository.GetFirstOrDefault(filter: p => p.id == id);
+                    data_consulta.estatus = 6;
+                    _contenedorTrabajo.feriaLocalRepository.UpdateFeriaLocal(data_consulta);
+                    _contenedorTrabajo.Save();
+                    return Ok(data_consulta);
+                }
+            } catch (Exception e) {
+                return BadRequest("No se pueden consultar :  " + e.Message);
+            }
+            return Ok(new { message = "Se recibio la informacion" });
+        }
+
+
+      [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
+        [HttpPost("set-feria-rechazar-usne")]
+        public IActionResult setRechazaUsne([FromBody] int id) {
+            try {
+                if (User.Identity.IsAuthenticated) {
+                    var data_consulta = _contenedorTrabajo.feriaLocalRepository.GetFirstOrDefault(filter: p => p.id == id);
+                    data_consulta.estatus = 4;
+                    _contenedorTrabajo.feriaLocalRepository.UpdateFeriaLocal(data_consulta);
+                    _contenedorTrabajo.Save();
+                    return Ok(data_consulta);
+                }
+            } catch (Exception e) {
+                return BadRequest("No se pueden consultar :  " + e.Message);
+            }
+            return Ok(new { message = "Se recibio la informacion" });
+        }
+
+
+
+
+
+    // "https://localhost:7193/api/Account/set-feria-validar-feria-fna-usne",
+    // "https://localhost:7193/api/Account/set-feria-rechazar-feria-fna-usne",
+    //"https://localhost:7193/api/Account/set-feria-reactivar-fna-usne",
+
+
+
+        [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
+        [HttpPost("set-feria-validar-feria-fna-usne")]
+        public IActionResult set_validar_fna_Usne([FromBody] int id) {
+            try {
+                if (User.Identity.IsAuthenticated) {
+                    var data_consulta = _contenedorTrabajo.feriaNacionalRepository.
+                    GetFirstOrDefault(filter: p => p.id == id);
+                    data_consulta.estatus = 5;
+                    _contenedorTrabajo.feriaNacionalRepository.UpdateFeriaNacional(data_consulta);
+                    _contenedorTrabajo.Save();
+                    return Ok(data_consulta);
+                }
+            } catch (Exception e) {
+                return BadRequest("No se pueden consultar :  " + e.Message);
+            }
+            return Ok(new { message = "Se recibio la informacion" });
+        }
+
+
+
+
+
+        [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
+        [HttpPost("set-feria-rechazar-feria-fna-usne")]
+        public IActionResult set_feria_rechazar_feria_fna_usne([FromBody] int id) {
+            try {
+                if (User.Identity.IsAuthenticated) {
+                    var data_consulta = _contenedorTrabajo.feriaNacionalRepository.
+                    GetFirstOrDefault(filter: p => p.id == id);
+                    data_consulta.estatus = 4;
+                    _contenedorTrabajo.feriaNacionalRepository.UpdateFeriaNacional(data_consulta);
+                    _contenedorTrabajo.Save();
+                    return Ok(data_consulta);
+                }
+            } catch (Exception e) {
+                return BadRequest("No se pueden consultar :  " + e.Message);
+            }
+            return Ok(new { message = "Se recibio la informacion" });
+        }
+
+
+        [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
+        [HttpPost("set-feria-reactivar-fna-usne")]
+        public IActionResult set_feria_reactivar_fna_usne([FromBody] int id) {
+            try {
+                if (User.Identity.IsAuthenticated) {
+                    var data_consulta = _contenedorTrabajo.feriaNacionalRepository.
+                    GetFirstOrDefault(filter: p => p.id == id);
+                    data_consulta.estatus = 6;
+                    _contenedorTrabajo.feriaNacionalRepository.UpdateFeriaNacional(data_consulta);
+                    _contenedorTrabajo.Save();
+                    return Ok(data_consulta);
+                }
+            } catch (Exception e) {
+                return BadRequest("No se pueden consultar :  " + e.Message);
+            }
+            return Ok(new { message = "Se recibio la informacion" });
+        }
 
 
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
+        [HttpPost("set-feria-validado-usne")]
+        public IActionResult setValidarUsne([FromBody] int id) {
+            try {
+                if (User.Identity.IsAuthenticated) {
+                    var data_consulta = _contenedorTrabajo.feriaLocalRepository.GetFirstOrDefault(filter: p => p.id == id);
+                    data_consulta.estatus = 5;
+                    _contenedorTrabajo.feriaLocalRepository.UpdateFeriaLocal(data_consulta);
+                    _contenedorTrabajo.Save();
+                    return Ok(data_consulta);
+                }
+            } catch (Exception e) {
+                return BadRequest("No se pueden consultar :  " + e.Message);
+            }
+            return Ok(new { message = "Se recibio la informacion" });
+        }
+
+ 
 
 } // End

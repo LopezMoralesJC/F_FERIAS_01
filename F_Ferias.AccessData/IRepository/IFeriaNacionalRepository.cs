@@ -10,4 +10,8 @@ namespace F_Ferias.AccessData.IRepository;
           IQueryable<ferias_nacional> GetAllAsync__2();
 
            IEnumerable<ferias_nacional> GetListaFeriasNacionales();
+
+           void UpdateFeriaNacional(ferias_nacional ferias_Nacional);
+
+
     }

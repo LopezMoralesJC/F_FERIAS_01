@@ -1,6 +1,11 @@
 D:\Users\juancarlos.lopez\source\repos\F_FERIAS\F_FERIAS_01\publish\F_Ferias.API.exe
+D:\Users\juancarlos.lopez\source\repos\F_FERIAS\F_FERIAS_01\publish\publish\web.config
 D:\Users\juancarlos.lopez\source\repos\F_FERIAS\F_FERIAS_01\publish\appsettings.Development.json
 D:\Users\juancarlos.lopez\source\repos\F_FERIAS\F_FERIAS_01\publish\appsettings.json
+D:\Users\juancarlos.lopez\source\repos\F_FERIAS\F_FERIAS_01\publish\publish\appsettings.Development.json
+D:\Users\juancarlos.lopez\source\repos\F_FERIAS\F_FERIAS_01\publish\publish\appsettings.json
+D:\Users\juancarlos.lopez\source\repos\F_FERIAS\F_FERIAS_01\publish\publish\F_Ferias.API.deps.json
+D:\Users\juancarlos.lopez\source\repos\F_FERIAS\F_FERIAS_01\publish\publish\F_Ferias.API.runtimeconfig.json
 D:\Users\juancarlos.lopez\source\repos\F_FERIAS\F_FERIAS_01\publish\F_Ferias.API.dll
 D:\Users\juancarlos.lopez\source\repos\F_FERIAS\F_FERIAS_01\publish\F_Ferias.API.deps.json
 D:\Users\juancarlos.lopez\source\repos\F_FERIAS\F_FERIAS_01\publish\F_Ferias.API.runtimeconfig.json

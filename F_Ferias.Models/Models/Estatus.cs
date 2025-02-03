@@ -14,7 +14,7 @@ namespace F_Ferias.Models.Models
         public int value { get; set; }
         
         public string descripcion { get; set; }
-        
+
         
     }
 }

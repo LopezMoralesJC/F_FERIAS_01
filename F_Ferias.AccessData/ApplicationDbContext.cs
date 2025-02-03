@@ -81,5 +81,9 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser , Applicat
 
      
         base.OnModelCreating(modelBuilder);
+          base.OnModelCreating(modelBuilder);
+        modelBuilder.Entity<ferias_nacional>()
+            .Property(b => b.Dataentidades_selection_serialize)
+            .HasColumnType("jsonb");
     }
 }

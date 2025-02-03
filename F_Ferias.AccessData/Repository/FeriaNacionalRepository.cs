@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http.Json;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using F_Ferias.AccessData.IRepository;
 using F_Ferias.Models.Models;
@@ -18,6 +20,13 @@ public class FeriaNacionalRepository : Repository<ferias_nacional>, IFeriaNacion
        return _context.Ferias_Nacional.Where(f => f.estatus == 1);
     }
 
+    public void UpdateFeriaNacional(ferias_nacional ferias_Nacional)
+    {
+             var objFromDb = _context.Ferias_Nacional.FirstOrDefault(c => c.id == ferias_Nacional.id);
+                objFromDb = ferias_Nacional;
+                _context.SaveChanges();
+    }
+
     IQueryable<ferias_nacional> IFeriaNacionalRepository.GetAllAsync__2() {
          var employees = _context.Ferias_Nacional
             .Select(e => new ferias_nacional { 
@@ -31,7 +40,7 @@ public class FeriaNacionalRepository : Repository<ferias_nacional>, IFeriaNacion
 
                 estatus = e.estatus,
                 entidades_todas = e.entidades_todas,
-                Dataentidades_selection = e.Dataentidades_selection,
+                // Dataentidades_selection = e.Dataentidades_selection,
                 file__name = e.file__name,
                 feria_logo_banner = e.feria_logo_banner,
 
@@ -45,3 +54,6 @@ public class FeriaNacionalRepository : Repository<ferias_nacional>, IFeriaNacion
     }
 
 }
+
+
+//cp_cepomex_mexico data_geo_go = JsonConvert.DeserializeObject<cp_cepomex_mexico>(responseContent_Geo);

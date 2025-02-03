@@ -35,12 +35,6 @@ namespace F_Ferias.Models.Models;
         public DateTime fecha_fin  { get; set; }
 
 
-
-
-
-
-
-
         [Display(Name = "Hora Inicio*:")]
         [DisplayFormat(DataFormatString = "{0:HH:mm}", ApplyFormatInEditMode = false)]
         [DataType(DataType.Time)]
@@ -56,8 +50,12 @@ namespace F_Ferias.Models.Models;
         public int estatus { get; set; }
         public bool entidades_todas	 { get; set; }
 
-        [Column(TypeName = "jsonb")]
-        public string Dataentidades_selection { get; set; }
+        // [Column(TypeName = "jsonb")]
+        // public string Dataentidades_selection { get; set; }
+
+       public int[] data_entidades_selection { get; set; }
+     
+        public Dataentidades_selection_model Dataentidades_selection_serialize { get; set; }
 
         [NotMapped]
         public string file__name{ get; set; }
@@ -94,3 +92,15 @@ namespace F_Ferias.Models.Models;
          public virtual ICollection<ferias_nacionales_banner> ferias_nac_FK { get; set; }
 
     }
+
+
+
+
+public class Dataentidades_selection_model
+{
+    // [Key]
+    // public int Id { get; set; }
+    
+    public string Dataentidades_Selection { get; set; }
+   
+}
