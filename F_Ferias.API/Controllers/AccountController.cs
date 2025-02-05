@@ -281,9 +281,9 @@ namespace F_Ferias.API.Controllers;
 
 
 
-                         var feriaInversion = new feria_inversion();
+                    var feriaInversion = new feria_inversion();
                     switch(feria.ferias_empleo_local.id_tipo_recurso) {
-                        case 1 : 
+                         case 1 : 
                         feriaInversion.id_tipo_recurso = 1;
                         feriaInversion.observacion_recurso_estatal = "Distribucion Estatal";
 
@@ -293,12 +293,12 @@ namespace F_Ferias.API.Controllers;
                         feriaInversion.observacion_alquiler_est = "No Aplica";
                         feriaInversion.observacion_servicios_videoconferencias_est = "No Aplica";
 
-                        feriaInversion.cantidad_promocion_est = feria.add_Feria_local.number_1_Estatales;
-                        feriaInversion.cantidad_acondicionamiento_est = feria.add_Feria_local.number_2_Estatales;
-                        feriaInversion.cantidad_infraestructura_computo_est = feria.add_Feria_local.number_3_Estatales;
-                        feriaInversion.cantidad_alquiler_est = feria.add_Feria_local.number_4_Estatales;
-                        feriaInversion.cantidad_servicios_videoconferencias_est = feria.add_Feria_local.number_5_Estatales;
-                        feriaInversion.cantidad_total_est = feria.add_Feria_local.number_1_Estatales + feria.add_Feria_local.number_2_Estatales + feria.add_Feria_local.number_3_Estatales + feria.add_Feria_local.number_4_Estatales + feria.add_Feria_local.number_5_Estatales;
+                        feriaInversion.cantidad_promocion_est = 0;
+                        feriaInversion.cantidad_acondicionamiento_est = 0;
+                        feriaInversion.cantidad_infraestructura_computo_est =0;
+                        feriaInversion.cantidad_alquiler_est = 0;
+                        feriaInversion.cantidad_servicios_videoconferencias_est = 0;
+                        feriaInversion.cantidad_total_est = 0;
 
 
 
@@ -310,12 +310,12 @@ namespace F_Ferias.API.Controllers;
                         feriaInversion.observacion_alquiler_federal = "No Aplica";
                         feriaInversion.observacion_servicios_videoconferencias_est = "No Aplica";
 
-                        feriaInversion.cantidad_promocion_federal = feria.add_Feria_local.number1_Federales;
-                        feriaInversion.cantidad_acondicionamiento_federal = feria.add_Feria_local.number2_Federales;
-                        feriaInversion.cantidad_infraestructura_computo_federal = feria.add_Feria_local.number3_Federales;
-                        feriaInversion.cantidad_alquiler_federal = feria.add_Feria_local.number4_Federales;
-                        feriaInversion.cantidad_servicios_videoconferencias_federal = feria.add_Feria_local.number5_Federales;
-                        feriaInversion.cantidad_total_est = feria.add_Feria_local.number1_Federales + feria.add_Feria_local.number2_Federales + feria.add_Feria_local.number3_Federales + feria.add_Feria_local.number4_Federales + feria.add_Feria_local.number5_Federales;
+                        feriaInversion.cantidad_promocion_federal = 0;
+                        feriaInversion.cantidad_acondicionamiento_federal = 0;
+                        feriaInversion.cantidad_infraestructura_computo_federal = 0;
+                        feriaInversion.cantidad_alquiler_federal =0;
+                        feriaInversion.cantidad_servicios_videoconferencias_federal = 0;
+                        feriaInversion.cantidad_total_federal = 0;
 
 
 
@@ -324,9 +324,75 @@ namespace F_Ferias.API.Controllers;
                          break;
                          case 2 : 
                          feriaInversion.id_tipo_recurso = 2;
+
+                         
+                        feriaInversion.observacion_recurso_estatal = "Distribucion Estatal";
+                        feriaInversion.observacion_promocion_estatal = feria.add_Feria_local._Gastos_de_promocion_difucion_Estatales ?? "No Aplica";
+                        feriaInversion.observacion_acondicionamiento_est = feria.add_Feria_local._Gastos_de_acondicionamiento_del_local_Estatales ?? "No Aplica";
+                        feriaInversion.observacion_infraestructura_computo_est = feria.add_Feria_local._Gastos_de_infraestructura_de_computo_Estatales ?? "No Aplica";
+                        feriaInversion.observacion_alquiler_est = feria.add_Feria_local._Gastos_de_alquiler_Estatales ?? "No Aplica";
+                        feriaInversion.observacion_servicios_videoconferencias_est = feria.add_Feria_local._Gastos_de_servicios_de_videoconferencias_Estatales ?? "No Aplica";
+
+                        feriaInversion.cantidad_promocion_est = 0 ;
+                        feriaInversion.cantidad_acondicionamiento_est = 0 ;
+                        feriaInversion.cantidad_infraestructura_computo_est =0 ;
+                        feriaInversion.cantidad_alquiler_est = 0 ;
+                        feriaInversion.cantidad_servicios_videoconferencias_est = 0 ;
+                        feriaInversion.cantidad_total_est = 0 ;
+
+
+
+
+                        feriaInversion.observacion_recurso_federal = "Distribucion Federal";
+                        feriaInversion.observacion_promocion_federal = feria.add_Feria_local.Gastos_de_promocion_difucion_Federales_Federales ?? "No Aplica";
+                        feriaInversion.observacion_acondicionamiento_federal = feria.add_Feria_local.Gastos_de_acondicionamiento_del_local_Federales ?? "No Aplica";
+                        feriaInversion.observacion_infraestructura_computo_federal = feria.add_Feria_local.Gastos_de_infraestructura_de_computo_Federales ?? "No Aplica";
+                        feriaInversion.observacion_alquiler_federal = feria.add_Feria_local.Gastos_de_alquiler_Federales ?? "No Aplica";
+                        feriaInversion.observacion_servicios_videoconferencias_federal = feria.add_Feria_local.Gastos_de_servicios_de_videoconferencias_Federales ?? "No Aplica";
+
+                        feriaInversion.cantidad_promocion_federal = feria.add_Feria_local.number1_Federales ;
+                        feriaInversion.cantidad_acondicionamiento_federal = feria.add_Feria_local.number2_Federales ;
+                        feriaInversion.cantidad_infraestructura_computo_federal = feria.add_Feria_local.number3_Federales;
+                        feriaInversion.cantidad_alquiler_federal = feria.add_Feria_local.number4_Federales ;
+                        feriaInversion.cantidad_servicios_videoconferencias_federal = feria.add_Feria_local.number5_Federales;;
+                        feriaInversion.cantidad_total_federal = feria.add_Feria_local.number1_Federales + feria.add_Feria_local.number2_Federales + feria.add_Feria_local.number3_Federales + feria.add_Feria_local.number4_Federales + feria.add_Feria_local.number5_Federales ;;
+
                          break;
                          case 3 : 
                          feriaInversion.id_tipo_recurso = 3;
+
+                        feriaInversion.observacion_recurso_estatal = "Distribucion Estatal";
+                        feriaInversion.observacion_promocion_estatal = feria.add_Feria_local._Gastos_de_promocion_difucion_Estatales ?? "No Aplica";
+                        feriaInversion.observacion_acondicionamiento_est = feria.add_Feria_local._Gastos_de_acondicionamiento_del_local_Estatales ?? "No Aplica";
+                        feriaInversion.observacion_infraestructura_computo_est = feria.add_Feria_local._Gastos_de_infraestructura_de_computo_Estatales ?? "No Aplica";
+                        feriaInversion.observacion_alquiler_est = feria.add_Feria_local._Gastos_de_alquiler_Estatales ?? "No Aplica";
+                        feriaInversion.observacion_servicios_videoconferencias_est = feria.add_Feria_local._Gastos_de_servicios_de_videoconferencias_Estatales ?? "No Aplica";
+
+                        feriaInversion.cantidad_promocion_est = feria.add_Feria_local.number_1_Estatales ;
+                        feriaInversion.cantidad_acondicionamiento_est = feria.add_Feria_local.number_2_Estatales ;
+                        feriaInversion.cantidad_infraestructura_computo_est = feria.add_Feria_local.number_3_Estatales ;
+                        feriaInversion.cantidad_alquiler_est = feria.add_Feria_local.number_4_Estatales ;
+                        feriaInversion.cantidad_servicios_videoconferencias_est = feria.add_Feria_local.number_5_Estatales ;
+                        feriaInversion.cantidad_total_est = feria.add_Feria_local.number_1_Estatales + feria.add_Feria_local.number_2_Estatales + feria.add_Feria_local.number_3_Estatales + feria.add_Feria_local.number_4_Estatales + feria.add_Feria_local.number_5_Estatales ;
+
+
+
+
+                        feriaInversion.observacion_recurso_federal = "Distribucion Federal";
+                        feriaInversion.observacion_promocion_federal = feria.add_Feria_local.Gastos_de_promocion_difucion_Federales_Federales ?? "No Aplica";
+                        feriaInversion.observacion_acondicionamiento_federal = feria.add_Feria_local.Gastos_de_acondicionamiento_del_local_Federales ?? "No Aplica";
+                        feriaInversion.observacion_infraestructura_computo_federal = feria.add_Feria_local.Gastos_de_infraestructura_de_computo_Federales ?? "No Aplica";
+                        feriaInversion.observacion_alquiler_federal = feria.add_Feria_local.Gastos_de_alquiler_Federales ?? "No Aplica";
+                        feriaInversion.observacion_servicios_videoconferencias_federal = feria.add_Feria_local.Gastos_de_servicios_de_videoconferencias_Federales ?? "No Aplica";
+
+                        feriaInversion.cantidad_promocion_federal = 0 ;
+                        feriaInversion.cantidad_acondicionamiento_federal = 0 ;
+                        feriaInversion.cantidad_infraestructura_computo_federal = 0;
+                        feriaInversion.cantidad_alquiler_federal = 0;
+                        feriaInversion.cantidad_servicios_videoconferencias_federal = 0;
+                        feriaInversion.cantidad_total_federal = 0;
+
+
                          break;
                          case 4 : 
                          feriaInversion.id_tipo_recurso = 4;
@@ -360,7 +426,7 @@ namespace F_Ferias.API.Controllers;
                         feriaInversion.cantidad_infraestructura_computo_federal = feria.add_Feria_local.number3_Federales;
                         feriaInversion.cantidad_alquiler_federal = feria.add_Feria_local.number4_Federales ;
                         feriaInversion.cantidad_servicios_videoconferencias_federal = feria.add_Feria_local.number5_Federales;;
-                        feriaInversion.cantidad_total_est = feria.add_Feria_local.number1_Federales + feria.add_Feria_local.number2_Federales + feria.add_Feria_local.number3_Federales + feria.add_Feria_local.number4_Federales + feria.add_Feria_local.number5_Federales ;;
+                        feriaInversion.cantidad_total_federal = feria.add_Feria_local.number1_Federales + feria.add_Feria_local.number2_Federales + feria.add_Feria_local.number3_Federales + feria.add_Feria_local.number4_Federales + feria.add_Feria_local.number5_Federales ;;
 
                          break;
 
@@ -409,13 +475,12 @@ namespace F_Ferias.API.Controllers;
         public async Task<IActionResult> get_Ferias_locales() {
 
             var data = await _contenedorTrabajo.feriaLocalRepository.GetAllAsync(includeProperties:"Feria_Inversion_FK,ferias_locales_banners,id_unidad_responsable_asociada_FK,"
-                                                                                                  +"id_entidad_feria_presencial_ubicacion,id_entidad_asociado,id_feria_nacional_asociado," 
-                                                                                                  +"usuario_Actualizo,usuario_Inserto,justificacion_feria_local,id_poblacion_especifica_asociado," 
-                                                                                                  +"id_tipo_evento_asociado,id_actividad_economica_asociado,id_clasificacion_asociado,"
-                                                                                                  +"id_feriatamanio_asociado,id_modalidad_asociado,estatus_feria_asociado,id_modalidad_asociado,id_actividad_complementaria_asociado_FK,"
-                                                                                                  +"id_tipo_recurso_asociado" 
-                                                                                                  
-                                                                                                   );
+                            +"id_entidad_feria_presencial_ubicacion,id_entidad_asociado,id_feria_nacional_asociado," 
+                            +"usuario_Actualizo,usuario_Inserto,justificacion_feria_local,id_poblacion_especifica_asociado," 
+                            +"id_tipo_evento_asociado,id_actividad_economica_asociado,id_clasificacion_asociado,"
+                            +"id_feriatamanio_asociado,id_modalidad_asociado,estatus_feria_asociado,id_modalidad_asociado,id_actividad_complementaria_asociado_FK,"
+                            +"id_tipo_recurso_asociado"
+                            );
             return Ok(data);
 
         }

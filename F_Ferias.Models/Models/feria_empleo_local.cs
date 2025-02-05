@@ -186,11 +186,11 @@ namespace F_Ferias.Models.Models;
 
 
 
-    
+    public bool? actividad_complementaria { get; set; } // FK
     public bool? talleres_para_personas_buscadoras_empleo { get; set; } // FK
     public string  otra_tipo_recurso { get; set; }
     public int? id_actividad_complementaria { get; set; } // FK
-    public bool? actividad_complementaria { get; set; } // FK
+
     public string otra_actividad { get; set; }
     public int? id_feria_inversion { get; set; } // FK
     public int? id_tipo_recurso { get; set; } // FK

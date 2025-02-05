@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "3RJtUNWKNdB0n/m2mXBUfvmmvvi9jtIg6j3IvRX5jz+ss5+oQAjOKdTLcQh8IijPWmzOWEUITMqOjA/wxgQUdw==",
+  "dgSpecHash": "PnoLyeROF6RT9fZ6NUyIY0r+2V4OTlni8G9hxOL1ocWFlMXGIIMemdVZSFkE9gHpNiM1l7BdDTfSyGumC4wgdA==",
   "success": true,
-  "projectFilePath": "D:\\Users\\juancarlos.lopez\\source\\repos\\F_FERIAS\\F_FERIAS_01\\F_Ferias.api\\F_Ferias.API.csproj",
+  "projectFilePath": "D:\\Users\\juancarlos.lopez\\source\\repos\\F_FERIAS\\F_FERIAS_01\\F_Ferias.API\\F_Ferias.API.csproj",
   "expectedPackageFiles": [
     "d:\\Users\\juancarlos.lopez\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "d:\\Users\\juancarlos.lopez\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.33\\microsoft.aspnetcore.authentication.jwtbearer.6.0.33.nupkg.sha512",
