@@ -308,7 +308,7 @@ namespace F_Ferias.API.Controllers;
                         feriaInversion.observacion_acondicionamiento_federal = "No Aplica";
                         feriaInversion.observacion_infraestructura_computo_federal = "No Aplica";
                         feriaInversion.observacion_alquiler_federal = "No Aplica";
-                        feriaInversion.observacion_servicios_videoconferencias_est = "No Aplica";
+                        feriaInversion.observacion_servicios_videoconferencias_federal = "No Aplica";
 
                         feriaInversion.cantidad_promocion_federal = 0;
                         feriaInversion.cantidad_acondicionamiento_federal = 0;
@@ -502,7 +502,7 @@ namespace F_Ferias.API.Controllers;
 
 
 
-        [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
+        // [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
         [HttpPost("pagination-feria-local")]
         public async Task<IActionResult> get__Pagination__flc([FromBody] int pageNumber) {
             var feria =  _contenedorTrabajo.feriaLocalRepository.GetAll_2(includeProperties:"Feria_Inversion_FK,ferias_locales_banners,id_unidad_responsable_asociada_FK,"
@@ -520,6 +520,74 @@ namespace F_Ferias.API.Controllers;
              int pageSize = 10;
              return Ok(await PaginatedList<ferias_empleo_local>.CreateAsync((IQueryable<ferias_empleo_local>)feria, pageNumber, pageSize ));
         }
+
+
+
+
+
+
+        // [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
+        [HttpPost("pagination-feria-local-entidad")]
+        public async Task<IActionResult> get__Pagination__flc_entidad(modelData modelData ) {
+            var feria =  _contenedorTrabajo.feriaLocalRepository.GetAll_2(
+                includeProperties:"Feria_Inversion_FK,ferias_locales_banners,id_unidad_responsable_asociada_FK,"
+                +"id_entidad_feria_presencial_ubicacion,id_entidad_asociado,id_feria_nacional_asociado," 
+                +"usuario_Actualizo,usuario_Inserto,justificacion_feria_local,id_poblacion_especifica_asociado," 
+                +"id_tipo_evento_asociado,id_actividad_economica_asociado,id_clasificacion_asociado,"
+                +"id_feriatamanio_asociado,id_modalidad_asociado,estatus_feria_asociado,id_modalidad_asociado,id_actividad_complementaria_asociado_FK,"
+                +"id_tipo_recurso_asociado"  , filter: p => p.id_entidad == modelData.id_entidad);
+                                                                                                  
+              // Ensure pageNumber is at least 1
+            if (modelData.pagenumber < 1)
+            {
+                modelData.pagenumber = 1;
+            }
+             int pageSize = 10;
+             return Ok(await PaginatedList<ferias_empleo_local>
+             .CreateAsync((IQueryable<ferias_empleo_local>)feria, modelData.pagenumber, pageSize ));
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         [Authorize(Roles = "Administrador Consejero Laboral")]
         [HttpPost("pagination-feria-na")]
