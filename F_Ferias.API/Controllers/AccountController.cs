@@ -43,8 +43,6 @@ namespace F_Ferias.API.Controllers;
         }
 
 
-
-
         [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
         [HttpPost("register")]
         public async Task<IActionResult> Register([FromBody] Register model) {
@@ -485,7 +483,7 @@ namespace F_Ferias.API.Controllers;
 
         }
 
-        [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
+        // [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
         [HttpPost("get-feria-local")]
         public IActionResult get_Feria_local([FromBody] int id) {
             var data = _contenedorTrabajo.feriaLocalRepository.GetAll_2(

@@ -13,107 +13,32 @@ namespace F_Ferias.Models.Models;
        }
 
 
+        // SECCION 1 ----------------------------------------------------------------------------
 
+    [Key]
+    public int id { get; set; }
 
+    // public string? Nombre { get; set; }
+    public int? estatus { get; set; }  // FK Estatus feria
 
+    [Display(Name = "Clasificación *")]
+    public int? clasificacion { get; set; }   // FK  1 "Feria de empleo"  2 "Reclutamiento"
 
+    [Display(Name = "Modalidad (Ambiente) * ")]
+    public int? modalidad { get; set; }         // FK Modalidad Presencial 1 o Virtual 2
 
+    [Display(Name = "Publicación")]
+    public bool publicacion { get; set; }
 
-       [Key]
-       public int id { get; set; }
-       public int estatus { get; set; }  // FK Estatus feria
+    [Display(Name = "Tamaño de feria")]
+    public int? id_feriatamanio { get; set; } // FK  Grande 1, Mediana 2
 
-      [System.ComponentModel.DataAnnotations.Display(Name = "Fecha de recepcion*:")]
-      [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-      [DataType(DataType.Date)]
-      public DateTime created_at { get; set; }
+    [Display(Name = "Sector/Actividad Económica *")]
+    public int? actividad_economica { get; set; } // FK actividad economica
 
-      [System.ComponentModel.DataAnnotations.Display(Name = "Fecha de recepcion*:")]
-      [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-      [DataType(DataType.Date)]
-      public DateTime updated_at { get; set; }
-
-      [System.ComponentModel.DataAnnotations.Display(Name = "Fecha de recepcion*:")]
-      [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-      [DataType(DataType.Date)]
-      public DateTime deleted_at { get; set; }
-
-     
-
-       // SECCION 1 ----------------------------------------------------------------------------
-       public string titulo { get; set; }
-       public int clasificacion { get; set; }   // FK  1 "Feria de empleo"  2 "Reclutamiento"
-       public int modalidad { get; set; }         // FK Modalidad Presencial 1 o Virtual 2
-       public bool publicacion { get; set; }
-
-       public int? actividad_economica { get; set; } // FK actividad economica
-       public string otra_actividad_economica { get; set; }
-
-       public int tipo_evento { get; set; } // FK
-       public int? poblacion_especifica { get; set; }  // FK
-       public string otros_tipo_poblacion { get; set; }
-
-       public int? justificacion_feria { get; set; } // Fk Justificacion
-       public string otros_tipo_justificacion { get; set; } // otra justificacion
-
-
-       public int asiste_empresas { get; set; }
-       public int asiste_oferta_empleo { get; set; }
-       public int asiste_solicitan_empleo { get; set; }
-       public int asiste_solicitan_colocado { get; set; }
-
-       public bool es_usne { get; set; }
-       public bool es_osne { get; set; }
-
-
-
-
-   
-        // 1	"Activo"
-        // 2	"Publicado"
-        // 3	"Concluido"
-        // 4	"Rechazado por USNE"
-        // 5	"Validado por USNE"
-        // 6	"Reactivado"
-        // 7	"Validado por OSNE"
-        // 8	"Rechazado por OSNE"
-        // 9	"Cancelado"
-      public bool es_virtual { get; set; }
-      public int user_create { get; set; }       // FK USUARIO
-      public int? user_upddel { get; set; }   // FK USUARIO
-
-      public int id_feriatamanio { get; set; } // FK  Grande 1, Mediana 2
-      public bool es_nacional { get; set; }
-      public int? id_feria_nacional { get; set; } // FK
-
-      public int id_entidad { get; set; }        // FK
-      public int id_unidadresponsable { get; set; } // FK
-
-
-
-      [System.ComponentModel.DataAnnotations.Display(Name = "Fecha de recepcion*:")]
-      [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-      [DataType(DataType.Date)]
-      public DateTime fecha_ini { get; set; }
-      
-      [System.ComponentModel.DataAnnotations.Display(Name = "Fecha de recepcion*:")]
-      [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-      [DataType(DataType.Date)]
-      public DateTime fecha_fin { get; set; }
-      [System.ComponentModel.DataAnnotations.Display(Name = "Hora Fin*:")]
-      [DisplayFormat(DataFormatString = "{0:HH:mm}", ApplyFormatInEditMode = false)]
-      [DataType(DataType.Time)]
-      public DateTime hora_inicio { get; set; }
-      
-      [System.ComponentModel.DataAnnotations.Display(Name = "Hora Fin*:")]
-      [DisplayFormat(DataFormatString = "{0:HH:mm}", ApplyFormatInEditMode = false)]
-      [DataType(DataType.Time)]
-      public DateTime hora_fin { get; set; }
-
-
-
-
-      // SECCION 2 ----------------------------------------------------------------------------
+    [Display(Name = "Otro tipo, ¿Cuál?  *")]
+    [StringLength(50, ErrorMessage = "50 caracteres mínimos")]
+    public string? otra_actividad_economica { get; set; }
 
 
 
@@ -121,26 +46,176 @@ namespace F_Ferias.Models.Models;
 
 
 
-      public bool misma_cede { get; set; }   // Misma sede feria del empleo portal www.
-
-
-      public string  plataforma { get; set; }
-      public string  plataforma_evento { get; set; }
-      public string  plataforma_contrasena { get; set; }
-      public string  plataforma_url { get; set; }
 
 
 
-      public string cp_direccion { get; set; }
-      public int? id_entidad_federativa_feria_local { get; set; }
-      public string municipio { get; set; }
-      public string colonia { get; set; }
-      public string vialidad { get; set; }
-      public string sede_evento { get; set; }
-      public string calle { get; set; }
-      public int numeroExt { get; set; }
-      public int numeroInt { get; set; }
-      public string referencias_direccion { get; set; }
+    [Display(Name = "Tipo de evento (Población) *")]
+    public int? tipo_evento { get; set; } // FK
+
+    [Display(Name = "Población específica * ")]
+
+    public int? poblacion_especifica { get; set; } = 10; // FK
+
+    [Display(Name = "Otro tipo de población, ¿Cuál? * ")]
+    [StringLength(50, ErrorMessage = "50 caracteres mínimos")]
+    public string? otros_tipo_poblacion { get; set; }
+
+
+
+
+
+
+
+    [Display(Name = "Justificación *")]
+    public int? justificacion_feria { get; set; } // Fk Justificacion
+
+    [Display(Name = "Otra justificación, ¿Cual? *")]
+    [StringLength(50, ErrorMessage = "50 caracteres mínimos")]
+    public string? otros_tipo_justificacion { get; set; } // otra justificacion
+
+
+
+
+
+
+
+
+
+
+
+    [Range(1, 9999, ErrorMessage = "Ingresa un valor válido")]
+    [Display(Name = "De empresas *")]
+    public int asiste_empresas { get; set; }
+    [Display(Name = "Ofertas de empleo *")]
+    [Range(1, 9999, ErrorMessage = "Ingresa un valor válido")]
+    public int asiste_oferta_empleo { get; set; }
+    [Display(Name = "Personas BT asistentes *")]
+    [Range(1, 9999, ErrorMessage = "Ingresa un valor válido")]
+    public int asiste_solicitan_empleo { get; set; }
+    [Display(Name = "Personas BT colocadas *")]
+    [Range(1, 9999, ErrorMessage = "Ingresa un valor válido")]
+    public int asiste_solicitan_colocado { get; set; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    public bool? es_virtual { get; set; }
+    public int? user_create { get; set; }       // FK USUARIO
+    public int? user_upddel { get; set; }   // FK USUARIO
+
+
+
+
+    [Display(Name = "Nombre del evento *")]
+    [StringLength(50, ErrorMessage = "50 caracteres mínimos")]
+    public string? titulo { get; set; }
+
+    [Display(Name = "Entidad federativa *")]
+    public int? id_entidad { get; set; }        // FK
+
+    [Display(Name = "Unidad Responsable *")]
+    public int? id_unidadresponsable { get; set; } // FK
+
+
+    [Display(Name = "Unidad responsable *")]
+    public bool? es_usne { get; set; } = false;
+    [Display(Name = "Unidad responsable *")]
+    public bool? es_osne { get; set; } = false;
+
+    [Display(Name = "¿Participa en la feria nacional? *")]
+    public bool? es_nacional { get; set; } = false;
+
+    [Display(Name = "Ferias nacionales *")]
+    public int? id_feria_nacional { get; set; } // FK
+
+    [System.ComponentModel.DataAnnotations.Display(Name = "Fecha inicio del evento *")]
+    [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+    [DataType(DataType.Date)]
+    public DateTime fecha_ini { get; set; }
+
+    [System.ComponentModel.DataAnnotations.Display(Name = "Fecha fin del evento *")]
+    [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+    [DataType(DataType.Date)]
+
+
+    public DateTime fecha_fin { get; set; }
+    [System.ComponentModel.DataAnnotations.Display(Name = "Horario de atención (De las) *")]
+    [DisplayFormat(DataFormatString = "{0:HH:mm}", ApplyFormatInEditMode = false)]
+    [DataType(DataType.Time)]
+    public DateTime hora_inicio { get; set; }
+
+    [System.ComponentModel.DataAnnotations.Display(Name = "A las *")]
+    [DisplayFormat(DataFormatString = "{0:HH:mm}", ApplyFormatInEditMode = false)]
+    [DataType(DataType.Time)]
+    public DateTime hora_fin { get; set; }
+
+
+    [System.ComponentModel.DataAnnotations.Display(Name = "Fecha de recepción*:")]
+    [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+    [DataType(DataType.Date)]
+    public DateTime created_at { get; set; }
+
+    [System.ComponentModel.DataAnnotations.Display(Name = "Fecha de recepción*:")]
+    [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+    [DataType(DataType.Date)]
+    public DateTime updated_at { get; set; }
+
+    [System.ComponentModel.DataAnnotations.Display(Name = "Fecha de recepción*:")]
+    [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+    [DataType(DataType.Date)]
+    public DateTime deleted_at { get; set; }
+
+
+
+
+    // SECCION 2 ----------------------------------------------------------------------------
+
+
+
+
+
+
+    [Display(Name = "¿ Se llevará a cabo en la misma unidad (OSNE responsable) *")]
+    public bool? misma_cede { get; set; }   // Misma sede feria del empleo portal www.
+
+
+    [Display(Name = "¿El evento virtual se llevará a cabo en el Portal del Empleo? *")]
+    public bool?  evento_virtual_portal_empleo { get; set; }   // Misma sede feria del empleo portal www.
+
+    public string? plataforma { get; set; }
+    public string? plataforma_evento { get; set; }
+    public string? plataforma_contrasena { get; set; }
+    public string? plataforma_url { get; set; }
+
+
+
+    public string? cp_direccion { get; set; }
+    public int? id_entidad_federativa_feria_local { get; set; }
+    public string? municipio { get; set; }
+    public string? colonia { get; set; }
+    public string? vialidad { get; set; }
+    public string? sede_evento { get; set; }
+    public string? calle { get; set; }
+    public int? numeroExt { get; set; }
+    public int? numeroInt { get; set; }
+    public string? referencias_direccion { get; set; }
+
+
+
 
 
 
@@ -184,12 +259,10 @@ namespace F_Ferias.Models.Models;
 
    // SECCION 4----------------------------------------------------------------------------
 
-
-
-    public bool? actividad_complementaria { get; set; } // FK
     public bool? talleres_para_personas_buscadoras_empleo { get; set; } // FK
-    public string  otra_tipo_recurso { get; set; }
+    public string  otra_tipo_recurso { get; set; }    
     public int? id_actividad_complementaria { get; set; } // FK
+    public bool? actividad_complementaria { get; set; } // FK
 
     public string otra_actividad { get; set; }
     public int? id_feria_inversion { get; set; } // FK
