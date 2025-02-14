@@ -194,7 +194,7 @@ namespace F_Ferias.Models.Models;
 
 
     // [Display(Name = "¿El evento virtual se llevará a cabo en el Portal del Empleo? *")]
-    public bool?  evento_virtual_portal_empleo { get; set; }   // Misma sede feria del empleo portal www.
+     public bool?  evento_virtual_portal_empleo { get; set; }   // Misma sede feria del empleo portal www.
 
     public string? plataforma { get; set; }
     public string? plataforma_evento { get; set; }
