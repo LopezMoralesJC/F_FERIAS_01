@@ -21,6 +21,7 @@ using F_Ferias.AccessData.Repository;
 using F_Ferias.Models.Models.Modelos_API;
 using F_Ferias.Models;
 using System.Text.Json.Serialization;
+using System.Diagnostics;
 
 namespace F_Ferias.API.Controllers;
 
@@ -256,228 +257,70 @@ namespace F_Ferias.API.Controllers;
         }
 
 
-        [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
-        [HttpPost("add-feria-local")]
-        public async Task<IActionResult> Add_Feria_local(ferias_locales_model feria  ) {
 
-              try {
-                if (User.Identity.IsAuthenticated) {
-                    CultureInfo ci = new CultureInfo("es-ES");
-                    DateTime sqlFormattedDate = (DateTime) DateTime.UtcNow;;
-                    string fecha_titulo = sqlFormattedDate.ToString("yyyyMMddHHmmssfffffff");
-                    string YFormateada = sqlFormattedDate.ToString("yyyy", ci);
-                    string MFormateada = sqlFormattedDate.ToString("MMMM", ci);
-                    string filePathGeneral = "wwwroot\\Uploads\\flc__uploads" + string.Format("\\{0}\\{1}", YFormateada, MFormateada + "\\");
-                    string NombreArchivo = fecha_titulo + "_" + feria.ferias_empleo_local.file__name;
-                    string rutaDestinoCompleta = Path.Combine(_environment.ContentRootPath + filePathGeneral, NombreArchivo);
-                    bool exist = Directory.Exists(_environment.ContentRootPath + filePathGeneral);
+    [HttpPost("add-feria-local")]
+    public IActionResult Add_Feria_local(ferias_locales_model feria)
+    {
 
-                    if (!Directory.Exists(_environment.ContentRootPath + filePathGeneral)) {
-                        Directory.CreateDirectory(_environment.ContentRootPath + filePathGeneral);
-                    }
-                    else { }
+        try
+        {
 
+            // CultureInfo ci = new CultureInfo("es-ES");
+            // DateTime sqlFormattedDate = (DateTime)DateTime.UtcNow; ;
+            // string fecha_titulo = sqlFormattedDate.ToString("yyyyMMddHHmmssfffffff");
+            // string YFormateada = sqlFormattedDate.ToString("yyyy", ci);
+            // string MFormateada = sqlFormattedDate.ToString("MMMM", ci);
+            // string filePathGeneral = "wwwroot\\Uploads\\flc__uploads" + string.Format("\\{0}\\{1}", YFormateada, MFormateada + "\\");
+            // string NombreArchivo = fecha_titulo + "_" + feria.ferias_empleo_local.file__name;
+            // string rutaDestinoCompleta = Path.Combine(_environment.ContentRootPath + filePathGeneral, NombreArchivo);
+            // bool exist = Directory.Exists(_environment.ContentRootPath + filePathGeneral);
 
-
-                    var feriaInversion = new feria_inversion();
-                    switch(feria.ferias_empleo_local.id_tipo_recurso) {
-                         case 1 : 
-                        feriaInversion.id_tipo_recurso = 1;
-                        feriaInversion.observacion_recurso_estatal = "Distribucion Estatal";
-
-                        feriaInversion.observacion_promocion_estatal = "No Aplica";
-                        feriaInversion.observacion_acondicionamiento_est = "No Aplica";
-                        feriaInversion.observacion_infraestructura_computo_est = "No Aplica";
-                        feriaInversion.observacion_alquiler_est = "No Aplica";
-                        feriaInversion.observacion_servicios_videoconferencias_est = "No Aplica";
-
-                        feriaInversion.cantidad_promocion_est = 0;
-                        feriaInversion.cantidad_acondicionamiento_est = 0;
-                        feriaInversion.cantidad_infraestructura_computo_est =0;
-                        feriaInversion.cantidad_alquiler_est = 0;
-                        feriaInversion.cantidad_servicios_videoconferencias_est = 0;
-                        feriaInversion.cantidad_total_est = 0;
+            // if (!Directory.Exists(_environment.ContentRootPath + filePathGeneral))
+            // {
+            //     Directory.CreateDirectory(_environment.ContentRootPath + filePathGeneral);
+            // }
+            // else { }
 
 
+            _contenedorTrabajo.feriaLocalRepository.Add(feria.ferias_empleo_local);
+            _contenedorTrabajo.Save();
+            int dataInserAct = feria.ferias_empleo_local.id;
 
 
-                        feriaInversion.observacion_recurso_federal = "Distribucion Federal";
-                        feriaInversion.observacion_promocion_federal = "No Aplica";
-                        feriaInversion.observacion_acondicionamiento_federal = "No Aplica";
-                        feriaInversion.observacion_infraestructura_computo_federal = "No Aplica";
-                        feriaInversion.observacion_alquiler_federal = "No Aplica";
-                        feriaInversion.observacion_servicios_videoconferencias_federal = "No Aplica";
+            // -------------------------------------------------------------------------------
 
-                        feriaInversion.cantidad_promocion_federal = 0;
-                        feriaInversion.cantidad_acondicionamiento_federal = 0;
-                        feriaInversion.cantidad_infraestructura_computo_federal = 0;
-                        feriaInversion.cantidad_alquiler_federal =0;
-                        feriaInversion.cantidad_servicios_videoconferencias_federal = 0;
-                        feriaInversion.cantidad_total_federal = 0;
+            // var feria_local_banner = new  ferias_locales_banners();
+            // feria_local_banner.id_feria_local = dataInserAct;
+            // feria_local_banner.feria_logo_ruta = filePathGeneral + "" + NombreArchivo; // rutaDestinoCompleta;
+            // feria_local_banner.nombre_feria_logo_ruta =  feria.ferias_empleo_local.file__name;
+            // _contenedorTrabajo.ferias_locales_bannerRespository.Add(feria_local_banner);
+            // _contenedorTrabajo.Save();
 
+            //   await System.IO.File.WriteAllBytesAsync(string.Format("{0}" ,rutaDestinoCompleta  ), feria.ferias_empleo_local.feria_logo_banner);
 
+            return Ok("SE INSERTO CORRECTAMENTE");
 
-                    
-
-                         break;
-                         case 2 : 
-                         feriaInversion.id_tipo_recurso = 2;
-
-                         
-                        feriaInversion.observacion_recurso_estatal = "Distribucion Estatal";
-                        feriaInversion.observacion_promocion_estatal = feria.add_Feria_local._Gastos_de_promocion_difucion_Estatales ?? "No Aplica";
-                        feriaInversion.observacion_acondicionamiento_est = feria.add_Feria_local._Gastos_de_acondicionamiento_del_local_Estatales ?? "No Aplica";
-                        feriaInversion.observacion_infraestructura_computo_est = feria.add_Feria_local._Gastos_de_infraestructura_de_computo_Estatales ?? "No Aplica";
-                        feriaInversion.observacion_alquiler_est = feria.add_Feria_local._Gastos_de_alquiler_Estatales ?? "No Aplica";
-                        feriaInversion.observacion_servicios_videoconferencias_est = feria.add_Feria_local._Gastos_de_servicios_de_videoconferencias_Estatales ?? "No Aplica";
-
-                        feriaInversion.cantidad_promocion_est = 0 ;
-                        feriaInversion.cantidad_acondicionamiento_est = 0 ;
-                        feriaInversion.cantidad_infraestructura_computo_est =0 ;
-                        feriaInversion.cantidad_alquiler_est = 0 ;
-                        feriaInversion.cantidad_servicios_videoconferencias_est = 0 ;
-                        feriaInversion.cantidad_total_est = 0 ;
+            //  return BadRequest("No se pueden consultar , no estas authenticado");
 
 
-
-
-                        feriaInversion.observacion_recurso_federal = "Distribucion Federal";
-                        feriaInversion.observacion_promocion_federal = feria.add_Feria_local.Gastos_de_promocion_difucion_Federales_Federales ?? "No Aplica";
-                        feriaInversion.observacion_acondicionamiento_federal = feria.add_Feria_local.Gastos_de_acondicionamiento_del_local_Federales ?? "No Aplica";
-                        feriaInversion.observacion_infraestructura_computo_federal = feria.add_Feria_local.Gastos_de_infraestructura_de_computo_Federales ?? "No Aplica";
-                        feriaInversion.observacion_alquiler_federal = feria.add_Feria_local.Gastos_de_alquiler_Federales ?? "No Aplica";
-                        feriaInversion.observacion_servicios_videoconferencias_federal = feria.add_Feria_local.Gastos_de_servicios_de_videoconferencias_Federales ?? "No Aplica";
-
-                        feriaInversion.cantidad_promocion_federal = feria.add_Feria_local.number1_Federales ;
-                        feriaInversion.cantidad_acondicionamiento_federal = feria.add_Feria_local.number2_Federales ;
-                        feriaInversion.cantidad_infraestructura_computo_federal = feria.add_Feria_local.number3_Federales;
-                        feriaInversion.cantidad_alquiler_federal = feria.add_Feria_local.number4_Federales ;
-                        feriaInversion.cantidad_servicios_videoconferencias_federal = feria.add_Feria_local.number5_Federales;;
-                        feriaInversion.cantidad_total_federal = feria.add_Feria_local.number1_Federales + feria.add_Feria_local.number2_Federales + feria.add_Feria_local.number3_Federales + feria.add_Feria_local.number4_Federales + feria.add_Feria_local.number5_Federales ;;
-
-                         break;
-                         case 3 : 
-                         feriaInversion.id_tipo_recurso = 3;
-
-                        feriaInversion.observacion_recurso_estatal = "Distribucion Estatal";
-                        feriaInversion.observacion_promocion_estatal = feria.add_Feria_local._Gastos_de_promocion_difucion_Estatales ?? "No Aplica";
-                        feriaInversion.observacion_acondicionamiento_est = feria.add_Feria_local._Gastos_de_acondicionamiento_del_local_Estatales ?? "No Aplica";
-                        feriaInversion.observacion_infraestructura_computo_est = feria.add_Feria_local._Gastos_de_infraestructura_de_computo_Estatales ?? "No Aplica";
-                        feriaInversion.observacion_alquiler_est = feria.add_Feria_local._Gastos_de_alquiler_Estatales ?? "No Aplica";
-                        feriaInversion.observacion_servicios_videoconferencias_est = feria.add_Feria_local._Gastos_de_servicios_de_videoconferencias_Estatales ?? "No Aplica";
-
-                        feriaInversion.cantidad_promocion_est = feria.add_Feria_local.number_1_Estatales ;
-                        feriaInversion.cantidad_acondicionamiento_est = feria.add_Feria_local.number_2_Estatales ;
-                        feriaInversion.cantidad_infraestructura_computo_est = feria.add_Feria_local.number_3_Estatales ;
-                        feriaInversion.cantidad_alquiler_est = feria.add_Feria_local.number_4_Estatales ;
-                        feriaInversion.cantidad_servicios_videoconferencias_est = feria.add_Feria_local.number_5_Estatales ;
-                        feriaInversion.cantidad_total_est = feria.add_Feria_local.number_1_Estatales + feria.add_Feria_local.number_2_Estatales + feria.add_Feria_local.number_3_Estatales + feria.add_Feria_local.number_4_Estatales + feria.add_Feria_local.number_5_Estatales ;
-
-
-
-
-                        feriaInversion.observacion_recurso_federal = "Distribucion Federal";
-                        feriaInversion.observacion_promocion_federal = feria.add_Feria_local.Gastos_de_promocion_difucion_Federales_Federales ?? "No Aplica";
-                        feriaInversion.observacion_acondicionamiento_federal = feria.add_Feria_local.Gastos_de_acondicionamiento_del_local_Federales ?? "No Aplica";
-                        feriaInversion.observacion_infraestructura_computo_federal = feria.add_Feria_local.Gastos_de_infraestructura_de_computo_Federales ?? "No Aplica";
-                        feriaInversion.observacion_alquiler_federal = feria.add_Feria_local.Gastos_de_alquiler_Federales ?? "No Aplica";
-                        feriaInversion.observacion_servicios_videoconferencias_federal = feria.add_Feria_local.Gastos_de_servicios_de_videoconferencias_Federales ?? "No Aplica";
-
-                        feriaInversion.cantidad_promocion_federal = 0 ;
-                        feriaInversion.cantidad_acondicionamiento_federal = 0 ;
-                        feriaInversion.cantidad_infraestructura_computo_federal = 0;
-                        feriaInversion.cantidad_alquiler_federal = 0;
-                        feriaInversion.cantidad_servicios_videoconferencias_federal = 0;
-                        feriaInversion.cantidad_total_federal = 0;
-
-
-                         break;
-                         case 4 : 
-                         feriaInversion.id_tipo_recurso = 4;
-
-                        feriaInversion.observacion_recurso_estatal = "Distribucion Estatal";
-                        feriaInversion.observacion_promocion_estatal = feria.add_Feria_local._Gastos_de_promocion_difucion_Estatales ?? "No Aplica";
-                        feriaInversion.observacion_acondicionamiento_est = feria.add_Feria_local._Gastos_de_acondicionamiento_del_local_Estatales ?? "No Aplica";
-                        feriaInversion.observacion_infraestructura_computo_est = feria.add_Feria_local._Gastos_de_infraestructura_de_computo_Estatales ?? "No Aplica";
-                        feriaInversion.observacion_alquiler_est = feria.add_Feria_local._Gastos_de_alquiler_Estatales ?? "No Aplica";
-                        feriaInversion.observacion_servicios_videoconferencias_est = feria.add_Feria_local._Gastos_de_servicios_de_videoconferencias_Estatales ?? "No Aplica";
-
-                        feriaInversion.cantidad_promocion_est = feria.add_Feria_local.number_1_Estatales ;
-                        feriaInversion.cantidad_acondicionamiento_est = feria.add_Feria_local.number_2_Estatales ;
-                        feriaInversion.cantidad_infraestructura_computo_est = feria.add_Feria_local.number_3_Estatales ;
-                        feriaInversion.cantidad_alquiler_est = feria.add_Feria_local.number_4_Estatales ;
-                        feriaInversion.cantidad_servicios_videoconferencias_est = feria.add_Feria_local.number_5_Estatales ;
-                        feriaInversion.cantidad_total_est = feria.add_Feria_local.number_1_Estatales + feria.add_Feria_local.number_2_Estatales + feria.add_Feria_local.number_3_Estatales + feria.add_Feria_local.number_4_Estatales + feria.add_Feria_local.number_5_Estatales ;
-
-
-
-
-                        feriaInversion.observacion_recurso_federal = "Distribucion Federal";
-                        feriaInversion.observacion_promocion_federal = feria.add_Feria_local.Gastos_de_promocion_difucion_Federales_Federales ?? "No Aplica";
-                        feriaInversion.observacion_acondicionamiento_federal = feria.add_Feria_local.Gastos_de_acondicionamiento_del_local_Federales ?? "No Aplica";
-                        feriaInversion.observacion_infraestructura_computo_federal = feria.add_Feria_local.Gastos_de_infraestructura_de_computo_Federales ?? "No Aplica";
-                        feriaInversion.observacion_alquiler_federal = feria.add_Feria_local.Gastos_de_alquiler_Federales ?? "No Aplica";
-                        feriaInversion.observacion_servicios_videoconferencias_federal = feria.add_Feria_local.Gastos_de_servicios_de_videoconferencias_Federales ?? "No Aplica";
-
-                        feriaInversion.cantidad_promocion_federal = feria.add_Feria_local.number1_Federales ;
-                        feriaInversion.cantidad_acondicionamiento_federal = feria.add_Feria_local.number2_Federales ;
-                        feriaInversion.cantidad_infraestructura_computo_federal = feria.add_Feria_local.number3_Federales;
-                        feriaInversion.cantidad_alquiler_federal = feria.add_Feria_local.number4_Federales ;
-                        feriaInversion.cantidad_servicios_videoconferencias_federal = feria.add_Feria_local.number5_Federales;;
-                        feriaInversion.cantidad_total_federal = feria.add_Feria_local.number1_Federales + feria.add_Feria_local.number2_Federales + feria.add_Feria_local.number3_Federales + feria.add_Feria_local.number4_Federales + feria.add_Feria_local.number5_Federales ;;
-
-                         break;
-
-                    }
-
-
-                    _contenedorTrabajo.feriaInversionRepository.Add(feriaInversion);
-                    _contenedorTrabajo.Save();
-                    int dataInserAct_1 = feriaInversion.id;
-
-                    feria.ferias_empleo_local.id_feria_inversion = dataInserAct_1;
-                    // -------------------------------------------------------------------------------
-                    _contenedorTrabajo.feriaLocalRepository.Add(feria.ferias_empleo_local);
-                    _contenedorTrabajo.Save();
-                    int dataInserAct = feria.ferias_empleo_local.id;
-
-
-                    // -------------------------------------------------------------------------------
-
-                    var feria_local_banner = new  ferias_locales_banners();
-                    feria_local_banner.id_feria_local = dataInserAct;
-                    feria_local_banner.feria_logo_ruta = filePathGeneral + "" + NombreArchivo; // rutaDestinoCompleta;
-                    feria_local_banner.nombre_feria_logo_ruta =  feria.ferias_empleo_local.file__name;
-                    _contenedorTrabajo.ferias_locales_bannerRespository.Add(feria_local_banner);
-                    _contenedorTrabajo.Save();
-
-                     await System.IO.File.WriteAllBytesAsync(string.Format("{0}" ,rutaDestinoCompleta  ), feria.ferias_empleo_local.feria_logo_banner);
-
-                    return Ok("SE INSERTO CORRECTAMENTE");
-                } else {
-                     return BadRequest("No se pueden consultar , no estas authenticado");
-                }
-
-
-
-
-
-
-            } catch (Exception e) {
-                return BadRequest("No se pueden consultar :  " + e.Message);
-            }
         }
+        catch (Exception e)
+        {
+            Debug.WriteLine(e.Message);
+            return BadRequest("No se pueden consultar :  " + e.Message);
+        }
+    }
 
 
-        [HttpGet("get-ferias-locales")]
+    [HttpGet("get-ferias-locales")]
         public async Task<IActionResult> get_Ferias_locales() {
 
-            var data = await _contenedorTrabajo.feriaLocalRepository.GetAllAsync(includeProperties:"Feria_Inversion_FK,ferias_locales_banners,id_unidad_responsable_asociada_FK,"
+            var data = await _contenedorTrabajo.feriaLocalRepository.GetAllAsync(includeProperties:"ferias_locales_banners,id_unidad_responsable_asociada_FK,"
                             +"id_entidad_feria_presencial_ubicacion,id_entidad_asociado,id_feria_nacional_asociado," 
                             +"usuario_Actualizo,usuario_Inserto,justificacion_feria_local,id_poblacion_especifica_asociado," 
                             +"id_tipo_evento_asociado,id_actividad_economica_asociado,id_clasificacion_asociado,"
-                            +"id_feriatamanio_asociado,id_modalidad_asociado,estatus_feria_asociado,id_modalidad_asociado,id_actividad_complementaria_asociado_FK,"
-                            +"id_tipo_recurso_asociado"
+                            +"id_feriatamanio_asociado,id_modalidad_asociado,estatus_feria_asociado,id_modalidad_asociado,"
+                            +"id_tipo_recurso_asociado" // Feria_Inversion_FK,id_actividad_complementaria_asociado_FK,
                             );
             return Ok(data);
 

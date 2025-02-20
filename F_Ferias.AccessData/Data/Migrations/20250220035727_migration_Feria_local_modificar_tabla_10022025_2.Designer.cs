@@ -4,6 +4,7 @@ using F_Ferias.AccessData;
 using F_Ferias.Models.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -12,9 +13,10 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace F_Ferias.AccessData.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250220035727_migration_Feria_local_modificar_tabla_10022025_2")]
+    partial class migration_Feria_local_modificar_tabla_10022025_2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -905,8 +907,6 @@ namespace F_Ferias.AccessData.Data.Migrations
 
                     b.HasIndex("id_unidadresponsable");
 
-                    b.HasIndex("justificacion_feria");
-
                     b.HasIndex("modalidad");
 
                     b.HasIndex("poblacion_especifica");
@@ -1756,10 +1756,6 @@ namespace F_Ferias.AccessData.Data.Migrations
                         .WithMany()
                         .HasForeignKey("id_unidadresponsable");
 
-                    b.HasOne("F_Ferias.Models.Models.justificaciones", "justificacion_feria_local")
-                        .WithMany()
-                        .HasForeignKey("justificacion_feria");
-
                     b.HasOne("F_Ferias.Models.Models.feria_modalidad", "id_modalidad_asociado")
                         .WithMany()
                         .HasForeignKey("modalidad");
@@ -1807,8 +1803,6 @@ namespace F_Ferias.AccessData.Data.Migrations
                     b.Navigation("id_tipo_recurso_asociado");
 
                     b.Navigation("id_unidad_responsable_asociada_FK");
-
-                    b.Navigation("justificacion_feria_local");
 
                     b.Navigation("usuario_Actualizo");
 

@@ -18,7 +18,6 @@ namespace F_Ferias.Models.Models;
     [Key]
     public int id { get; set; }
 
-    // public string? Nombre { get; set; }
     public int? estatus { get; set; }  // FK Estatus feria
 
     [Display(Name = "Clasificación *")]
@@ -38,7 +37,9 @@ namespace F_Ferias.Models.Models;
 
     [Display(Name = "Otro tipo, ¿Cuál?  *")]
     [StringLength(50, ErrorMessage = "50 caracteres mínimos")]
-    public string? otra_actividad_economica { get; set; }
+    public string otra_actividad_economica { get; set; }
+
+
 
 
 
@@ -50,15 +51,15 @@ namespace F_Ferias.Models.Models;
 
 
     [Display(Name = "Tipo de evento (Población) *")]
-    public int? tipo_evento { get; set; } // FK
+    public int tipo_evento { get; set; } // FK
 
     [Display(Name = "Población específica * ")]
 
-    public int? poblacion_especifica { get; set; } = 10; // FK
+    public int poblacion_especifica { get; set; } = 10; // FK
 
     [Display(Name = "Otro tipo de población, ¿Cuál? * ")]
-    [StringLength(50, ErrorMessage = "50 caracteres mínimos")]
-    public string? otros_tipo_poblacion { get; set; }
+
+    public string otros_tipo_poblacion { get; set; }
 
 
 
@@ -70,8 +71,7 @@ namespace F_Ferias.Models.Models;
     public int? justificacion_feria { get; set; } // Fk Justificacion
 
     [Display(Name = "Otra justificación, ¿Cual? *")]
-    [StringLength(50, ErrorMessage = "50 caracteres mínimos")]
-    public string? otros_tipo_justificacion { get; set; } // otra justificacion
+    public string otros_tipo_justificacion { get; set; } // otra justificacion
 
 
 
@@ -122,7 +122,7 @@ namespace F_Ferias.Models.Models;
 
     [Display(Name = "Nombre del evento *")]
     [StringLength(50, ErrorMessage = "50 caracteres mínimos")]
-    public string? titulo { get; set; }
+    public string titulo { get; set; }
 
     [Display(Name = "Entidad federativa *")]
     public int? id_entidad { get; set; }        // FK
@@ -194,25 +194,25 @@ namespace F_Ferias.Models.Models;
 
 
     // [Display(Name = "¿El evento virtual se llevará a cabo en el Portal del Empleo? *")]
-     public bool?  evento_virtual_portal_empleo { get; set; }   // Misma sede feria del empleo portal www.
+     public bool? evento_virtual_portal_empleo { get; set; }   // Misma sede feria del empleo portal www.
 
-    public string? plataforma { get; set; }
-    public string? plataforma_evento { get; set; }
-    public string? plataforma_contrasena { get; set; }
-    public string? plataforma_url { get; set; }
+    public string plataforma { get; set; }
+    public string plataforma_evento { get; set; }
+    public string plataforma_contrasena { get; set; }
+    public string plataforma_url { get; set; }
 
 
 
-    public string? cp_direccion { get; set; }
-    public int? id_entidad_federativa_feria_local { get; set; }
-    public string? municipio { get; set; }
-    public string? colonia { get; set; }
-    public string? vialidad { get; set; }
-    public string? sede_evento { get; set; }
-    public string? calle { get; set; }
+    public string cp_direccion { get; set; }
+    public int id_entidad_federativa_feria_local { get; set; }
+    public string municipio { get; set; }
+    public string colonia { get; set; }
+    public string vialidad { get; set; }
+    public string sede_evento { get; set; }
+    public string calle { get; set; }
     public int? numeroExt { get; set; }
     public int? numeroInt { get; set; }
-    public string? referencias_direccion { get; set; }
+    public string referencias_direccion { get; set; }
 
 
 
@@ -260,13 +260,103 @@ namespace F_Ferias.Models.Models;
    // SECCION 4----------------------------------------------------------------------------
 
     public bool? talleres_para_personas_buscadoras_empleo { get; set; } // FK
-    public string  otra_tipo_recurso { get; set; }    
-    public int? id_actividad_complementaria { get; set; } // FK
+
     public bool? actividad_complementaria { get; set; } // FK
 
     public string otra_actividad { get; set; }
-    public int? id_feria_inversion { get; set; } // FK
-    public int? id_tipo_recurso { get; set; } // FK
+
+
+
+
+
+
+
+
+    // Seccion 4    --------------------------------------------------------------------------------------------------------
+
+ 
+    public int id_tipo_recurso { get; set; }
+
+
+
+
+    [StringLength(50)]
+    public string observacion_recurso_estatal { get; set; } = "Distribución completamente estatal";
+
+
+    [StringLength(50)]
+    public string observacion_promocion_estatal { get; set; }
+
+
+    public float cantidad_promocion_est { get; set; }
+
+
+
+
+    public string observacion_acondicionamiento_est { get; set; }
+
+
+    public float cantidad_acondicionamiento_est { get; set; }
+
+
+
+    public string observacion_infraestructura_computo_est { get; set; }
+
+
+    public float cantidad_infraestructura_computo_est { get; set; }
+
+
+    public string observacion_servicios_videoconferencias_est { get; set; }
+
+
+
+    public float cantidad_servicios_videoconferencias_est { get; set; }
+
+
+    public float cantidad_total_est { get; set; }
+
+
+
+
+    // -------------------------------------------------------------------------------------------
+
+    public string observacion_recurso_federal { get; set; } = "Distribución completamente federal";
+
+
+
+    public string observacion_promocion_federal { get; set; }
+
+    public float cantidad_promocion_federal { get; set; }
+
+    public string observacion_acondicionamiento_federal { get; set; }
+
+
+    public float cantidad_acondicionamiento_federal { get; set; }
+
+
+    public string observacion_infraestructura_computo_federal { get; set; }
+
+
+
+    public float cantidad_infraestructura_computo_federal { get; set; }
+
+  
+    public string observacion_alquiler_federal { get; set; }
+
+   
+
+    public float cantidad_alquiler_federal { get; set; }
+
+    public string observacion_servicios_videoconferencias_federal { get; set; }
+
+
+    public float cantidad_servicios_videoconferencias_federal { get; set; }
+
+    public float cantidad_total_federal { get; set; }
+
+
+
+
 
     
 
@@ -286,6 +376,8 @@ namespace F_Ferias.Models.Models;
 
 
 
+
+
     // CLAVES FORANEAS  ---------------------------------------------------------------------------------
 
     [ForeignKey("clasificacion")]
@@ -300,14 +392,10 @@ namespace F_Ferias.Models.Models;
     [ForeignKey("tipo_evento")]
     public virtual tipo_evento_ferias id_tipo_evento_asociado { get; set; }
 
+ 
     [ForeignKey("justificacion_feria")]
     public virtual justificaciones justificacion_feria_local { get; set; }
- 
   
-
-    [ForeignKey("id_actividad_complementaria")]
-    public virtual actividades_complementarias  id_actividad_complementaria_asociado_FK { get; set; }
-
     [ForeignKey("estatus")]
     public virtual ferias_estatus estatus_feria_asociado { get; set; }
 
@@ -336,8 +424,6 @@ namespace F_Ferias.Models.Models;
     [ForeignKey("id_tipo_recurso")]  // Clave foranea  # 1 En especie  | # 2  Federal # 3 Estatal   # 4 Mixta
     public virtual tipo_recurso id_tipo_recurso_asociado { get; set; }
 
-    [ForeignKey("id_feria_inversion")] // Tabla donde se guardan las distribuciones de FERIA DE INVERION
-     public virtual feria_inversion Feria_Inversion_FK { get; set; }
 
      public virtual  ICollection<ferias_locales_banners> ferias_locales_banners { get; set; }  
   

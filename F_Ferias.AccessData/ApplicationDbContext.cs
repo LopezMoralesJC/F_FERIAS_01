@@ -39,7 +39,7 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser , Applicat
 
       public DbSet<ferias_empleo_local> Ferias_Empleo_Local { get; set; }
 
-      public DbSet<feria_inversion> Feria_Inversion { get; set; }
+      // public DbSet<feria_inversion> Feria_Inversion { get; set; }
 
       public DbSet<feria_modalidad> Feria_Modalidad { get; set; }
 
