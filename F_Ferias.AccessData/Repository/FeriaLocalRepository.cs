@@ -14,10 +14,21 @@ namespace F_Ferias.AccessData.Repository ;
         _context = context;
     }
 
-    public void UpdateFeriaLocal(ferias_empleo_local ferias_Empleo_Local)
+    public void UpdateFeriaLocal(ferias_empleo_local feria)
     {
-            var objFromDb = _context.Ferias_Empleo_Local.FirstOrDefault(c => c.id == ferias_Empleo_Local.id);
-                objFromDb = ferias_Empleo_Local;
-                _context.SaveChanges();
+            // var objFromDb = _context.Ferias_Empleo_Local.FirstOrDefault(c => c.id == feria.id);
+            // Console.WriteLine(objFromDb);
+            //     objFromDb = feria;
+            //     _context.SaveChanges();
+
+
+
+        var dbBook = _context.Ferias_Empleo_Local.Find(feria.id);
+
+
+        _context.Entry(dbBook).CurrentValues.SetValues(feria);
+
+        _context.SaveChanges();
     }
 }
+   

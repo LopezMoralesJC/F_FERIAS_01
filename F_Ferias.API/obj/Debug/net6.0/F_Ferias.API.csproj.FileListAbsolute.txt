@@ -341,3 +341,8 @@ D:\Users\juancarlos.lopez\source\repos\F_FERIAS\F_FERIAS_01\F_Ferias.API\bin\Deb
 D:\Users\juancarlos.lopez\source\repos\F_FERIAS\F_FERIAS_01\F_Ferias.API\bin\Debug\net6.0\publish\appsettings.json
 D:\Users\juancarlos.lopez\source\repos\F_FERIAS\F_FERIAS_01\F_Ferias.API\bin\Debug\net6.0\publish\F_Ferias.API.deps.json
 D:\Users\juancarlos.lopez\source\repos\F_FERIAS\F_FERIAS_01\F_Ferias.API\bin\Debug\net6.0\publish\F_Ferias.API.runtimeconfig.json
+C:\Users\japoc\source\repos\F_FERIAS_01\F_Ferias.API\bin\Debug\net6.0\publish\web.config
+C:\Users\japoc\source\repos\F_FERIAS_01\F_Ferias.API\bin\Debug\net6.0\publish\appsettings.Development.json
+C:\Users\japoc\source\repos\F_FERIAS_01\F_Ferias.API\bin\Debug\net6.0\publish\appsettings.json
+C:\Users\japoc\source\repos\F_FERIAS_01\F_Ferias.API\bin\Debug\net6.0\publish\F_Ferias.API.deps.json
+C:\Users\japoc\source\repos\F_FERIAS_01\F_Ferias.API\bin\Debug\net6.0\publish\F_Ferias.API.runtimeconfig.json

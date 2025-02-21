@@ -9,6 +9,6 @@ namespace F_Ferias.AccessData.IRepository
 {
     public interface IFeriaLocalRepository : IRepository<ferias_empleo_local> 
     {
-            void UpdateFeriaLocal(ferias_empleo_local ferias_Empleo_Local);
+            void UpdateFeriaLocal(ferias_empleo_local feria);
     }
 }
