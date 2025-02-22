@@ -280,11 +280,11 @@ namespace F_Ferias.Models.Models;
 
 
 
-    [StringLength(50)]
+  
     public string observacion_recurso_estatal { get; set; } = "Distribución completamente estatal";
 
 
-    [StringLength(50)]
+
     public string observacion_promocion_estatal { get; set; }
 
 
@@ -304,6 +304,15 @@ namespace F_Ferias.Models.Models;
 
 
     public float cantidad_infraestructura_computo_est { get; set; }
+
+
+
+   public string observacion_alquiler_est { get; set; } = "No Aplica";
+
+
+   public float cantidad_alquiler_est { get; set; }
+
+
 
 
     public string observacion_servicios_videoconferencias_est { get; set; }

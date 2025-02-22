@@ -1152,6 +1152,70 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\flc__uploads\2025\febrero\202502202030229634180_Black Minimalist Corporate Professional Profile LinkedIn Banner (1) (1) (1) (1).png))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\flc__uploads\2025\febrero\202502202051009360558_Black Minimalist Corporate Professional Profile LinkedIn Banner (1) (1) (1) (1).png))">
+      <SourceType>Package</SourceType>
+      <SourceId>F_Ferias.API</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/F_Ferias.API</BasePath>
+      <RelativePath>Uploads/flc__uploads/2025/febrero/202502202051009360558_Black Minimalist Corporate Professional Profile LinkedIn Banner (1) (1) (1) (1).png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\flc__uploads\2025\febrero\202502202051009360558_Black Minimalist Corporate Professional Profile LinkedIn Banner (1) (1) (1) (1).png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\flc__uploads\2025\febrero\202502202130243483855_Black Minimalist Corporate Professional Profile LinkedIn Banner (1) (1) (1) (1).png))">
+      <SourceType>Package</SourceType>
+      <SourceId>F_Ferias.API</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/F_Ferias.API</BasePath>
+      <RelativePath>Uploads/flc__uploads/2025/febrero/202502202130243483855_Black Minimalist Corporate Professional Profile LinkedIn Banner (1) (1) (1) (1).png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\flc__uploads\2025\febrero\202502202130243483855_Black Minimalist Corporate Professional Profile LinkedIn Banner (1) (1) (1) (1).png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\flc__uploads\2025\febrero\202502202131178216045_Black Minimalist Corporate Professional Profile LinkedIn Banner (1) (1) (1).png))">
+      <SourceType>Package</SourceType>
+      <SourceId>F_Ferias.API</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/F_Ferias.API</BasePath>
+      <RelativePath>Uploads/flc__uploads/2025/febrero/202502202131178216045_Black Minimalist Corporate Professional Profile LinkedIn Banner (1) (1) (1).png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\flc__uploads\2025\febrero\202502202131178216045_Black Minimalist Corporate Professional Profile LinkedIn Banner (1) (1) (1).png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\flc__uploads\2025\febrero\202502202348048302206_cbimage (2).png))">
+      <SourceType>Package</SourceType>
+      <SourceId>F_Ferias.API</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/F_Ferias.API</BasePath>
+      <RelativePath>Uploads/flc__uploads/2025/febrero/202502202348048302206_cbimage (2).png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\flc__uploads\2025\febrero\202502202348048302206_cbimage (2).png))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\fna__uploads\2024\diciembre\202412092338406913283_202411252115543390148_Search_job_svg.svg))">
       <SourceType>Package</SourceType>
       <SourceId>F_Ferias.API</SourceId>

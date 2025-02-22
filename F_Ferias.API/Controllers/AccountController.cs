@@ -345,14 +345,18 @@ namespace F_Ferias.API.Controllers;
 
             // -------------------------------------------------------------------------------
 
-            var feria_local_banner = new  ferias_locales_banners();
-            feria_local_banner.id_feria_local = dataInserAct;
-            feria_local_banner.feria_logo_ruta = filePathGeneral + "" + NombreArchivo; // rutaDestinoCompleta;
-            feria_local_banner.nombre_feria_logo_ruta =  feria.file__name;
-            _contenedorTrabajo.ferias_locales_bannerRespository.Add(feria_local_banner);
-            _contenedorTrabajo.Save();
+            if(feria.feria_logo_banner != null && feria.file__name != null){ 
+                var feria_local_banner = new  ferias_locales_banners();
+                feria_local_banner.id_feria_local = dataInserAct;
+                feria_local_banner.feria_logo_ruta = filePathGeneral + "" + NombreArchivo; // rutaDestinoCompleta;
+                feria_local_banner.nombre_feria_logo_ruta =  feria.file__name;
+                _contenedorTrabajo.ferias_locales_bannerRespository.Add(feria_local_banner);
+                _contenedorTrabajo.Save();
 
-              await System.IO.File.WriteAllBytesAsync(string.Format("{0}" ,rutaDestinoCompleta  ), feria.feria_logo_banner);
+                await System.IO.File.WriteAllBytesAsync(string.Format("{0}" ,rutaDestinoCompleta  ), feria.feria_logo_banner);
+             }
+
+
 
             return Ok("SE Actualizo CORRECTAMENTE con ID : " + dataInserAct);
 

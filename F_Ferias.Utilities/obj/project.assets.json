@@ -2375,19 +2375,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\japoc\\.nuget\\packages\\": {}
+    "d:\\Users\\juancarlos.lopez\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\japoc\\source\\repos\\F_FERIAS_01\\F_Ferias.Utilities\\F_Ferias.Utilities.csproj",
+      "projectUniqueName": "D:\\Users\\juancarlos.lopez\\source\\repos\\F_FERIAS\\F_FERIAS_01\\F_Ferias.Utilities\\F_Ferias.Utilities.csproj",
       "projectName": "F_Ferias.Utilities",
-      "projectPath": "C:\\Users\\japoc\\source\\repos\\F_FERIAS_01\\F_Ferias.Utilities\\F_Ferias.Utilities.csproj",
-      "packagesPath": "C:\\Users\\japoc\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\japoc\\source\\repos\\F_FERIAS_01\\F_Ferias.Utilities\\obj\\",
+      "projectPath": "D:\\Users\\juancarlos.lopez\\source\\repos\\F_FERIAS\\F_FERIAS_01\\F_Ferias.Utilities\\F_Ferias.Utilities.csproj",
+      "packagesPath": "d:\\Users\\juancarlos.lopez\\.nuget\\packages\\",
+      "outputPath": "D:\\Users\\juancarlos.lopez\\source\\repos\\F_FERIAS\\F_FERIAS_01\\F_Ferias.Utilities\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\japoc\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "d:\\Users\\juancarlos.lopez\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2395,18 +2395,17 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\japoc\\source\\repos\\F_FERIAS_01\\F_Ferias.AccessData\\F_Ferias.AccessData.csproj": {
-              "projectPath": "C:\\Users\\japoc\\source\\repos\\F_FERIAS_01\\F_Ferias.AccessData\\F_Ferias.AccessData.csproj"
+            "D:\\Users\\juancarlos.lopez\\source\\repos\\F_FERIAS\\F_FERIAS_01\\F_Ferias.AccessData\\F_Ferias.AccessData.csproj": {
+              "projectPath": "D:\\Users\\juancarlos.lopez\\source\\repos\\F_FERIAS\\F_FERIAS_01\\F_Ferias.AccessData\\F_Ferias.AccessData.csproj"
             },
-            "C:\\Users\\japoc\\source\\repos\\F_FERIAS_01\\F_Ferias.Models\\F_Ferias.Models.csproj": {
-              "projectPath": "C:\\Users\\japoc\\source\\repos\\F_FERIAS_01\\F_Ferias.Models\\F_Ferias.Models.csproj"
+            "D:\\Users\\juancarlos.lopez\\source\\repos\\F_FERIAS\\F_FERIAS_01\\F_Ferias.Models\\F_Ferias.Models.csproj": {
+              "projectPath": "D:\\Users\\juancarlos.lopez\\source\\repos\\F_FERIAS\\F_FERIAS_01\\F_Ferias.Models\\F_Ferias.Models.csproj"
             }
           }
         }
@@ -2436,26 +2435,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[6.0.32, 6.0.32]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[6.0.32, 6.0.32]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[6.0.32, 6.0.32]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }

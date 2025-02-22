@@ -668,6 +668,9 @@ namespace F_Ferias.AccessData.Data.Migrations
                     b.Property<float>("cantidad_acondicionamiento_federal")
                         .HasColumnType("real");
 
+                    b.Property<float>("cantidad_alquiler_est")
+                        .HasColumnType("real");
+
                     b.Property<float>("cantidad_alquiler_federal")
                         .HasColumnType("real");
 
@@ -797,6 +800,9 @@ namespace F_Ferias.AccessData.Data.Migrations
                     b.Property<string>("observacion_acondicionamiento_federal")
                         .HasColumnType("text");
 
+                    b.Property<string>("observacion_alquiler_est")
+                        .HasColumnType("text");
+
                     b.Property<string>("observacion_alquiler_federal")
                         .HasColumnType("text");
 
@@ -807,15 +813,13 @@ namespace F_Ferias.AccessData.Data.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("observacion_promocion_estatal")
-                        .HasMaxLength(50)
-                        .HasColumnType("character varying(50)");
+                        .HasColumnType("text");
 
                     b.Property<string>("observacion_promocion_federal")
                         .HasColumnType("text");
 
                     b.Property<string>("observacion_recurso_estatal")
-                        .HasMaxLength(50)
-                        .HasColumnType("character varying(50)");
+                        .HasColumnType("text");
 
                     b.Property<string>("observacion_recurso_federal")
                         .HasColumnType("text");
