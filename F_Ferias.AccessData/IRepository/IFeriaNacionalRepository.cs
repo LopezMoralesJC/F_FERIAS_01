@@ -11,7 +11,7 @@ namespace F_Ferias.AccessData.IRepository;
 
            IEnumerable<ferias_nacional> GetListaFeriasNacionales();
 
-           void UpdateFeriaNacional(ferias_nacional ferias_Nacional);
+           void UpdateFeriaNacional(ferias_nacional feria);
 
 
     }

@@ -20,11 +20,16 @@ public class FeriaNacionalRepository : Repository<ferias_nacional>, IFeriaNacion
        return _context.Ferias_Nacional.Where(f => f.estatus == 1);
     }
 
-    public void UpdateFeriaNacional(ferias_nacional ferias_Nacional)
+    public void UpdateFeriaNacional(ferias_nacional feria)
     {
-             var objFromDb = _context.Ferias_Nacional.FirstOrDefault(c => c.id == ferias_Nacional.id);
-                objFromDb = ferias_Nacional;
-                _context.SaveChanges();
+            //  var objFromDb = _context.Ferias_Nacional.FirstOrDefault(c => c.id == ferias_Nacional.id);
+            //     objFromDb = ferias_Nacional;
+            //     _context.SaveChanges();
+
+
+        var feria_ant = _context.Ferias_Nacional.Find(feria.id);
+        _context.Entry(feria_ant).CurrentValues.SetValues(feria);
+        _context.SaveChanges();
     }
 
     IQueryable<ferias_nacional> IFeriaNacionalRepository.GetAllAsync__2() {

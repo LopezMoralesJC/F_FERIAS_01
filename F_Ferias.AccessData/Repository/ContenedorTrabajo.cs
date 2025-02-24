@@ -32,6 +32,7 @@ namespace F_Ferias.AccessData.Repository;
             feriaLocalRepository = new FeriaLocalRepository(_context);
             ferias_locales_bannerRespository = new Ferias_locales_bannerRespository(_context);
             feriaInversionRepository = new FeriaInversionRepository(_context);
+            feria_Nacional_BannnerRepository = new Ferias_nacionales_bannerRepository(_context);
         }
 
 
@@ -60,9 +61,14 @@ namespace F_Ferias.AccessData.Repository;
 
         public IFeriaLocalRepository feriaLocalRepository  { get; private set; }
 
+        //   IFerias_locales_bannerRespository ferias_locales_bannerRespository {get;}
+
         public IFerias_locales_bannerRespository ferias_locales_bannerRespository  { get; private set; }
 
         public IFeriaInversionRepository feriaInversionRepository  { get; private set; }
+
+        public  IFerias_nacionales_bannerRepository  feria_Nacional_BannnerRepository { get; private set; }
+        // IFerias_nacionales_bannerRepository  feria_Nacional_BannnerRepository
 
     #endregion
 

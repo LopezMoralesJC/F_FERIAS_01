@@ -44,6 +44,10 @@ namespace F_Ferias.API.Controllers;
         }
 
 
+
+
+        // Identity
+
         [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
         [HttpPost("register")]
         public async Task<IActionResult> Register([FromBody] Register model) {
@@ -206,6 +210,41 @@ namespace F_Ferias.API.Controllers;
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+         // Ferias Nacionales ---------------------------------------------------------------------------
+
+
         // [Authorize(Roles = "Administrador Consejero Laboral")]
         [HttpPost("add-feria-na")]
         public async Task<IActionResult> AddFeria(ferias_nacional feria) {
@@ -255,308 +294,6 @@ namespace F_Ferias.API.Controllers;
             }
 
         }
-
-
-
-    [HttpPost("add-feria-local")]
-     public async Task<IActionResult> Add_Feria_local(F_Ferias.Models.Models.ferias_empleo_local feria)    {
-        try
-        {
-            CultureInfo ci = new CultureInfo("es-ES");
-            DateTime sqlFormattedDate = (DateTime)DateTime.UtcNow; ;
-            string fecha_titulo = sqlFormattedDate.ToString("yyyyMMddHHmmssfffffff");
-            string YFormateada = sqlFormattedDate.ToString("yyyy", ci);
-            string MFormateada = sqlFormattedDate.ToString("MMMM", ci);
-            string filePathGeneral = "wwwroot\\Uploads\\flc__uploads" + string.Format("\\{0}\\{1}", YFormateada, MFormateada + "\\");
-            string NombreArchivo = fecha_titulo + "_" + feria.file__name;
-            string rutaDestinoCompleta = Path.Combine(_environment.ContentRootPath + filePathGeneral, NombreArchivo);
-            bool exist = Directory.Exists(_environment.ContentRootPath + filePathGeneral);
-
-            if (!Directory.Exists(_environment.ContentRootPath + filePathGeneral))
-            {
-                Directory.CreateDirectory(_environment.ContentRootPath + filePathGeneral);
-            }
-            else { }
-
-
-            _contenedorTrabajo.feriaLocalRepository.Add(feria);
-            _contenedorTrabajo.Save();
-            int dataInserAct = feria.id;
-
-
-            // -------------------------------------------------------------------------------
-
-            var feria_local_banner = new  ferias_locales_banners();
-            feria_local_banner.id_feria_local = dataInserAct;
-            feria_local_banner.feria_logo_ruta = filePathGeneral + "" + NombreArchivo; // rutaDestinoCompleta;
-            feria_local_banner.nombre_feria_logo_ruta =  feria.file__name;
-            _contenedorTrabajo.ferias_locales_bannerRespository.Add(feria_local_banner);
-            _contenedorTrabajo.Save();
-
-              await System.IO.File.WriteAllBytesAsync(string.Format("{0}" ,rutaDestinoCompleta  ), feria.feria_logo_banner);
-
-            return Ok("SE INSERTO CORRECTAMENTE");
-
-            //  return BadRequest("No se pueden consultar , no estas authenticado");
-
-
-        }
-        catch (Exception e)
-        {
-            Debug.WriteLine(e.Message);
-            return BadRequest("No se pueden consultar :  " + e.Message);
-        }
-    }
-
-
-
-
-
-
-
-
-
-
-  [HttpPost("update-feria-local")]
-     public async Task<IActionResult> Update_Feria_local(F_Ferias.Models.Models.ferias_empleo_local feria)    {
-        try
-        {
-            CultureInfo ci = new CultureInfo("es-ES");
-            DateTime sqlFormattedDate = (DateTime)DateTime.UtcNow; ;
-            string fecha_titulo = sqlFormattedDate.ToString("yyyyMMddHHmmssfffffff");
-            string YFormateada = sqlFormattedDate.ToString("yyyy", ci);
-            string MFormateada = sqlFormattedDate.ToString("MMMM", ci);
-            string filePathGeneral = "wwwroot\\Uploads\\flc__uploads" + string.Format("\\{0}\\{1}", YFormateada, MFormateada + "\\");
-            string NombreArchivo = fecha_titulo + "_" + feria.file__name;
-            string rutaDestinoCompleta = Path.Combine(_environment.ContentRootPath + filePathGeneral, NombreArchivo);
-            bool exist = Directory.Exists(_environment.ContentRootPath + filePathGeneral);
-
-            if (!Directory.Exists(_environment.ContentRootPath + filePathGeneral))
-            {
-                Directory.CreateDirectory(_environment.ContentRootPath + filePathGeneral);
-            }
-            else { }
-
-
-            _contenedorTrabajo.feriaLocalRepository.UpdateFeriaLocal(feria);
-            _contenedorTrabajo.Save();
-            int dataInserAct = feria.id;
-
-
-            // -------------------------------------------------------------------------------
-
-            if(feria.feria_logo_banner != null && feria.file__name != null){ 
-                var feria_local_banner = new  ferias_locales_banners();
-                feria_local_banner.id_feria_local = dataInserAct;
-                feria_local_banner.feria_logo_ruta = filePathGeneral + "" + NombreArchivo; // rutaDestinoCompleta;
-                feria_local_banner.nombre_feria_logo_ruta =  feria.file__name;
-                _contenedorTrabajo.ferias_locales_bannerRespository.Add(feria_local_banner);
-                _contenedorTrabajo.Save();
-
-                await System.IO.File.WriteAllBytesAsync(string.Format("{0}" ,rutaDestinoCompleta  ), feria.feria_logo_banner);
-             }
-
-
-
-            return Ok("SE Actualizo CORRECTAMENTE con ID : " + dataInserAct);
-
-            //  return BadRequest("No se pueden consultar , no estas authenticado");
-
-
-        }
-        catch (Exception e)
-        {
-            Debug.WriteLine(e.Message);
-            return BadRequest("No se pueden consultar :  " + e.Message);
-        }
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    [HttpGet("get-ferias-locales")]
-        public async Task<IActionResult> get_Ferias_locales() {
-
-            var data = await _contenedorTrabajo.feriaLocalRepository.GetAllAsync(includeProperties:"ferias_locales_banners,id_unidad_responsable_asociada_FK,"
-                            +"id_entidad_feria_presencial_ubicacion,id_entidad_asociado,id_feria_nacional_asociado," 
-                            +"usuario_Actualizo,usuario_Inserto,justificacion_feria_local,id_poblacion_especifica_asociado," 
-                            +"id_tipo_evento_asociado,id_actividad_economica_asociado,id_clasificacion_asociado,"
-                            +"id_feriatamanio_asociado,id_modalidad_asociado,estatus_feria_asociado,id_modalidad_asociado,"
-                            +"id_tipo_recurso_asociado" // Feria_Inversion_FK,id_actividad_complementaria_asociado_FK,
-                            );
-            return Ok(data);
-
-        }
-
-        // [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
-        [HttpPost("get-feria-local")]
-        public IActionResult get_Feria_local([FromBody] int id) {
-            var data = _contenedorTrabajo.feriaLocalRepository.GetAll_2(
-                includeProperties: "ferias_locales_banners,id_unidad_responsable_asociada_FK,"
-                                    + "id_entidad_feria_presencial_ubicacion,id_entidad_asociado,id_feria_nacional_asociado,"
-                                    + "usuario_Actualizo,usuario_Inserto,justificacion_feria_local,id_poblacion_especifica_asociado,"
-                                    + "id_tipo_evento_asociado,id_actividad_economica_asociado,id_clasificacion_asociado,"
-                                    + "id_feriatamanio_asociado,id_modalidad_asociado,estatus_feria_asociado,id_modalidad_asociado,"
-                                    + "id_tipo_recurso_asociado" //Feria_Inversion_FK,id_actividad_complementaria_asociado_FK,
-                                    , filter: p => p.id == id );
-            return Ok(data);
-
-        }
-
-
-
-        // [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
-        [HttpPost("pagination-feria-local")]
-        public async Task<IActionResult> get__Pagination__flc([FromBody] int pageNumber) {
-            var feria =  _contenedorTrabajo.feriaLocalRepository.GetAll_2(includeProperties:"ferias_locales_banners,id_unidad_responsable_asociada_FK,"
-                                                                                                  +"id_entidad_feria_presencial_ubicacion,id_entidad_asociado,id_feria_nacional_asociado," 
-                                                                                                  +"usuario_Actualizo,usuario_Inserto,justificacion_feria_local,id_poblacion_especifica_asociado," 
-                                                                                                  +"id_tipo_evento_asociado,id_actividad_economica_asociado,id_clasificacion_asociado,"
-                                                                                                  +"id_feriatamanio_asociado,id_modalidad_asociado,estatus_feria_asociado,id_modalidad_asociado,"
-                                                                                                  +"id_tipo_recurso_asociado"  // Feria_Inversion_FK,id_actividad_complementaria_asociado_FK,
-                                                                                                   );
-              // Ensure pageNumber is at least 1
-            if (pageNumber < 1)
-            {
-                pageNumber = 1;
-            }
-             int pageSize = 10;
-             return Ok(await PaginatedList<ferias_empleo_local>.CreateAsync((IQueryable<ferias_empleo_local>)feria, pageNumber, pageSize ));
-        }
-
-
-
-
-
-
-        // [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
-        [HttpPost("pagination-feria-local-entidad")]
-        public async Task<IActionResult> get__Pagination__flc_entidad(modelData modelData ) {
-            var feria =  _contenedorTrabajo.feriaLocalRepository.GetAll_2(
-                includeProperties:"ferias_locales_banners,id_unidad_responsable_asociada_FK,"
-                +"id_entidad_feria_presencial_ubicacion,id_entidad_asociado,id_feria_nacional_asociado," 
-                +"usuario_Actualizo,usuario_Inserto,justificacion_feria_local,id_poblacion_especifica_asociado," 
-                +"id_tipo_evento_asociado,id_actividad_economica_asociado,id_clasificacion_asociado,"
-                +"id_feriatamanio_asociado,id_modalidad_asociado,estatus_feria_asociado,id_modalidad_asociado,"
-                +"id_tipo_recurso_asociado"  , filter: p => p.id_entidad == modelData.id_entidad);
-                  // Feria_Inversion_FK,      ,id_actividad_complementaria_asociado_FK,                                                                          
-              // Ensure pageNumber is at least 1
-            if (modelData.pagenumber < 1)
-            {
-                modelData.pagenumber = 1;
-            }
-             int pageSize = 10;
-             return Ok(await PaginatedList<ferias_empleo_local>
-             .CreateAsync((IQueryable<ferias_empleo_local>)feria, modelData.pagenumber, pageSize ));
-        }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -664,6 +401,341 @@ namespace F_Ferias.API.Controllers;
             }
             // return Ok(new { message = "Se recibio la informacion" }); .Where(entity=> entity.JsonObject[PathInsideJson] == filterValue)
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // https://localhost:7193/api/Account/update-feria-nacional
+        [HttpPost("update-feria-nacional")]
+        public async Task<IActionResult> Update_Feria_nacional(F_Ferias.Models.Models.ferias_nacional feria)    {
+        try
+        {
+            CultureInfo ci = new CultureInfo("es-ES");
+            DateTime sqlFormattedDate = (DateTime)DateTime.UtcNow; ;
+            string fecha_titulo = sqlFormattedDate.ToString("yyyyMMddHHmmssfffffff");
+            string YFormateada = sqlFormattedDate.ToString("yyyy", ci);
+            string MFormateada = sqlFormattedDate.ToString("MMMM", ci);
+            string filePathGeneral = "wwwroot\\Uploads\\fna__uploads" + string.Format("\\{0}\\{1}", YFormateada, MFormateada + "\\");
+            string NombreArchivo = fecha_titulo + "_" + feria.file__name;
+            string rutaDestinoCompleta = Path.Combine(_environment.ContentRootPath + filePathGeneral, NombreArchivo);
+            bool exist = Directory.Exists(_environment.ContentRootPath + filePathGeneral);
+
+            if (!Directory.Exists(_environment.ContentRootPath + filePathGeneral))
+            {
+                Directory.CreateDirectory(_environment.ContentRootPath + filePathGeneral);
+            }
+            else { }
+
+
+            _contenedorTrabajo.feriaNacionalRepository.UpdateFeriaNacional(feria);
+            _contenedorTrabajo.Save();
+            int dataInserAct = feria.id;
+
+
+            // -------------------------------------------------------------------------------
+
+            // if(feria.feria_logo_banner != null && feria.file__name != null){ 
+            //     var feria_nacional_banner = new  F_Ferias.Models.Models.ferias_nacionales_banner();
+            //     feria_nacional_banner.id_feria_nacional = dataInserAct;
+            //     feria_nacional_banner.feria_logo_ruta = filePathGeneral + "" + NombreArchivo; // rutaDestinoCompleta;
+            //     feria_nacional_banner.nombre_feria_logo_ruta =  feria.file__name;
+            //     _contenedorTrabajo.feria_Nacional_BannnerRepository.Add(feria_nacional_banner);
+            //     _contenedorTrabajo.Save();
+
+            //     await System.IO.File.WriteAllBytesAsync(string.Format("{0}" ,rutaDestinoCompleta  ), feria.feria_logo_banner);
+            //  }
+
+
+
+            return Ok("SE Actualizo CORRECTAMENTE con ID : " + dataInserAct);
+
+            //  return BadRequest("No se pueden consultar , no estas authenticado");
+
+
+        }
+        catch (Exception e)
+        {
+            Debug.WriteLine(e.Message);
+            return BadRequest("No se pueden consultar :  " + e.Message);
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // Ferias Locales ---------------------------------------------------------------------------
+
+
+        [HttpPost("add-feria-local")]
+        public async Task<IActionResult> Add_Feria_local(F_Ferias.Models.Models.ferias_empleo_local feria)    {
+        try
+        {
+            CultureInfo ci = new CultureInfo("es-ES");
+            DateTime sqlFormattedDate = (DateTime)DateTime.UtcNow; ;
+            string fecha_titulo = sqlFormattedDate.ToString("yyyyMMddHHmmssfffffff");
+            string YFormateada = sqlFormattedDate.ToString("yyyy", ci);
+            string MFormateada = sqlFormattedDate.ToString("MMMM", ci);
+            string filePathGeneral = "wwwroot\\Uploads\\flc__uploads" + string.Format("\\{0}\\{1}", YFormateada, MFormateada + "\\");
+            string NombreArchivo = fecha_titulo + "_" + feria.file__name;
+            string rutaDestinoCompleta = Path.Combine(_environment.ContentRootPath + filePathGeneral, NombreArchivo);
+            bool exist = Directory.Exists(_environment.ContentRootPath + filePathGeneral);
+
+            if (!Directory.Exists(_environment.ContentRootPath + filePathGeneral))
+            {
+                Directory.CreateDirectory(_environment.ContentRootPath + filePathGeneral);
+            }
+            else { }
+
+
+            _contenedorTrabajo.feriaLocalRepository.Add(feria);
+            _contenedorTrabajo.Save();
+            int dataInserAct = feria.id;
+
+
+            // -------------------------------------------------------------------------------
+
+            var feria_local_banner = new  ferias_locales_banners();
+            feria_local_banner.id_feria_local = dataInserAct;
+            feria_local_banner.feria_logo_ruta = filePathGeneral + "" + NombreArchivo; // rutaDestinoCompleta;
+            feria_local_banner.nombre_feria_logo_ruta =  feria.file__name;
+            _contenedorTrabajo.ferias_locales_bannerRespository.Add(feria_local_banner);
+            _contenedorTrabajo.Save();
+
+              await System.IO.File.WriteAllBytesAsync(string.Format("{0}" ,rutaDestinoCompleta  ), feria.feria_logo_banner);
+
+            return Ok("SE INSERTO CORRECTAMENTE");
+
+            //  return BadRequest("No se pueden consultar , no estas authenticado");
+
+
+        }
+        catch (Exception e)
+        {
+            Debug.WriteLine(e.Message);
+            return BadRequest("No se pueden consultar :  " + e.Message);
+        }
+    }
+ 
+
+        [HttpPost("update-feria-local")]
+        public async Task<IActionResult> Update_Feria_local(F_Ferias.Models.Models.ferias_empleo_local feria)    {
+        try
+        {
+            CultureInfo ci = new CultureInfo("es-ES");
+            DateTime sqlFormattedDate = (DateTime)DateTime.UtcNow; ;
+            string fecha_titulo = sqlFormattedDate.ToString("yyyyMMddHHmmssfffffff");
+            string YFormateada = sqlFormattedDate.ToString("yyyy", ci);
+            string MFormateada = sqlFormattedDate.ToString("MMMM", ci);
+            string filePathGeneral = "wwwroot\\Uploads\\flc__uploads" + string.Format("\\{0}\\{1}", YFormateada, MFormateada + "\\");
+            string NombreArchivo = fecha_titulo + "_" + feria.file__name;
+            string rutaDestinoCompleta = Path.Combine(_environment.ContentRootPath + filePathGeneral, NombreArchivo);
+            bool exist = Directory.Exists(_environment.ContentRootPath + filePathGeneral);
+
+            if (!Directory.Exists(_environment.ContentRootPath + filePathGeneral))
+            {
+                Directory.CreateDirectory(_environment.ContentRootPath + filePathGeneral);
+            }
+            else { }
+
+
+            _contenedorTrabajo.feriaLocalRepository.UpdateFeriaLocal(feria);
+            _contenedorTrabajo.Save();
+            int dataInserAct = feria.id;
+
+
+            // -------------------------------------------------------------------------------
+
+            if(feria.feria_logo_banner != null && feria.file__name != null){ 
+                var feria_local_banner = new  ferias_locales_banners();
+                feria_local_banner.id_feria_local = dataInserAct;
+                feria_local_banner.feria_logo_ruta = filePathGeneral + "" + NombreArchivo; // rutaDestinoCompleta;
+                feria_local_banner.nombre_feria_logo_ruta =  feria.file__name;
+                _contenedorTrabajo.ferias_locales_bannerRespository.Add(feria_local_banner);
+                _contenedorTrabajo.Save();
+
+                await System.IO.File.WriteAllBytesAsync(string.Format("{0}" ,rutaDestinoCompleta  ), feria.feria_logo_banner);
+             }
+
+
+
+            return Ok("SE Actualizo CORRECTAMENTE con ID : " + dataInserAct);
+
+            //  return BadRequest("No se pueden consultar , no estas authenticado");
+
+
+        }
+        catch (Exception e)
+        {
+            Debug.WriteLine(e.Message);
+            return BadRequest("No se pueden consultar :  " + e.Message);
+        }
+    }
+
+
+
+        [HttpGet("get-ferias-locales")]
+        public async Task<IActionResult> get_Ferias_locales() {
+
+            var data = await _contenedorTrabajo.feriaLocalRepository.GetAllAsync(includeProperties:"ferias_locales_banners,id_unidad_responsable_asociada_FK,"
+                            +"id_entidad_feria_presencial_ubicacion,id_entidad_asociado,id_feria_nacional_asociado," 
+                            +"usuario_Actualizo,usuario_Inserto,justificacion_feria_local,id_poblacion_especifica_asociado," 
+                            +"id_tipo_evento_asociado,id_actividad_economica_asociado,id_clasificacion_asociado,"
+                            +"id_feriatamanio_asociado,id_modalidad_asociado,estatus_feria_asociado,id_modalidad_asociado,"
+                            +"id_tipo_recurso_asociado" // Feria_Inversion_FK,id_actividad_complementaria_asociado_FK,
+                            );
+            return Ok(data);
+
+        }
+
+        // [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
+        [HttpPost("get-feria-local")]
+        public IActionResult get_Feria_local([FromBody] int id) {
+            var data = _contenedorTrabajo.feriaLocalRepository.GetAll_2(
+                includeProperties: "ferias_locales_banners,id_unidad_responsable_asociada_FK,"
+                                    + "id_entidad_feria_presencial_ubicacion,id_entidad_asociado,id_feria_nacional_asociado,"
+                                    + "usuario_Actualizo,usuario_Inserto,justificacion_feria_local,id_poblacion_especifica_asociado,"
+                                    + "id_tipo_evento_asociado,id_actividad_economica_asociado,id_clasificacion_asociado,"
+                                    + "id_feriatamanio_asociado,id_modalidad_asociado,estatus_feria_asociado,id_modalidad_asociado,"
+                                    + "id_tipo_recurso_asociado" //Feria_Inversion_FK,id_actividad_complementaria_asociado_FK,
+                                    , filter: p => p.id == id );
+            return Ok(data);
+
+        }
+
+
+
+        // [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
+        [HttpPost("pagination-feria-local")]
+        public async Task<IActionResult> get__Pagination__flc([FromBody] int pageNumber) {
+            var feria =  _contenedorTrabajo.feriaLocalRepository.GetAll_2(includeProperties:"ferias_locales_banners,id_unidad_responsable_asociada_FK,"
+                                                                                                  +"id_entidad_feria_presencial_ubicacion,id_entidad_asociado,id_feria_nacional_asociado," 
+                                                                                                  +"usuario_Actualizo,usuario_Inserto,justificacion_feria_local,id_poblacion_especifica_asociado," 
+                                                                                                  +"id_tipo_evento_asociado,id_actividad_economica_asociado,id_clasificacion_asociado,"
+                                                                                                  +"id_feriatamanio_asociado,id_modalidad_asociado,estatus_feria_asociado,id_modalidad_asociado,"
+                                                                                                  +"id_tipo_recurso_asociado"  // Feria_Inversion_FK,id_actividad_complementaria_asociado_FK,
+                                                                                                   );
+              // Ensure pageNumber is at least 1
+            if (pageNumber < 1)
+            {
+                pageNumber = 1;
+            }
+             int pageSize = 10;
+             return Ok(await PaginatedList<ferias_empleo_local>.CreateAsync((IQueryable<ferias_empleo_local>)feria, pageNumber, pageSize ));
+        }
+
+
+
+        // [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
+        [HttpPost("pagination-feria-local-entidad")]
+        public async Task<IActionResult> get__Pagination__flc_entidad(modelData modelData ) {
+            var feria =  _contenedorTrabajo.feriaLocalRepository.GetAll_2(
+                includeProperties:"ferias_locales_banners,id_unidad_responsable_asociada_FK,"
+                +"id_entidad_feria_presencial_ubicacion,id_entidad_asociado,id_feria_nacional_asociado," 
+                +"usuario_Actualizo,usuario_Inserto,justificacion_feria_local,id_poblacion_especifica_asociado," 
+                +"id_tipo_evento_asociado,id_actividad_economica_asociado,id_clasificacion_asociado,"
+                +"id_feriatamanio_asociado,id_modalidad_asociado,estatus_feria_asociado,id_modalidad_asociado,"
+                +"id_tipo_recurso_asociado"  , filter: p => p.id_entidad == modelData.id_entidad);
+                  // Feria_Inversion_FK,      ,id_actividad_complementaria_asociado_FK,                                                                          
+              // Ensure pageNumber is at least 1
+            if (modelData.pagenumber < 1)
+            {
+                modelData.pagenumber = 1;
+            }
+             int pageSize = 10;
+             return Ok(await PaginatedList<ferias_empleo_local>
+             .CreateAsync((IQueryable<ferias_empleo_local>)feria, modelData.pagenumber, pageSize ));
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
         [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
@@ -856,7 +928,7 @@ namespace F_Ferias.API.Controllers;
         }
 
 
-      [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
+        [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
         [HttpPost("set-feria-rechazar-usne")]
         public IActionResult setRechazaUsne([FromBody] int id) {
             try {
@@ -873,13 +945,6 @@ namespace F_Ferias.API.Controllers;
             return Ok(new { message = "Se recibio la informacion" });
         }
 
-
-
-
-
-    // "https://localhost:7193/api/Account/set-feria-validar-feria-fna-usne",
-    // "https://localhost:7193/api/Account/set-feria-rechazar-feria-fna-usne",
-    //"https://localhost:7193/api/Account/set-feria-reactivar-fna-usne",
 
 
 
@@ -941,60 +1006,6 @@ namespace F_Ferias.API.Controllers;
             }
             return Ok(new { message = "Se recibio la informacion" });
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

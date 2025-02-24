@@ -49,3 +49,16 @@ D:\Users\juancarlos.lopez\Escritorio\F_FERIAS_01-main\F_Ferias.Models\obj\Debug\
 D:\Users\juancarlos.lopez\Escritorio\F_FERIAS_01-main\F_Ferias.Models\obj\Debug\net6.0\refint\F_Ferias.Models.dll
 D:\Users\juancarlos.lopez\Escritorio\F_FERIAS_01-main\F_Ferias.Models\obj\Debug\net6.0\F_Ferias.Models.pdb
 D:\Users\juancarlos.lopez\Escritorio\F_FERIAS_01-main\F_Ferias.Models\obj\Debug\net6.0\ref\F_Ferias.Models.dll
+C:\Users\Juan Carlos Morales\Documents\GitHub\F_FERIAS_01\F_Ferias.Models\bin\Debug\net6.0\F_Ferias.Models.deps.json
+C:\Users\Juan Carlos Morales\Documents\GitHub\F_FERIAS_01\F_Ferias.Models\bin\Debug\net6.0\F_Ferias.Models.dll
+C:\Users\Juan Carlos Morales\Documents\GitHub\F_FERIAS_01\F_Ferias.Models\bin\Debug\net6.0\F_Ferias.Models.pdb
+C:\Users\Juan Carlos Morales\Documents\GitHub\F_FERIAS_01\F_Ferias.Models\obj\Debug\net6.0\F_Ferias.Models.csproj.AssemblyReference.cache
+C:\Users\Juan Carlos Morales\Documents\GitHub\F_FERIAS_01\F_Ferias.Models\obj\Debug\net6.0\F_Ferias.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Juan Carlos Morales\Documents\GitHub\F_FERIAS_01\F_Ferias.Models\obj\Debug\net6.0\F_Ferias.Models.AssemblyInfoInputs.cache
+C:\Users\Juan Carlos Morales\Documents\GitHub\F_FERIAS_01\F_Ferias.Models\obj\Debug\net6.0\F_Ferias.Models.AssemblyInfo.cs
+C:\Users\Juan Carlos Morales\Documents\GitHub\F_FERIAS_01\F_Ferias.Models\obj\Debug\net6.0\F_Ferias.Models.csproj.CoreCompileInputs.cache
+C:\Users\Juan Carlos Morales\Documents\GitHub\F_FERIAS_01\F_Ferias.Models\obj\Debug\net6.0\F_Ferias.Models.sourcelink.json
+C:\Users\Juan Carlos Morales\Documents\GitHub\F_FERIAS_01\F_Ferias.Models\obj\Debug\net6.0\F_Ferias.Models.dll
+C:\Users\Juan Carlos Morales\Documents\GitHub\F_FERIAS_01\F_Ferias.Models\obj\Debug\net6.0\refint\F_Ferias.Models.dll
+C:\Users\Juan Carlos Morales\Documents\GitHub\F_FERIAS_01\F_Ferias.Models\obj\Debug\net6.0\F_Ferias.Models.pdb
+C:\Users\Juan Carlos Morales\Documents\GitHub\F_FERIAS_01\F_Ferias.Models\obj\Debug\net6.0\ref\F_Ferias.Models.dll

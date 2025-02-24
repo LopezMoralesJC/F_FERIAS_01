@@ -33,6 +33,9 @@ namespace F_Ferias.AccessData.IRepository;
 
         IFeriaInversionRepository feriaInversionRepository {get;}
 
+
+        IFerias_nacionales_bannerRepository  feria_Nacional_BannnerRepository {get;}
+
         #endregion
 
 

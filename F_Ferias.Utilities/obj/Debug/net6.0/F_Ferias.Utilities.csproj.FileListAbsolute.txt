@@ -69,3 +69,21 @@ D:\Users\juancarlos.lopez\Escritorio\F_FERIAS_01-main\F_Ferias.Utilities\obj\Deb
 D:\Users\juancarlos.lopez\Escritorio\F_FERIAS_01-main\F_Ferias.Utilities\obj\Debug\net6.0\refint\F_Ferias.Utilities.dll
 D:\Users\juancarlos.lopez\Escritorio\F_FERIAS_01-main\F_Ferias.Utilities\obj\Debug\net6.0\F_Ferias.Utilities.pdb
 D:\Users\juancarlos.lopez\Escritorio\F_FERIAS_01-main\F_Ferias.Utilities\obj\Debug\net6.0\ref\F_Ferias.Utilities.dll
+C:\Users\Juan Carlos Morales\Documents\GitHub\F_FERIAS_01\F_Ferias.Utilities\bin\Debug\net6.0\F_Ferias.Utilities.deps.json
+C:\Users\Juan Carlos Morales\Documents\GitHub\F_FERIAS_01\F_Ferias.Utilities\bin\Debug\net6.0\F_Ferias.Utilities.dll
+C:\Users\Juan Carlos Morales\Documents\GitHub\F_FERIAS_01\F_Ferias.Utilities\bin\Debug\net6.0\F_Ferias.Utilities.pdb
+C:\Users\Juan Carlos Morales\Documents\GitHub\F_FERIAS_01\F_Ferias.Utilities\bin\Debug\net6.0\F_Ferias.AccessData.dll
+C:\Users\Juan Carlos Morales\Documents\GitHub\F_FERIAS_01\F_Ferias.Utilities\bin\Debug\net6.0\F_Ferias.Models.dll
+C:\Users\Juan Carlos Morales\Documents\GitHub\F_FERIAS_01\F_Ferias.Utilities\bin\Debug\net6.0\F_Ferias.Models.pdb
+C:\Users\Juan Carlos Morales\Documents\GitHub\F_FERIAS_01\F_Ferias.Utilities\bin\Debug\net6.0\F_Ferias.AccessData.pdb
+C:\Users\Juan Carlos Morales\Documents\GitHub\F_FERIAS_01\F_Ferias.Utilities\obj\Debug\net6.0\F_Ferias.Utilities.csproj.AssemblyReference.cache
+C:\Users\Juan Carlos Morales\Documents\GitHub\F_FERIAS_01\F_Ferias.Utilities\obj\Debug\net6.0\F_Ferias.Utilities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Juan Carlos Morales\Documents\GitHub\F_FERIAS_01\F_Ferias.Utilities\obj\Debug\net6.0\F_Ferias.Utilities.AssemblyInfoInputs.cache
+C:\Users\Juan Carlos Morales\Documents\GitHub\F_FERIAS_01\F_Ferias.Utilities\obj\Debug\net6.0\F_Ferias.Utilities.AssemblyInfo.cs
+C:\Users\Juan Carlos Morales\Documents\GitHub\F_FERIAS_01\F_Ferias.Utilities\obj\Debug\net6.0\F_Ferias.Utilities.csproj.CoreCompileInputs.cache
+C:\Users\Juan Carlos Morales\Documents\GitHub\F_FERIAS_01\F_Ferias.Utilities\obj\Debug\net6.0\F_Ferias.Utilities.sourcelink.json
+C:\Users\Juan Carlos Morales\Documents\GitHub\F_FERIAS_01\F_Ferias.Utilities\obj\Debug\net6.0\F_Ferias.DFB698C6.Up2Date
+C:\Users\Juan Carlos Morales\Documents\GitHub\F_FERIAS_01\F_Ferias.Utilities\obj\Debug\net6.0\F_Ferias.Utilities.dll
+C:\Users\Juan Carlos Morales\Documents\GitHub\F_FERIAS_01\F_Ferias.Utilities\obj\Debug\net6.0\refint\F_Ferias.Utilities.dll
+C:\Users\Juan Carlos Morales\Documents\GitHub\F_FERIAS_01\F_Ferias.Utilities\obj\Debug\net6.0\F_Ferias.Utilities.pdb
+C:\Users\Juan Carlos Morales\Documents\GitHub\F_FERIAS_01\F_Ferias.Utilities\obj\Debug\net6.0\ref\F_Ferias.Utilities.dll

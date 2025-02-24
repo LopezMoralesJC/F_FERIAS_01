@@ -69,3 +69,21 @@ D:\Users\juancarlos.lopez\Escritorio\F_FERIAS_01-main\F_Ferias.AccessData\obj\De
 D:\Users\juancarlos.lopez\Escritorio\F_FERIAS_01-main\F_Ferias.AccessData\obj\Debug\net6.0\F_Ferias.AccessData.pdb
 D:\Users\juancarlos.lopez\Escritorio\F_FERIAS_01-main\F_Ferias.AccessData\obj\Debug\net6.0\F_Ferias.AccessData.genruntimeconfig.cache
 D:\Users\juancarlos.lopez\Escritorio\F_FERIAS_01-main\F_Ferias.AccessData\obj\Debug\net6.0\ref\F_Ferias.AccessData.dll
+C:\Users\Juan Carlos Morales\Documents\GitHub\F_FERIAS_01\F_Ferias.AccessData\bin\Debug\net6.0\F_Ferias.AccessData.deps.json
+C:\Users\Juan Carlos Morales\Documents\GitHub\F_FERIAS_01\F_Ferias.AccessData\bin\Debug\net6.0\F_Ferias.AccessData.runtimeconfig.json
+C:\Users\Juan Carlos Morales\Documents\GitHub\F_FERIAS_01\F_Ferias.AccessData\bin\Debug\net6.0\F_Ferias.AccessData.dll
+C:\Users\Juan Carlos Morales\Documents\GitHub\F_FERIAS_01\F_Ferias.AccessData\bin\Debug\net6.0\F_Ferias.AccessData.pdb
+C:\Users\Juan Carlos Morales\Documents\GitHub\F_FERIAS_01\F_Ferias.AccessData\bin\Debug\net6.0\F_Ferias.Models.dll
+C:\Users\Juan Carlos Morales\Documents\GitHub\F_FERIAS_01\F_Ferias.AccessData\bin\Debug\net6.0\F_Ferias.Models.pdb
+C:\Users\Juan Carlos Morales\Documents\GitHub\F_FERIAS_01\F_Ferias.AccessData\obj\Debug\net6.0\F_Ferias.AccessData.csproj.AssemblyReference.cache
+C:\Users\Juan Carlos Morales\Documents\GitHub\F_FERIAS_01\F_Ferias.AccessData\obj\Debug\net6.0\F_Ferias.AccessData.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Juan Carlos Morales\Documents\GitHub\F_FERIAS_01\F_Ferias.AccessData\obj\Debug\net6.0\F_Ferias.AccessData.AssemblyInfoInputs.cache
+C:\Users\Juan Carlos Morales\Documents\GitHub\F_FERIAS_01\F_Ferias.AccessData\obj\Debug\net6.0\F_Ferias.AccessData.AssemblyInfo.cs
+C:\Users\Juan Carlos Morales\Documents\GitHub\F_FERIAS_01\F_Ferias.AccessData\obj\Debug\net6.0\F_Ferias.AccessData.csproj.CoreCompileInputs.cache
+C:\Users\Juan Carlos Morales\Documents\GitHub\F_FERIAS_01\F_Ferias.AccessData\obj\Debug\net6.0\F_Ferias.AccessData.sourcelink.json
+C:\Users\Juan Carlos Morales\Documents\GitHub\F_FERIAS_01\F_Ferias.AccessData\obj\Debug\net6.0\F_Ferias.43D46AAA.Up2Date
+C:\Users\Juan Carlos Morales\Documents\GitHub\F_FERIAS_01\F_Ferias.AccessData\obj\Debug\net6.0\F_Ferias.AccessData.dll
+C:\Users\Juan Carlos Morales\Documents\GitHub\F_FERIAS_01\F_Ferias.AccessData\obj\Debug\net6.0\refint\F_Ferias.AccessData.dll
+C:\Users\Juan Carlos Morales\Documents\GitHub\F_FERIAS_01\F_Ferias.AccessData\obj\Debug\net6.0\F_Ferias.AccessData.pdb
+C:\Users\Juan Carlos Morales\Documents\GitHub\F_FERIAS_01\F_Ferias.AccessData\obj\Debug\net6.0\F_Ferias.AccessData.genruntimeconfig.cache
+C:\Users\Juan Carlos Morales\Documents\GitHub\F_FERIAS_01\F_Ferias.AccessData\obj\Debug\net6.0\ref\F_Ferias.AccessData.dll
