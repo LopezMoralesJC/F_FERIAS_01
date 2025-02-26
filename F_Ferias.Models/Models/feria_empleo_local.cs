@@ -276,52 +276,17 @@ namespace F_Ferias.Models.Models;
 
  
     public int id_tipo_recurso { get; set; }
-
-
-
-
-  
     public string observacion_recurso_estatal { get; set; } = "Distribución completamente estatal";
-
-
-
     public string observacion_promocion_estatal { get; set; }
-
-
     public float cantidad_promocion_est { get; set; }
-
-
-
-
     public string observacion_acondicionamiento_est { get; set; }
-
-
     public float cantidad_acondicionamiento_est { get; set; }
-
-
-
     public string observacion_infraestructura_computo_est { get; set; }
-
-
     public float cantidad_infraestructura_computo_est { get; set; }
-
-
-
    public string observacion_alquiler_est { get; set; } = "No Aplica";
-
-
    public float cantidad_alquiler_est { get; set; }
-
-
-
-
     public string observacion_servicios_videoconferencias_est { get; set; }
-
-
-
     public float cantidad_servicios_videoconferencias_est { get; set; }
-
-
     public float cantidad_total_est { get; set; }
 
 

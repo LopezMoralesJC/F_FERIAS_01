@@ -48,10 +48,12 @@ namespace F_Ferias.AccessData.Repository;
         public IEnumerable<cp_cepomex_mexico> get__colonias__cp(string cp, string colonia)
         {
            
-            // return _context.cp_Cepomex_Mexico.Where(c =>c.d_codigo == cp && c.d_asenta == colonia );
+
             return _context.cp_Cepomex_Mexico.Where(c =>c.d_codigo == cp &&  EF.Functions.Unaccent(c.d_asenta.ToLower()) == colonia.ToLower());
+            // return _context.cp_Cepomex_Mexico.Where(c =>c.d_codigo == cp && c.d_asenta == colonia );
             //.Where(x => people.ILike(EF.Functions.Unaccent(x.Name)....
-          // var entity =  _context.cp_Cepomex_Mexico.FromSqlRaw("", "");
+            // var entity =  _context.cp_Cepomex_Mexico.FromSqlRaw("", "");
+            //  return _context.cp_Cepomex_Mexico.Where(c =>c.d_codigo == cp && c.ILike(EF.Functions.Unaccent(c.d_asenta), colonia));
         }
 
     public cp_cepomex_mexico get_vialidad_unique(int Id_Vialidad)

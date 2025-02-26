@@ -600,10 +600,7 @@
           "Npgsql.EntityFrameworkCore.PostgreSQL": "6.0.29"
         },
         "runtime": {
-          "F_Ferias.AccessData.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "F_Ferias.AccessData.dll": {}
         }
       },
       "F_Ferias.Models/1.0.0": {
@@ -612,10 +609,7 @@
           "Microsoft.Extensions.Identity.Stores": "6.0.33"
         },
         "runtime": {
-          "F_Ferias.Models.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "F_Ferias.Models.dll": {}
         }
       }
     }

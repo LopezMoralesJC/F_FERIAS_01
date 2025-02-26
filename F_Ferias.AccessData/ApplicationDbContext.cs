@@ -80,10 +80,13 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser , Applicat
     protected override void OnModelCreating(ModelBuilder modelBuilder) {
 
      
-        base.OnModelCreating(modelBuilder);
+       // base.OnModelCreating(modelBuilder);
           base.OnModelCreating(modelBuilder);
-        modelBuilder.Entity<ferias_nacional>()
+          modelBuilder.HasPostgresExtension("unaccent");
+          modelBuilder.Entity<ferias_nacional>()
             .Property(b => b.Dataentidades_selection_serialize)
             .HasColumnType("jsonb");
+        // modelBuilder.HasPostgresExtension("unaccent");
+          // modelBuilder.Conventions.Add(new CodeFirstStoreFunctions.FunctionsConvention<DatabaseContext>("public"));
     }
 }

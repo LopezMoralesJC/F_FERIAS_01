@@ -48,7 +48,8 @@ namespace F_Ferias.API.Controllers;
 
         // Identity
 
-        [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
+        // [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
+        [Authorize]
         [HttpPost("register")]
         public async Task<IActionResult> Register([FromBody] Register model) {
             var user = new ApplicationUser { UserName = model.Username };
@@ -85,7 +86,8 @@ namespace F_Ferias.API.Controllers;
         return Unauthorized();
         }
 
-        [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
+        // [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
+        [Authorize]
         [HttpPost("add-role")]
         public async Task<IActionResult>  AddRole([FromBody] string role) {
             if(!await _roleManager.RoleExistsAsync(role)){
@@ -99,7 +101,8 @@ namespace F_Ferias.API.Controllers;
             return BadRequest("El rol ya existe");
         }
 
-        [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
+        // [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
+        [Authorize]
         [HttpPost("assign-role")]
         public async Task<IActionResult> AssignRole([FromBody] UserRole model){
             var user = await _userManager.FindByNameAsync(model.Username);
@@ -117,7 +120,26 @@ namespace F_Ferias.API.Controllers;
         }
 
 
-        [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
+        [Authorize]
         [HttpGet("return-data_funcionary")]
         public IActionResult GetCurrentUSerRole([FromBody] string email) {
             if (User.Identity.IsAuthenticated) {
@@ -135,7 +157,8 @@ namespace F_Ferias.API.Controllers;
         }
 
 
-        [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
+        // [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
+        [Authorize]
         [HttpGet("getData_user")]
         public IActionResult getUserData([FromBody] string email) {
             if (User.Identity.IsAuthenticated) {
@@ -148,7 +171,8 @@ namespace F_Ferias.API.Controllers;
         }
 
 
-        [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
+        // [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
+        [Authorize]
         [HttpPost("send-tokken-data")]
         public async Task<IActionResult> SendTokenUsuario([FromBody] Login.User_Data model) {
             if (User.Identity.IsAuthenticated) {
@@ -298,7 +322,8 @@ namespace F_Ferias.API.Controllers;
 
 
 
-        [Authorize(Roles = "Administrador Consejero Laboral")]
+        // [Authorize(Roles = "Administrador Consejero Laboral")]
+        [Authorize]
         [HttpPost("pagination-feria-na")]
         public async Task<IActionResult> get__Pagination__fna([FromBody] int pageNumber) {
             var feria =  _contenedorTrabajo.feriaNacionalRepository.GetAll_2( includeProperties: "Id_usuario_Inserto_FK,Id_usuario_Actualizo_FK,Id_FKestatus_feria_FK,ferias_nac_FK");
@@ -311,7 +336,8 @@ namespace F_Ferias.API.Controllers;
              return Ok(await PaginatedList<ferias_nacional>.CreateAsync((IQueryable<ferias_nacional>)feria, pageNumber, pageSize ));
         }
 
-        [Authorize(Roles = "Administrador Consejero Laboral")]
+        // [Authorize(Roles = "Administrador Consejero Laboral")]
+        [Authorize]
         [HttpPost("pagination-feria-na__2")]
         public IActionResult get__Pagination__fna_async([FromBody] int pageNumber) {
 
@@ -338,7 +364,8 @@ namespace F_Ferias.API.Controllers;
         }
 
 
-        [Authorize(Roles = "Administrador Consejero Laboral")]
+        // [Authorize(Roles = "Administrador Consejero Laboral")]
+        [Authorize]
         [HttpPost("get_feria_na")]
         public IActionResult get__feria_na([FromBody] int id) {
             try {
@@ -356,7 +383,8 @@ namespace F_Ferias.API.Controllers;
 
 
 
-        [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
+        // [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
+        [Authorize]
         [HttpGet("get_ferias_na")]
         public IActionResult get__ferias_na() {
             try {
@@ -445,16 +473,16 @@ namespace F_Ferias.API.Controllers;
 
             // -------------------------------------------------------------------------------
 
-            // if(feria.feria_logo_banner != null && feria.file__name != null){ 
-            //     var feria_nacional_banner = new  F_Ferias.Models.Models.ferias_nacionales_banner();
-            //     feria_nacional_banner.id_feria_nacional = dataInserAct;
-            //     feria_nacional_banner.feria_logo_ruta = filePathGeneral + "" + NombreArchivo; // rutaDestinoCompleta;
-            //     feria_nacional_banner.nombre_feria_logo_ruta =  feria.file__name;
-            //     _contenedorTrabajo.feria_Nacional_BannnerRepository.Add(feria_nacional_banner);
-            //     _contenedorTrabajo.Save();
+            if(feria.feria_logo_banner != null && feria.file__name != null){ 
+                var feria_nacional_banner = new  F_Ferias.Models.Models.ferias_nacionales_banner();
+                feria_nacional_banner.id_feria_nacional = dataInserAct;
+                feria_nacional_banner.feria_logo_ruta = filePathGeneral + "" + NombreArchivo; // rutaDestinoCompleta;
+                feria_nacional_banner.nombre_feria_logo_ruta =  feria.file__name;
+                _contenedorTrabajo.feria_Nacional_BannnerRepository.Add(feria_nacional_banner);
+                _contenedorTrabajo.Save();
 
-            //     await System.IO.File.WriteAllBytesAsync(string.Format("{0}" ,rutaDestinoCompleta  ), feria.feria_logo_banner);
-            //  }
+                await System.IO.File.WriteAllBytesAsync(string.Format("{0}" ,rutaDestinoCompleta  ), feria.feria_logo_banner);
+             }
 
 
 
@@ -538,7 +566,14 @@ namespace F_Ferias.API.Controllers;
             }
             else { }
 
-
+            feria.cantidad_total_federal = 0;
+            feria.cantidad_total_est = 0;
+            feria.cantidad_total_est = feria.cantidad_promocion_est + feria.cantidad_acondicionamiento_est
+            + feria.cantidad_infraestructura_computo_est + feria.cantidad_alquiler_est 
+            + feria.cantidad_servicios_videoconferencias_est;
+            feria.cantidad_total_federal = feria.cantidad_promocion_federal + feria.cantidad_acondicionamiento_federal
+            + feria.cantidad_infraestructura_computo_federal + feria.cantidad_alquiler_federal +
+            feria.cantidad_servicios_videoconferencias_federal;
             _contenedorTrabajo.feriaLocalRepository.Add(feria);
             _contenedorTrabajo.Save();
             int dataInserAct = feria.id;
@@ -589,7 +624,15 @@ namespace F_Ferias.API.Controllers;
             }
             else { }
 
-
+            feria.cantidad_total_federal = 0;
+            feria.cantidad_total_est = 0;
+            feria.cantidad_total_est = feria.cantidad_promocion_est + feria.cantidad_acondicionamiento_est
+            + feria.cantidad_infraestructura_computo_est + feria.cantidad_alquiler_est 
+            + feria.cantidad_servicios_videoconferencias_est;
+            
+            feria.cantidad_total_federal = feria.cantidad_promocion_federal + feria.cantidad_acondicionamiento_federal
+            + feria.cantidad_infraestructura_computo_federal + feria.cantidad_alquiler_federal +
+            feria.cantidad_servicios_videoconferencias_federal;
             _contenedorTrabajo.feriaLocalRepository.UpdateFeriaLocal(feria);
             _contenedorTrabajo.Save();
             int dataInserAct = feria.id;
@@ -738,7 +781,8 @@ namespace F_Ferias.API.Controllers;
 
 
 
-        [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
+        // [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
+        [Authorize]
         [HttpPost("get_unidades_res")]
         public IActionResult get__unidades_responsables([FromBody] int id) {
             try {
@@ -752,7 +796,8 @@ namespace F_Ferias.API.Controllers;
             return Ok(new { message = "Se recibio la informacion" });
         }
 
-        [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
+        // [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
+        [Authorize]
         [HttpGet("get-all-vialidades")]
         public IActionResult getVialidades() {
                 try {
@@ -767,7 +812,8 @@ namespace F_Ferias.API.Controllers;
             }
         }
 
-        [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
+        // [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
+        [Authorize]
         [HttpPost("get_unique_vialidad")]
         public IActionResult get__unique_vialidad([FromBody] int id) {
 
@@ -783,7 +829,8 @@ namespace F_Ferias.API.Controllers;
         }
 
 
-        [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
+        // [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
+        [Authorize]
         [HttpPost("get-filter-municipios")]
         public IActionResult getMunicipios([FromBody] int id) {
                 try {
@@ -797,7 +844,8 @@ namespace F_Ferias.API.Controllers;
             }
         }
 
-        [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
+        // [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
+        [Authorize]
         [HttpPost("get-filter-colonias")]
         public IActionResult getColonias([FromBody] GetColonias.obtenerColonias model) {
         try {
@@ -813,7 +861,8 @@ namespace F_Ferias.API.Controllers;
 
 
 
-        [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
+        // [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
+        [Authorize]
         [HttpPost("get-filter-entidades_cp")]
         public IActionResult getEntidadCp([FromBody] string id) {
         try {
@@ -828,7 +877,8 @@ namespace F_Ferias.API.Controllers;
         }
 
 
-        [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
+        // [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
+        [Authorize]
         [HttpPost("get-filter-colonias_cp")]
         public IActionResult getColoniasCp([FromBody] string id) {
         try {
@@ -848,7 +898,8 @@ namespace F_Ferias.API.Controllers;
         public IActionResult getdataCp_colonia([FromBody] GetColonias.obtenercolonia_cp obtenercolonia_Cp) {
                 try {
                         // if (User.Identity.IsAuthenticated) {
-                        return Ok(_contenedorTrabajo.cpCepomexRepository.get__colonias__cp (obtenercolonia_Cp.cp  , obtenercolonia_Cp.colonia));
+                        return Ok(_contenedorTrabajo.cpCepomexRepository.get__colonias__cp 
+                        (obtenercolonia_Cp.cp  , obtenercolonia_Cp.colonia));
                         // }else {
                         //     return BadRequest("No estas autenticado");
                         // }
@@ -871,7 +922,8 @@ namespace F_Ferias.API.Controllers;
 
          }
 
-        [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
+        // [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
+        [Authorize]
         [HttpPost("set-feria-Validado-osne")]
         public IActionResult setOsne([FromBody] int id) {
             try {
@@ -891,7 +943,8 @@ namespace F_Ferias.API.Controllers;
         }
 
       
-        [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
+        // [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
+        [Authorize]
         [HttpPost("set-feria-rechazado-osne")]
         public IActionResult setRechazarOsne([FromBody] int id) {
             try {
@@ -910,7 +963,8 @@ namespace F_Ferias.API.Controllers;
 
 
 
-        [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
+        // [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
+        [Authorize]
         [HttpPost("set-feria-reactivar_osne")]
         public IActionResult setReactivarOsne([FromBody] int id) {
             try {
@@ -928,7 +982,8 @@ namespace F_Ferias.API.Controllers;
         }
 
 
-        [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
+        // [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
+        [Authorize]
         [HttpPost("set-feria-rechazar-usne")]
         public IActionResult setRechazaUsne([FromBody] int id) {
             try {
@@ -948,7 +1003,8 @@ namespace F_Ferias.API.Controllers;
 
 
 
-        [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
+        // [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]}
+        [Authorize]
         [HttpPost("set-feria-validar-feria-fna-usne")]
         public IActionResult set_validar_fna_Usne([FromBody] int id) {
             try {
@@ -970,7 +1026,8 @@ namespace F_Ferias.API.Controllers;
 
 
 
-        [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
+        // [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
+        [Authorize]
         [HttpPost("set-feria-rechazar-feria-fna-usne")]
         public IActionResult set_feria_rechazar_feria_fna_usne([FromBody] int id) {
             try {
@@ -989,7 +1046,8 @@ namespace F_Ferias.API.Controllers;
         }
 
 
-        [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
+        // [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
+        [Authorize]
         [HttpPost("set-feria-reactivar-fna-usne")]
         public IActionResult set_feria_reactivar_fna_usne([FromBody] int id) {
             try {
@@ -1009,7 +1067,8 @@ namespace F_Ferias.API.Controllers;
 
 
 
-        [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
+        // [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
+        [Authorize]
         [HttpPost("set-feria-validado-usne")]
         public IActionResult setValidarUsne([FromBody] int id) {
             try {

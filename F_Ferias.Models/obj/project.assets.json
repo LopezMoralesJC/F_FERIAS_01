@@ -626,24 +626,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Juan Carlos Morales\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "d:\\Users\\juancarlos.lopez\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Juan Carlos Morales\\Documents\\GitHub\\F_FERIAS_01\\F_Ferias.Models\\F_Ferias.Models.csproj",
+      "projectUniqueName": "D:\\Users\\juancarlos.lopez\\source\\repos\\F_FERIAS\\F_FERIAS_01\\F_Ferias.Models\\F_Ferias.Models.csproj",
       "projectName": "F_Ferias.Models",
-      "projectPath": "C:\\Users\\Juan Carlos Morales\\Documents\\GitHub\\F_FERIAS_01\\F_Ferias.Models\\F_Ferias.Models.csproj",
-      "packagesPath": "C:\\Users\\Juan Carlos Morales\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Juan Carlos Morales\\Documents\\GitHub\\F_FERIAS_01\\F_Ferias.Models\\obj\\",
+      "projectPath": "D:\\Users\\juancarlos.lopez\\source\\repos\\F_FERIAS\\F_FERIAS_01\\F_Ferias.Models\\F_Ferias.Models.csproj",
+      "packagesPath": "d:\\Users\\juancarlos.lopez\\.nuget\\packages\\",
+      "outputPath": "D:\\Users\\juancarlos.lopez\\source\\repos\\F_FERIAS\\F_FERIAS_01\\F_Ferias.Models\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Juan Carlos Morales\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "d:\\Users\\juancarlos.lopez\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -668,8 +663,7 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      },
-      "SdkAnalysisLevel": "9.0.200"
+      }
     },
     "frameworks": {
       "net6.0": {
@@ -700,7 +694,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }
