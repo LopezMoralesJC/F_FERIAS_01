@@ -121,6 +121,14 @@ namespace F_Ferias.API.Controllers;
 
 
 
+    [HttpGet("get-users-role")]
+    public IActionResult getAllUsers()
+    {
+
+        var data = _contenedorTrabajo.applicationUserRepository.GetAll();
+        return Ok(data);
+
+    }
 
 
 
@@ -137,9 +145,8 @@ namespace F_Ferias.API.Controllers;
 
 
 
-
-        // [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
-        [Authorize]
+    // [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
+    [Authorize]
         [HttpGet("return-data_funcionary")]
         public IActionResult GetCurrentUSerRole([FromBody] string email) {
             if (User.Identity.IsAuthenticated) {
