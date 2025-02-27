@@ -396,7 +396,8 @@ namespace F_Ferias.API.Controllers;
         public IActionResult get__ferias_na() {
             try {
                 if (User.Identity.IsAuthenticated) {
-                    var data_consulta = _contenedorTrabajo.feriaNacionalRepository.GetListaFeriasNacionales();
+                    var data_consulta = _contenedorTrabajo.feriaNacionalRepository
+                    .GetListaFeriasNacionales();
                     return Ok(data_consulta);
                 }
             } catch (Exception e) {
@@ -426,7 +427,9 @@ namespace F_Ferias.API.Controllers;
             try {
             //   x.Name->>'value' like '%@search%'
                     var data_consulta = _contenedorTrabajo.feriaNacionalRepository.GetAll(
-                    filter: p => p.data_entidades_selection.Contains(id));
+                    filter: p => p.data_entidades_selection.Contains(id) && p.estatus == 5
+                    
+                    );
 
             return Ok(data_consulta);
             
@@ -613,8 +616,7 @@ namespace F_Ferias.API.Controllers;
 
         [HttpPost("update-feria-local")]
         public async Task<IActionResult> Update_Feria_local(F_Ferias.Models.Models.ferias_empleo_local feria)    {
-        try
-        {
+        try {
             CultureInfo ci = new CultureInfo("es-ES");
             DateTime sqlFormattedDate = (DateTime)DateTime.UtcNow; ;
             string fecha_titulo = sqlFormattedDate.ToString("yyyyMMddHHmmssfffffff");
@@ -804,7 +806,7 @@ namespace F_Ferias.API.Controllers;
         }
 
         // [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
-        [Authorize]
+        // [Authorize]
         [HttpGet("get-all-vialidades")]
         public IActionResult getVialidades() {
                 try {
@@ -820,7 +822,7 @@ namespace F_Ferias.API.Controllers;
         }
 
         // [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
-        [Authorize]
+        // [Authorize]
         [HttpPost("get_unique_vialidad")]
         public IActionResult get__unique_vialidad([FromBody] int id) {
 
@@ -837,7 +839,7 @@ namespace F_Ferias.API.Controllers;
 
 
         // [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
-        [Authorize]
+        // [Authorize]
         [HttpPost("get-filter-municipios")]
         public IActionResult getMunicipios([FromBody] int id) {
                 try {
@@ -850,6 +852,29 @@ namespace F_Ferias.API.Controllers;
                 return BadRequest("No se pueden consultar :  " + e.Message);
             }
         }
+
+
+        // [Authorize]
+        [HttpPost("get-filter-municipio")]
+        public IActionResult get_Municipio([FromBody] GetColonias.obtenerColonias model) {
+                try {
+                if (User.Identity.IsAuthenticated) {
+                // return Ok(_contenedorTrabajo.cpCepomexRepository
+                // .get_municipio_unique(model.IdEntidad , model.IdMunicipio));
+               return Ok(_context.cp_Cepomex_Mexico.Where(c => c.id_entidad ==model.IdEntidad
+               
+               && c.c_mnpio == model.IdMunicipio ).FirstOrDefault());
+            
+              
+                }else {
+                    return BadRequest("No estas autenticado");
+                }
+            } catch(Exception e) {
+                return BadRequest("No se pueden consultar :  " + e.Message);
+            }
+        } 
+
+
 
         // [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
         [Authorize]
@@ -869,7 +894,7 @@ namespace F_Ferias.API.Controllers;
 
 
         // [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
-        [Authorize]
+        // [Authorize]
         [HttpPost("get-filter-entidades_cp")]
         public IActionResult getEntidadCp([FromBody] string id) {
         try {
@@ -885,7 +910,7 @@ namespace F_Ferias.API.Controllers;
 
 
         // [Authorize(Roles = "Consejero Laboral,Administrador Consejero Laboral")]
-        [Authorize]
+        // [Authorize]
         [HttpPost("get-filter-colonias_cp")]
         public IActionResult getColoniasCp([FromBody] string id) {
         try {

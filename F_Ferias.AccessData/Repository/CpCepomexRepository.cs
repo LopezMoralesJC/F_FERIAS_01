@@ -56,8 +56,12 @@ namespace F_Ferias.AccessData.Repository;
             //  return _context.cp_Cepomex_Mexico.Where(c =>c.d_codigo == cp && c.ILike(EF.Functions.Unaccent(c.d_asenta), colonia));
         }
 
-    public cp_cepomex_mexico get_vialidad_unique(int Id_Vialidad)
-    {
-         return _context.cp_Cepomex_Mexico.Where(g => g.c_tipo_asenta == Id_Vialidad).FirstOrDefault();
-    }
+         public cp_cepomex_mexico get_vialidad_unique(int Id_Vialidad)
+         {
+               return _context.cp_Cepomex_Mexico.Where(g => g.c_tipo_asenta == Id_Vialidad).FirstOrDefault();
+         }
+
+
+    
+        
 }
