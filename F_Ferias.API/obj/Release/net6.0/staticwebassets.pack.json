@@ -325,6 +325,26 @@
       "PackagePath": "staticwebassets\\Uploads\\flc__uploads\\2025\\febrero\\202502260539260739045_2021080720404800-5E92066D83C981FCBC05AE4D9711906A.png"
     },
     {
+      "Id": "D:\\Users\\juancarlos.lopez\\source\\repos\\F_FERIAS\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\Uploads\\flc__uploads\\2025\\febrero\\202502282124099494304_2021080720404800-5E92066D83C981FCBC05AE4D9711906A.png",
+      "PackagePath": "staticwebassets\\Uploads\\flc__uploads\\2025\\febrero\\202502282124099494304_2021080720404800-5E92066D83C981FCBC05AE4D9711906A.png"
+    },
+    {
+      "Id": "D:\\Users\\juancarlos.lopez\\source\\repos\\F_FERIAS\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\Uploads\\flc__uploads\\2025\\febrero\\202502282125031991726_2021080720404800-5E92066D83C981FCBC05AE4D9711906A.png",
+      "PackagePath": "staticwebassets\\Uploads\\flc__uploads\\2025\\febrero\\202502282125031991726_2021080720404800-5E92066D83C981FCBC05AE4D9711906A.png"
+    },
+    {
+      "Id": "D:\\Users\\juancarlos.lopez\\source\\repos\\F_FERIAS\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\Uploads\\flc__uploads\\2025\\febrero\\202502282206068755007_2021080720404800-5E92066D83C981FCBC05AE4D9711906A.png",
+      "PackagePath": "staticwebassets\\Uploads\\flc__uploads\\2025\\febrero\\202502282206068755007_2021080720404800-5E92066D83C981FCBC05AE4D9711906A.png"
+    },
+    {
+      "Id": "D:\\Users\\juancarlos.lopez\\source\\repos\\F_FERIAS\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\Uploads\\flc__uploads\\2025\\marzo\\202503042034590723298_2021080720404800-5E92066D83C981FCBC05AE4D9711906A.png",
+      "PackagePath": "staticwebassets\\Uploads\\flc__uploads\\2025\\marzo\\202503042034590723298_2021080720404800-5E92066D83C981FCBC05AE4D9711906A.png"
+    },
+    {
+      "Id": "D:\\Users\\juancarlos.lopez\\source\\repos\\F_FERIAS\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\Uploads\\flc__uploads\\2025\\marzo\\202503042142139461373_2021080720404800-5E92066D83C981FCBC05AE4D9711906A.png",
+      "PackagePath": "staticwebassets\\Uploads\\flc__uploads\\2025\\marzo\\202503042142139461373_2021080720404800-5E92066D83C981FCBC05AE4D9711906A.png"
+    },
+    {
       "Id": "D:\\Users\\juancarlos.lopez\\source\\repos\\F_FERIAS\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\Uploads\\fna__uploads\\2024\\diciembre\\202412092338406913283_202411252115543390148_Search_job_svg.svg",
       "PackagePath": "staticwebassets\\Uploads\\fna__uploads\\2024\\diciembre\\202412092338406913283_202411252115543390148_Search_job_svg.svg"
     },
@@ -631,6 +651,10 @@
     {
       "Id": "D:\\Users\\juancarlos.lopez\\source\\repos\\F_FERIAS\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\Uploads\\fna__uploads\\2025\\febrero\\202502260133536949562_2021080720404800-5E92066D83C981FCBC05AE4D9711906A.png",
       "PackagePath": "staticwebassets\\Uploads\\fna__uploads\\2025\\febrero\\202502260133536949562_2021080720404800-5E92066D83C981FCBC05AE4D9711906A.png"
+    },
+    {
+      "Id": "D:\\Users\\juancarlos.lopez\\source\\repos\\F_FERIAS\\F_FERIAS_01\\F_Ferias.API\\wwwroot\\Uploads\\fna__uploads\\2025\\marzo\\202503042137445591834_2021080720404800-5E92066D83C981FCBC05AE4D9711906A.png",
+      "PackagePath": "staticwebassets\\Uploads\\fna__uploads\\2025\\marzo\\202503042137445591834_2021080720404800-5E92066D83C981FCBC05AE4D9711906A.png"
     },
     {
       "Id": "obj\\Release\\net6.0\\staticwebassets\\msbuild.F_Ferias.API.Microsoft.AspNetCore.StaticWebAssets.props",
