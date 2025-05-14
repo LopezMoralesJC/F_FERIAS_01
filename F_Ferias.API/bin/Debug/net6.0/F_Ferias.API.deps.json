@@ -633,7 +633,10 @@
           "Npgsql.EntityFrameworkCore.PostgreSQL": "6.0.29"
         },
         "runtime": {
-          "F_Ferias.AccessData.dll": {}
+          "F_Ferias.AccessData.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "F_Ferias.Models/1.0.0": {
@@ -642,7 +645,10 @@
           "Microsoft.Extensions.Identity.Stores": "6.0.33"
         },
         "runtime": {
-          "F_Ferias.Models.dll": {}
+          "F_Ferias.Models.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "F_Ferias.Utilities/1.0.0": {
@@ -651,7 +657,10 @@
           "F_Ferias.Models": "1.0.0"
         },
         "runtime": {
-          "F_Ferias.Utilities.dll": {}
+          "F_Ferias.Utilities.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }

@@ -600,7 +600,10 @@
           "Microsoft.Extensions.Identity.Stores": "6.0.33"
         },
         "runtime": {
-          "F_Ferias.Models.dll": {}
+          "F_Ferias.Models.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }
